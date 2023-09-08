@@ -1,11 +1,6 @@
 import React from "react";
-import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
+export const metadata = {
     title: "Movie",
     description: "Movie",
 };
@@ -17,7 +12,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-br">
-            <body className={inter.className}>{children}</body>
+            <body>{children}</body>
         </html>
     );
 }
