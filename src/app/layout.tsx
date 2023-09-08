@@ -1,3 +1,4 @@
+import { MovieProvider } from "@/context/ContextMovie";
 import React from "react";
 
 export const metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-br">
-            <body>{children}</body>
+            <body>
+                <MovieProvider>{children}</MovieProvider>
+            </body>
         </html>
     );
 }

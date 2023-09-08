@@ -1,4 +1,4 @@
-"use strict";
+"use client";
 import React from "react";
 import { POPULAR_MOVIE } from "@/api/Api";
 import { MovieContextData, Movie } from "./movie/interface";
@@ -11,12 +11,16 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     const [movies, setMovies] = React.useState<Movie[]>([]);
 
     React.useEffect(() => {
-        fetch(POPULAR_MOVIE.url, POPULAR_MOVIE.options)
-            .then((response) => response.json())
-            .then((data) => {
-                setMovies(data.results);
-                console.log(data.results);
-            });
+        try {
+            if (!POPULAR_MOVIE.url)
+                throw new Error("POPULAR_MOVIE.url is undefined");
+
+            fetch(POPULAR_MOVIE.url, POPULAR_MOVIE.options)
+                .then((response) => response.json())
+                .then((data) => setMovies(data.results));
+        } catch (error) {
+            console.log(error);
+        }
     }, []);
 
     return (

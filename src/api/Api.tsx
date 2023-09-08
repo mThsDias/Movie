@@ -1,8 +1,10 @@
-const apiKey = process.env.REACT_APP_API_KEY;
-const baseUrl = process.env.REACT_APP_API_BASE_URL;
+const apiKey =
+    process.env.REACT_APP_API_KEY || "dcf6fe444e49bcbe4d8f215076000be9";
+const baseUrl =
+    process.env.REACT_APP_API_BASE_URL || "https://api.themoviedb.org/3";
 
 export const POPULAR_MOVIE = {
-    url: apiKey ? `${baseUrl}/movie/popular?api_key=${apiKey}` : "",
+    url: `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`,
     options: {
         method: "GET",
         headers: {
