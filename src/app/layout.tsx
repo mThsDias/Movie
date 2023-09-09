@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-br">
-            <body style={{ background: "#141414" }}>
+            <body>
                 <MovieProvider>{children}</MovieProvider>
             </body>
         </html>

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { POPULAR_MOVIE } from "@/api/Api";
-import { MovieContextData, Movie } from "./movie/interface";
+import { MovieContextData, Movie } from "./movie/types";
 
 export const MovieContext = React.createContext<MovieContextData>(
     {} as MovieContextData

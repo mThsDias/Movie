@@ -1,5 +1,5 @@
 import React from "react";
-import { Movie } from "@/context/movie/interface";
+import { Movie } from "@/context/movie/types";
 import "./Card.css";
 
 export const Card = ({ movie }: { movie: Movie }) => {
