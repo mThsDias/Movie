@@ -17,7 +17,10 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
 
             fetch(POPULAR_MOVIE.url, POPULAR_MOVIE.options)
                 .then((response) => response.json())
-                .then((data) => setMovies(data.results));
+                .then((data) => {
+                    setMovies(data.results);
+                    console.log(data);
+                });
         } catch (error) {
             console.log(error);
         }
