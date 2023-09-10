@@ -1,6 +1,6 @@
 import React from "react";
 import "./Category.css";
-import { Movie } from "@/context/movie/interface";
+import { Movie } from "@/context/movie/types";
 
 export const Category = ({ movie }: { movie: Movie }) => {
     if (!movie) return null;
