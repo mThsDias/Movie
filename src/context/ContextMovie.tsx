@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { POPULAR_MOVIE } from "@/api/Api";
+import { POPULAR_MOVIE, TOP_RANKED_MOVIE } from "@/api/Api";
 import { MovieContextData, Movie } from "./movie/types";
 
 export const MovieContext = React.createContext<MovieContextData>(
@@ -8,7 +8,8 @@ export const MovieContext = React.createContext<MovieContextData>(
 );
 
 export function MovieProvider({ children }: { children: React.ReactNode }) {
-    const [movies, setMovies] = React.useState<Movie[]>([]);
+    const [popularMovies, setPopularMovies] = React.useState<Movie[]>([]);
+    const [topRated, setTopRated] = React.useState<Movie[]>([]);
 
     React.useEffect(() => {
         try {
@@ -18,7 +19,23 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
             fetch(POPULAR_MOVIE.url, POPULAR_MOVIE.options)
                 .then((response) => response.json())
                 .then((data) => {
-                    setMovies(data.results);
+                    setPopularMovies(data.results);
+                    console.log(data);
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
+
+    React.useEffect(() => {
+        try {
+            if (!TOP_RANKED_MOVIE.url)
+                throw new Error("TOP_RANKED_MOVIE.url is undefined");
+
+            fetch(TOP_RANKED_MOVIE.url, TOP_RANKED_MOVIE.options)
+                .then((response) => response.json())
+                .then((data) => {
+                    setTopRated(data.results);
                     console.log(data);
                 });
         } catch (error) {
@@ -27,7 +44,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     }, []);
 
     return (
-        <MovieContext.Provider value={{ movies }}>
+        <MovieContext.Provider value={{ popularMovies, topRated }}>
             {children}
         </MovieContext.Provider>
     );

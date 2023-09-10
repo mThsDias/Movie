@@ -13,3 +13,14 @@ export const POPULAR_MOVIE = {
         },
     },
 };
+
+export const TOP_RANKED_MOVIE = {
+    url: `${baseUrl}/tv/top_rated/?api_key=${apiKey}&language=en-US&page=1`,
+    options: {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${apiKey}`,
+        },
+    },
+};

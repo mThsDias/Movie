@@ -5,7 +5,7 @@ import { MovieContext } from "@/context/ContextMovie";
 import { Movie } from "@/context/movie/types";
 
 export const CardComponent = () => {
-    const { movies } = React.useContext(MovieContext);
+    const { popularMovies } = React.useContext(MovieContext);
 
     const settings: SliderProps = {
         spaceBetween: 50,
@@ -18,7 +18,7 @@ export const CardComponent = () => {
         <div>
             <h1>Populares na MovieDB</h1>
             <Slider settings={settings}>
-                {movies.map((movie: Movie) => (
+                {popularMovies.map((movie: Movie) => (
                     <Slide key={movie.id}>
                         <Card movie={movie} />
                     </Slide>

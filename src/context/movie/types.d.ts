@@ -7,5 +7,6 @@ export interface Movie {
 }
 
 export interface MovieContextData {
-    movies: Movie[];
+    popularMovies: Movie[];
+    topRated: Movie[];
 }
