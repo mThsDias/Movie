@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import { CardComponent } from "@/components/CardMovie/CardComponent";
-import { Header } from "@/components/Header/Header";
+import { HeaderCardComponent } from "@/components/Header/HeaderCardComponent";
 
 export default function Home() {
     return (
         <main>
-            <Header />
+            <HeaderCardComponent />
             <CardComponent />
         </main>
     );
