@@ -8,15 +8,21 @@ export const CardComponent = () => {
     const { popularMovies } = React.useContext(MovieContext);
 
     const settings: SliderProps = {
-        spaceBetween: 50,
-        slidesPerView: 3,
+        slidesPerView: 6,
         navigation: true,
-        pagination: { clickable: true },
     };
 
     return (
         <div>
-            <h1>Populares na MovieDB</h1>
+            <h1
+                style={{
+                    color: "#fff",
+                    padding: "4rem 0 0 5rem",
+                    fontSize: "1.5rem",
+                }}
+            >
+                Populares
+            </h1>
             <Slider settings={settings}>
                 {popularMovies.map((movie: Movie) => (
                     <Slide key={movie.id}>

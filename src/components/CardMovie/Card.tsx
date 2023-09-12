@@ -8,8 +8,8 @@ export const Card = ({ movie }: { movie: Movie }) => {
 
     if (!movie || !movie.poster_path) return null;
     return (
-        <section className="teste1">
-            <img className="img" src={imageUrl} alt={movie.title} />
+        <section className="container-card-img">
+            <img src={imageUrl} alt={movie.title} />
         </section>
     );
 };

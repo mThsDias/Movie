@@ -1,11 +1,14 @@
 .swiper {
     width: 100%;
+    max-width: 1820px;
     height: 100%;
+    margin-top: 1rem;
 }
 
-.swiper-slider {
+.swiper-slide {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .swiper-pagination-bullet-active {
@@ -13,9 +16,17 @@
 }
 
 .swiper-button-prev {
-    color: #fff;
+    color: #0c0c0c;
+}
+
+.swiper-button-prev:hover {
+    color: #d6d6d6;
 }
 
 .swiper-button-next {
-    color: #fff;
+    color: #0c0c0c;
+}
+
+.swiper-button-next:hover {
+    color: #d6d6d6;
 }

@@ -4,21 +4,29 @@ import { MovieContext } from "@/context/ContextMovie";
 import { Movie } from "@/context/movie/types";
 import { Header } from "@/components/Header/Header";
 import { NavBar } from "../NavBar/NavBar";
-import "./HeaderCard.css";
+import "./Header.css";
 
 export const HeaderCardComponent = () => {
     const { topRated } = React.useContext(MovieContext);
 
     const settings: SliderProps = {
-        spaceBetween: 50,
-        slidesPerView: 3,
+        slidesPerView: 6,
         navigation: true,
-        pagination: { clickable: true },
     };
 
     return (
         <div>
             <NavBar />
+            <h1
+                style={{
+                    color: "#fff",
+                    padding: "4rem 0 0 5rem",
+                    fontSize: "1.5rem",
+                }}
+            >
+                Em Alta
+            </h1>
+
             <Slider settings={settings}>
                 {topRated.map((movie: Movie) => (
                     <Slide key={movie.id}>
