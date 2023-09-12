@@ -7,6 +7,7 @@ export const Header = ({ topRated }: { topRated: Movie }) => {
 
     if (!topRated || !topRated.poster_path) return null;
     const imageUrl = `${base_url_photo}w500${topRated.poster_path}`;
+
     return (
         <header className="header-container">
             <img className="img" src={imageUrl} alt={topRated.title} />
