@@ -2,13 +2,14 @@
 import React from "react";
 import "./NavBar.css";
 import { BsSearch, BsBell } from "react-icons/bs";
+import { InputSearch } from "../Input/InputSearch";
 
 export const NavBar = () => {
     const [search, setSearch] = React.useState(false);
 
-    function handleSearch() {
+    const handleSearch = () => {
         setSearch(!search);
-    }
+    };
 
     return (
         <nav className="container-nav">
@@ -25,12 +26,12 @@ export const NavBar = () => {
             <div className="container-nav__user">
                 <BsSearch
                     onClick={handleSearch}
-                    search={search ? console.log(true) : console.log(false)}
                     style={{
                         color: "#fff",
                         fontSize: "1.5rem",
                     }}
                 />
+                {search && <InputSearch />}
                 <BsBell
                     style={{ color: "#fff", width: "32px", fontSize: "1.5rem" }}
                 />
