@@ -2,7 +2,7 @@
 import React from "react";
 import "./NavBar.css";
 import { BsSearch, BsBell } from "react-icons/bs";
-import { InputSearch } from "../Input/InputSearch";
+import { InputSearch } from "../Input/search";
 
 export const NavBar = () => {
     const [search, setSearch] = React.useState(false);
