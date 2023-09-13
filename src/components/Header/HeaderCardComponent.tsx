@@ -18,7 +18,7 @@ export const HeaderCardComponent = () => {
     return (
         <div>
             <NavBar />
-            {ResultsSearch ? <ResultsSearch /> : null}
+            <ResultsSearch />
             <h1
                 style={{
                     color: "#fff",
