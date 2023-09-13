@@ -5,6 +5,7 @@ import { Movie } from "@/context/movie/types";
 import { Header } from "@/components/Header/Header";
 import { NavBar } from "../NavBar/NavBar";
 import "./Header.css";
+import { ResultsSearch } from "../Input/ResultsSearch";
 
 export const HeaderCardComponent = () => {
     const { topRated } = React.useContext(MovieContext);
@@ -17,6 +18,7 @@ export const HeaderCardComponent = () => {
     return (
         <div>
             <NavBar />
+            {ResultsSearch ? <ResultsSearch /> : null}
             <h1
                 style={{
                     color: "#fff",

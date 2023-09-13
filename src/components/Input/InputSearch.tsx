@@ -4,7 +4,7 @@ import "./InputSearch.css";
 import { MovieContext } from "@/context/ContextMovie";
 
 export const InputSearch = () => {
-    const { searchResult, setSearch, search } = React.useContext(MovieContext);
+    const { setSearch, search } = React.useContext(MovieContext);
 
     const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(event.target.value);
@@ -18,13 +18,6 @@ export const InputSearch = () => {
                 onChange={handleSearch}
                 value={search}
             />
-            <ul>
-                {searchResult.map((movie) => (
-                    <li key={movie.id}>
-                        <h1>{movie.title}</h1>
-                    </li>
-                ))}
-            </ul>
         </div>
     );
 };
