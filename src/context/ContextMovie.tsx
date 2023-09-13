@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { POPULAR_MOVIE, TOP_RANKED_MOVIE } from "@/api/Api";
+import { POPULAR_MOVIE, TOP_RANKED_MOVIE, searchUrl } from "@/api/Api";
 import { MovieContextData, Movie } from "./movie/types";
 
 export const MovieContext = React.createContext<MovieContextData>(
@@ -10,6 +10,8 @@ export const MovieContext = React.createContext<MovieContextData>(
 export function MovieProvider({ children }: { children: React.ReactNode }) {
     const [popularMovies, setPopularMovies] = React.useState<Movie[]>([]);
     const [topRated, setTopRated] = React.useState<Movie[]>([]);
+    const [search, setSearch] = React.useState<string>("");
+    const [searchResult, setSearchResult] = React.useState<Movie[]>([]);
 
     React.useEffect(() => {
         try {
@@ -43,8 +45,27 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         }
     }, []);
 
+    React.useEffect(() => {
+        if (search.trim() === "") {
+            setSearchResult([]);
+            return;
+        }
+
+        const apiUrl = `${searchUrl}${search}`;
+        fetch(apiUrl)
+            .then((response) => response.json())
+            .then((data) => {
+                setSearchResult(data.results);
+            })
+            .catch((error) => {
+                console.error("Erro na pesquisa:", error);
+            });
+    }, [search]);
+
     return (
-        <MovieContext.Provider value={{ popularMovies, topRated }}>
+        <MovieContext.Provider
+            value={{ popularMovies, topRated, searchResult, setSearch, search }}
+        >
             {children}
         </MovieContext.Provider>
     );

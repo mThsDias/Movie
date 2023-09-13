@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
 import "./InputSearch.css";
-import { searchUrl } from "@/api/Api";
+import { MovieContext } from "@/context/ContextMovie";
 
 export const InputSearch = () => {
-    const [search, setSearch] = React.useState<string>("");
-    const [searchResult, setSearchResult] = React.useState<string[]>([]);
+    const { searchResult, setSearch, search } = React.useContext(MovieContext);
 
     const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(event.target.value);
@@ -19,6 +18,13 @@ export const InputSearch = () => {
                 onChange={handleSearch}
                 value={search}
             />
+            <ul>
+                {searchResult.map((movie) => (
+                    <li key={movie.id}>
+                        <h1>{movie.title}</h1>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };

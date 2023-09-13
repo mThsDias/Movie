@@ -14,4 +14,7 @@ export interface Movie {
 export interface MovieContextData {
     popularMovies: Movie[];
     topRated: Movie[];
+    searchResult: Movie[];
+    setSearch: (search: string) => void;
+    search: string;
 }
