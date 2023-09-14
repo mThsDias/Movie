@@ -13,8 +13,21 @@ export const Header = ({ topRated }: { topRated: Movie }) => {
 
     return (
         <header className="header-container-img">
-            <button onClick={() => setActive(!active)}>
-                <BsThreeDots />
+            <span
+                className="container-nav-card"
+                onClick={() => setActive(!active)}
+            >
+                <BsThreeDots
+                    style={{
+                        background: "#ffffff5b",
+                        borderRadius: "50%",
+                        width: "17px",
+                        height: "17px",
+                        position: "absolute",
+                        left: "15%",
+                        top: "2%",
+                    }}
+                />
                 {active && (
                     <ul>
                         <li>
@@ -31,7 +44,7 @@ export const Header = ({ topRated }: { topRated: Movie }) => {
                         </li>
                     </ul>
                 )}
-            </button>
+            </span>
             <img src={imageUrl} alt={topRated.title} />
         </header>
     );
