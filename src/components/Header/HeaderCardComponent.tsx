@@ -3,7 +3,6 @@ import { Slider, SliderProps, Slide } from "@/components/Slider/index";
 import { MovieContext } from "@/context/ContextMovie";
 import { Movie } from "@/context/movie/types";
 import { Header } from "@/components/Header/Header";
-import { NavBar } from "../NavBar/NavBar";
 import "./Header.css";
 import { ResultsSearch } from "../Input/ResultsSearch";
 
@@ -17,7 +16,6 @@ export const HeaderCardComponent = () => {
 
     return (
         <div>
-            <NavBar />
             <ResultsSearch />
             <h1
                 style={{

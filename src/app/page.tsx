@@ -6,8 +6,8 @@ import { HeaderCardComponent } from "@/components/Header/HeaderCardComponent";
 export default function Home() {
     return (
         <main>
-            <HeaderCardComponent />
             <CardComponent />
+            <HeaderCardComponent />
         </main>
     );
 }

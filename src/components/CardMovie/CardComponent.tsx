@@ -3,6 +3,7 @@ import { Slider, SliderProps, Slide } from "@/components/Slider/index";
 import { Card } from "@/components/CardMovie/Card";
 import { MovieContext } from "@/context/ContextMovie";
 import { Movie } from "@/context/movie/types";
+import { NavBar } from "../NavBar/NavBar";
 
 export const CardComponent = () => {
     const { popularMovies } = React.useContext(MovieContext);
@@ -14,6 +15,7 @@ export const CardComponent = () => {
 
     return (
         <div>
+            <NavBar />
             <h1
                 style={{
                     color: "#fff",
