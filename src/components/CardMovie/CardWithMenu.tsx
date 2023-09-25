@@ -1,24 +1,27 @@
 import React from "react";
 import { Movie } from "@/context/movie/types";
-import "./Card.css";
 import { DropdownMenu } from "./DropdownMenu";
 import { IconThreeDots } from "./IconThreeDots";
 
-export const Card = ({ movie }: { movie: Movie }) => {
+type CardWithMenuProps = {
+    movie: Movie;
+};
+
+export const CardWithMenu = ({ movie }: CardWithMenuProps) => {
     const [menuOpen, setMenuOpen] = React.useState(false);
 
-    const toogleMenu = () => {
+    const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
 
-    const base_url_photo = "https://image.tmdb.org/t/p/";
-    const imageUrl = `${base_url_photo}w500${movie.poster_path}`;
-
     return (
         <section className="container-card-img">
-            <IconThreeDots onClick={toogleMenu} />
             <DropdownMenu isOpen={menuOpen} />
-            <img src={imageUrl} alt={movie.title} />
+            <IconThreeDots onClick={toggleMenu} />
+            <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+            />
         </section>
     );
 };
