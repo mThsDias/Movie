@@ -18,3 +18,7 @@ export interface MovieContextData {
     setSearch: (search: string) => void;
     search: string;
 }
+
+interface ApiResponse<T> {
+    results: T[];
+}

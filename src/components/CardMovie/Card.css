@@ -4,3 +4,20 @@
     object-fit: cover;
     border-radius: 0.5rem;
 }
+
+.container-nav-card ul {
+    list-style: none;
+    width: 170px;
+    height: 70px;
+    background: white;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+}
+
+.container-nav-card ul li {
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}

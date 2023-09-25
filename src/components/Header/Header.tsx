@@ -24,8 +24,8 @@ export const Header = ({ topRated }: { topRated: Movie }) => {
                         width: "17px",
                         height: "17px",
                         position: "absolute",
-                        left: "9%",
-                        top: "2%",
+                        left: "15%",
+                        top: "4%",
                         cursor: "pointer",
                     }}
                 />
@@ -47,11 +47,6 @@ export const Header = ({ topRated }: { topRated: Movie }) => {
                 )}
             </span>
             <img src={imageUrl} alt={topRated.title} />
-            <span className="container-vote-average">
-                <span className="vote-average">{`${(
-                    topRated.vote_average * 10
-                ).toFixed(0)}%`}</span>
-            </span>
         </header>
     );
 };
