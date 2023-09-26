@@ -1,11 +1,16 @@
 "use client";
 import React from "react";
-import { CardComponent } from "@/components/CardMovie/CardComponent";
+import { Trending } from "@/components/Treding/Trending";
+import { NavBar } from "@/components/NavBar/NavBar";
+import Container from "@mui/material/Container";
 
 export default function Home() {
     return (
         <main>
-            <CardComponent />
+            <NavBar />
+            <Container maxWidth="lg">
+                <Trending />
+            </Container>
         </main>
     );
 }

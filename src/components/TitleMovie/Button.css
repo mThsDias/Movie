@@ -1,0 +1,61 @@
+.checkbox {
+    width: 100%;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 2rem;
+    position: relative;
+    color: black;
+    overflow: hidden;
+}
+
+#checkbox_toggle {
+    display: none;
+}
+
+.checkbox .toggle {
+    width: 100px;
+    height: 29px;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    background: linear-gradient(to right, #0066cc, #003399);
+    transition: 0.4s;
+    border-radius: 2rem; /* Adicione o mesmo border-radius aqui */
+}
+
+.checkbox .slide {
+    width: 200px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    cursor: pointer;
+    background-color: #fff;
+    color: linear-gradient(to right, #0066cc, #003399);
+    border: 1px solid #0066cc;
+    border-radius: 20px;
+    overflow: hidden; /* Adicione isso para esconder a parte do switch que sai do container */
+}
+
+.checkbox .slide .text {
+    font-size: 1.1rem;
+    margin-right: 10px;
+    z-index: 100;
+    cursor: pointer;
+    color: inherit;
+}
+
+.toggle-slide {
+    left: 100px;
+}
+
+.check:checked + .checkbox .toggle {
+    left: 100px;
+}
+
+.check:checked + .checkbox .slide {
+    background-color: #fff;
+    color: inherit;
+    border-color: #0066cc;
+}

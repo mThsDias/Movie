@@ -1,6 +1,12 @@
 "use client";
 import React from "react";
-import { POPULAR_MOVIE, TOP_RANKED_MOVIE, searchUrl } from "@/api/Api";
+import {
+    POPULAR_MOVIE,
+    TOP_RANKED_MOVIE,
+    searchUrl,
+    TRENDING_MOVIE,
+    TRENDING_MOVIE_WEEKLY,
+} from "@/api/Api";
 import { MovieContextData, Movie } from "./movie/types";
 
 export const MovieContext = React.createContext<MovieContextData>(
@@ -10,6 +16,8 @@ export const MovieContext = React.createContext<MovieContextData>(
 export function MovieProvider({ children }: { children: React.ReactNode }) {
     const [popularMovies, setPopularMovies] = React.useState<Movie[]>([]);
     const [topRated, setTopRated] = React.useState<Movie[]>([]);
+    const [trending, setTrending] = React.useState<Movie[]>([]);
+    const [trendingWeekly, setTrendingWeekly] = React.useState<Movie[]>([]);
     const [search, setSearch] = React.useState<string>("");
     const [searchResult, setSearchResult] = React.useState<Movie[]>([]);
 
@@ -22,7 +30,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
                 .then((response) => response.json())
                 .then((data) => {
                     setPopularMovies(data.results);
-                    console.log(data);
                 });
         } catch (error) {
             console.log(error);
@@ -38,7 +45,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
                 .then((response) => response.json())
                 .then((data) => {
                     setTopRated(data.results);
-                    console.log(data);
                 });
         } catch (error) {
             console.log(error);
@@ -62,9 +68,49 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
             });
     }, [search]);
 
+    React.useEffect(() => {
+        try {
+            if (!TRENDING_MOVIE.url)
+                throw new Error("TRENDING_MOVIE.url is undefined");
+
+            fetch(TRENDING_MOVIE.url, TRENDING_MOVIE.options)
+                .then((response) => response.json())
+                .then((data) => {
+                    setTrendingWeekly(data.results);
+                    console.log(data);
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
+
+    React.useEffect(() => {
+        try {
+            if (!TRENDING_MOVIE_WEEKLY.url)
+                throw new Error("TRENDING_MOVIE.url is undefined");
+
+            fetch(TRENDING_MOVIE_WEEKLY.url, TRENDING_MOVIE_WEEKLY.options)
+                .then((response) => response.json())
+                .then((data) => {
+                    setTrending(data.results);
+                    console.log(data);
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
+
     return (
         <MovieContext.Provider
-            value={{ popularMovies, topRated, searchResult, setSearch, search }}
+            value={{
+                popularMovies,
+                topRated,
+                searchResult,
+                setSearch,
+                search,
+                trending,
+                trendingWeekly,
+            }}
         >
             {children}
         </MovieContext.Provider>

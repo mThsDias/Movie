@@ -1,16 +1,9 @@
 "use client";
 import React from "react";
 import "./NavBar.css";
-import { BsSearch, BsBell } from "react-icons/bs";
-import { InputSearch } from "../Input/InputSearch";
+import { BsBell } from "react-icons/bs";
 
 export const NavBar = () => {
-    const [search, setSearch] = React.useState(false);
-
-    const handleSearch = () => {
-        setSearch(!search);
-    };
-
     return (
         <nav className="container-nav">
             <div className="div-container-nav">
@@ -24,14 +17,6 @@ export const NavBar = () => {
                 </ul>
             </div>
             <div className="container-nav__user">
-                <BsSearch
-                    onClick={handleSearch}
-                    style={{
-                        color: "#fff",
-                        fontSize: "1.5rem",
-                    }}
-                />
-                {search && <InputSearch />}
                 <BsBell
                     style={{ color: "#fff", width: "32px", fontSize: "1.5rem" }}
                 />

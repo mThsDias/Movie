@@ -1,3 +1,5 @@
+import { MovieContextData, Movie } from "./types";
+
 export interface Movie {
     id: number;
     title: string;
@@ -9,6 +11,8 @@ export interface Movie {
     backdrop_path: string;
     genre_ids: number[];
     genres: Genre[];
+    name: string;
+    first_air_date: string;
 }
 
 export interface MovieContextData {
@@ -17,6 +21,13 @@ export interface MovieContextData {
     searchResult: Movie[];
     setSearch: (search: string) => void;
     search: string;
+    trending: Movie[];
+    trendingWeekly: Movie[];
+}
+
+export interface MovieContextExtended extends MovieContextData {
+    dia: Movie[];
+    semanal: Movie[];
 }
 
 interface ApiResponse<T> {

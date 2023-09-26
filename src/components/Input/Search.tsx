@@ -1,9 +1,12 @@
 import { Movie } from "@/context/movie/types";
 import React from "react";
-import "./InputSearch.css";
+import "./Input.css";
 
-export const Search = ({ movie }: { movie: Movie }) => {
-    if (!movie || !movie.poster_path) return null;
+type SearchProps = {
+    movie: Movie;
+};
+
+export const Search = ({ movie }: SearchProps) => {
     return (
         <div>
             <img
