@@ -11,14 +11,14 @@ export const ImageComponent = ({ posterPatch }: ImageComponent) => {
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                {/* Use a caixa para alinhar o conteúdo */}
                 <div
                     style={{
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
-                        height: "100%", // Defina a altura para ocupar todo o espaço vertical
+                        maxWidth: "300px", // Defina a largura máxima desejada
+                        margin: "0 auto", // Centralize horizontalmente
                     }}
                 >
                     <ImageUrl images={posterPatch} />
