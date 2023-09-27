@@ -25,11 +25,6 @@ export interface MovieContextData {
     trendingWeekly: Movie[];
 }
 
-export interface MovieContextExtended extends MovieContextData {
-    dia: Movie[];
-    semanal: Movie[];
-}
-
 interface ApiResponse<T> {
     results: T[];
 }

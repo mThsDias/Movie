@@ -1,33 +1,26 @@
 import React from "react";
-import { Slider, SliderProps, Slide } from "@/components/Slider/index";
 import { Movie } from "@/context/movie/types";
-import { CardWithMenu } from "./CardWithMenu";
-import "./Card.css";
 import { MovieInfo } from "../TitleMovie/MovieInfo";
+import { ImageComponent } from "./ImageComponent";
 
-type CardComponentProps = {
-    movies: Movie[];
-    settings: SliderProps;
+type SectionMovieProps = {
+    cardMovie: Movie[];
 };
 
-export const SectionMovie = ({ movies, settings }: CardComponentProps) => {
+export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
     return (
-        <div>
-            <Slider settings={settings}>
-                {movies.map((movie) => (
-                    <Slide key={movie.id}>
-                        <section className="container-card-img">
-                            <CardWithMenu movie={movie} />
-                            <MovieInfo
-                                title={movie.title}
-                                releaseDate={movie.release_date}
-                                name={movie.name}
-                                firstAirDate={movie.first_air_date}
-                            />
-                        </section>
-                    </Slide>
-                ))}
-            </Slider>
-        </div>
+        <section>
+            {cardMovie.map((movie) => (
+                <div key={movie.id}>
+                    <ImageComponent posterPatch={movie} />
+                    <MovieInfo
+                        title={movie.title}
+                        name={movie.name}
+                        releaseDate={movie.release_date}
+                        firstAirDate={movie.first_air_date}
+                    />
+                </div>
+            ))}
+        </section>
     );
 };

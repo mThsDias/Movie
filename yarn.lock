@@ -1833,6 +1833,11 @@ json5@^1.0.2:
     object.assign "^4.1.4"
     object.values "^1.1.6"
 
+keen-slider@^6.8.6:
+  version "6.8.6"
+  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-6.8.6.tgz#17bb7b219860f291a5ea5fde4496b737bf407a83"
+  integrity sha512-dcEQ7GDBpCjUQA8XZeWh3oBBLLmyn8aoeIQFGL/NTVkoEOsmlnXqA4QykUm/SncolAZYGsEk/PfUhLZ7mwMM2w==
+
 keyv@^4.5.3:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.3.tgz#00873d2b046df737963157bd04f294ca818c9c25"
@@ -2437,11 +2442,6 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
-
-swiper@^10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-10.2.0.tgz#e7369ff56f4e10069f2244a4436f732b8925deb0"
-  integrity sha512-nktQsOtBInJjr3f5DicxC8eHYGcLXDVIGPSon0QoXRaO6NjKnATCbQ8SZsD3dN1Ph1RH4EhVPwSYCcuDRFWHGQ==
 
 tapable@^2.2.0:
   version "2.2.1"

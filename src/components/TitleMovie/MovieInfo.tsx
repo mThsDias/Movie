@@ -1,5 +1,5 @@
 import React from "react";
-import "./MovieInfo.css";
+import { Box } from "@mui/material";
 
 type MovieInfoProps = {
     title: string;
@@ -15,10 +15,19 @@ export const MovieInfo = ({
     firstAirDate,
 }: MovieInfoProps) => {
     return (
-        <div className="container-description">
-            <h4>{title}</h4>
-            <h4>{name}</h4>
-            <h5>{releaseDate || firstAirDate}</h5>
-        </div>
+        <Box
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        >
+            <h1>
+                {title}
+                {name}
+            </h1>
+            <h4>{releaseDate || firstAirDate}</h4>
+        </Box>
     );
 };

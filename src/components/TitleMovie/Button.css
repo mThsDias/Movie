@@ -1,5 +1,6 @@
 .checkbox {
     width: 100%;
+    max-width: 200px;
     height: 28px;
     background-color: #fff;
     border-radius: 2rem;

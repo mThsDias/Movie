@@ -5,9 +5,7 @@
     padding: 5rem 0 1rem 2rem;
 }
 
-.teste {
-    border: 1px solid red;
-    border-radius: 1rem;
-    background: #333;
-    padding: 1rem;
+section {
+    margin-top: 4rem;
+    background: white;
 }
