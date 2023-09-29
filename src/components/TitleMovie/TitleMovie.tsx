@@ -1,4 +1,5 @@
 import React from "react";
+import * as S from "./styles";
 
 type TitleMovieProps = {
     title: string;
@@ -6,15 +7,8 @@ type TitleMovieProps = {
 
 export const TitleMovie = ({ title }: TitleMovieProps) => {
     return (
-        <div className="container-title">
-            <h1
-                style={{
-                    color: "#000",
-                    fontSize: "1.5rem",
-                }}
-            >
-                {title}
-            </h1>
+        <div>
+            <S.TitleTrending>{title}</S.TitleTrending>
         </div>
     );
 };

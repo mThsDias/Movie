@@ -1,33 +1,13 @@
 import styled from "styled-components";
 
-// Styles in ImageComponent
-export const ContainerImage = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    max-width: 300px;
-    margin: 0 auto;
-`;
-
 // Styles in SectionMovie
 export const CustomBox = styled.div`
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
     overflow-x: auto;
-
-    width: 100%;
-    height: auto;
 
     margin: 0 auto;
     margin-bottom: 20px;
 
     white-space: nowrap;
-    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-    background-color: #f5f5f5;
     border-radius: 0.5rem;
 
     /* Estilização da barra de rolagem */
@@ -50,6 +30,21 @@ export const CustomBox = styled.div`
     }
 `;
 
+// Styles in EffectBlur
+export const EffectBlur = styled.div`
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 1) 40%,
+        rgba(255, 255, 255, 0) 100%
+    );
+`;
+
 export const InnerContainer = styled.div`
     display: flex;
     flex-wrap: nowrap;
@@ -58,7 +53,6 @@ export const InnerContainer = styled.div`
 `;
 
 // Styles in ImageUrl
-
 export const ContainerImageUrl = styled.div`
     position: relative;
 `;
@@ -90,7 +84,7 @@ export const CircleContainer = styled.div`
 
     position: absolute;
     top: 90%;
-    left: 10%;
+    left: 5%;
 
     border-radius: 50%;
     background-color: #081c22;
@@ -105,7 +99,7 @@ export const CircleContent = styled.div`
     height: 34px;
 
     border-radius: 50%;
-    border: 2px solid #21d07a;
+    border: 2px solid ${(props) => props.color};
 
     display: flex;
     align-items: center;

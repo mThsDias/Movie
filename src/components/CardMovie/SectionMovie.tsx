@@ -9,8 +9,17 @@ type SectionMovieProps = {
 };
 
 export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
+    const [showBlur, setShowBlur] = React.useState(true);
+
+    const handleScroll = () => {
+        // Lógica para ocultar o blur quando o usuário rolar a barra de rolagem
+        if (showBlur) {
+            setShowBlur(false);
+        }
+    };
+
     return (
-        <S.CustomBox>
+        <S.CustomBox onScroll={handleScroll}>
             <S.InnerContainer>
                 {cardMovie.map((movie) => (
                     <S.ContentMovie key={movie.id}>
@@ -28,6 +37,7 @@ export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
                     </S.ContentMovie>
                 ))}
             </S.InnerContainer>
+            {showBlur && <S.EffectBlur />}
         </S.CustomBox>
     );
 };

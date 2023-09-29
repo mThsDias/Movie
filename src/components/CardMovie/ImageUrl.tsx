@@ -9,6 +9,20 @@ type ImageUrlProps = {
 };
 
 export const ImageUrl = ({ images, voteAverage }: ImageUrlProps) => {
+    const [color, setColor] = React.useState("#f7f4f8");
+
+    React.useEffect(() => {
+        if (voteAverage >= 7) {
+            setColor("#21d07a");
+        } else if (voteAverage <= 7) {
+            setColor("#D2D531");
+        } else if (voteAverage <= 6) {
+            setColor("#FFC324");
+        } else if (voteAverage <= 5) {
+            setColor("#FF0000");
+        }
+    }, [voteAverage]);
+
     return (
         <S.ContainerImageUrl>
             <Image
@@ -24,9 +38,10 @@ export const ImageUrl = ({ images, voteAverage }: ImageUrlProps) => {
                 loading="lazy"
             />
             <S.CircleContainer>
-                <S.CircleContent>
+                <S.CircleContent color={color}>
                     <S.VoteAverage>
                         {((voteAverage / 10) * 100).toFixed(0)}
+
                         <S.Porcent>%</S.Porcent>
                     </S.VoteAverage>
                 </S.CircleContent>

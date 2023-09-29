@@ -2,15 +2,15 @@
 import React from "react";
 import { Trending } from "@/components/Treding/Trending";
 import { NavBar } from "@/components/NavBar/NavBar";
-import Container from "@mui/material/Container";
+import * as S from "./styles";
 
 export default function Home() {
     return (
         <main>
             <NavBar />
-            <Container maxWidth="lg">
+            <S.Container>
                 <Trending />
-            </Container>
+            </S.Container>
         </main>
     );
 }
