@@ -1,4 +1,5 @@
 import React from "react";
+import * as S from "./styles";
 
 type MovieInfoProps = {
     title: string;
@@ -15,20 +16,29 @@ export const MovieInfo = ({
     firstAirDate,
     voteAverage,
 }: MovieInfoProps) => {
+    const formatDate = (date: string) => {
+        const options: Intl.DateTimeFormatOptions = {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        };
+        return new Date(date).toLocaleDateString("pt-BR", options);
+    };
+
     return (
-        <div style={{ height: "100px", fontSize: "12px" }}>
-            <span>{((voteAverage / 10) * 100).toFixed(0)}%</span>
-            <h2
-                style={{
-                    whiteSpace: "normal",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                }}
-            >
+        <S.ContainerInfo>
+            <S.VoteAverage>
+                {((voteAverage / 10) * 100).toFixed(0)}%
+            </S.VoteAverage>
+            <S.Title>
                 {title}
                 {name}
-            </h2>
-            <p>{releaseDate || firstAirDate}</p>
-        </div>
+            </S.Title>
+            <S.Paragraph>
+                {releaseDate
+                    ? formatDate(releaseDate)
+                    : formatDate(firstAirDate)}
+            </S.Paragraph>
+        </S.ContainerInfo>
     );
 };

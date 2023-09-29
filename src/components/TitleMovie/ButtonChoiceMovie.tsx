@@ -3,8 +3,8 @@ import React from "react";
 export const ButtonChoiceMovie = () => {
     return (
         <div>
-            <button>Ver</button>
-            <button>Quiero ver</button>
+            <button>Hoje</button>
+            <button>Semana</button>
         </div>
     );
 };
