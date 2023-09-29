@@ -14,7 +14,10 @@ export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
             <S.InnerContainer>
                 {cardMovie.map((movie) => (
                     <S.ContentMovie key={movie.id}>
-                        <ImageComponent posterPatch={movie} />
+                        <ImageComponent
+                            posterPatch={movie}
+                            voteAverage={movie.vote_average}
+                        />
                         <MovieInfo
                             voteAverage={movie.vote_average}
                             title={movie.title}

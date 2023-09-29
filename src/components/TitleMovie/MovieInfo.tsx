@@ -14,7 +14,6 @@ export const MovieInfo = ({
     releaseDate,
     name,
     firstAirDate,
-    voteAverage,
 }: MovieInfoProps) => {
     const formatDate = (date: string) => {
         const options: Intl.DateTimeFormatOptions = {
@@ -27,9 +26,6 @@ export const MovieInfo = ({
 
     return (
         <S.ContainerInfo>
-            <S.VoteAverage>
-                {((voteAverage / 10) * 100).toFixed(0)}%
-            </S.VoteAverage>
             <S.Title>
                 {title}
                 {name}

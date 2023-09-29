@@ -5,12 +5,16 @@ import * as S from "./styles";
 
 type ImageComponent = {
     posterPatch: Movie;
+    voteAverage: number;
 };
 
-export const ImageComponent = ({ posterPatch }: ImageComponent) => {
+export const ImageComponent = ({
+    posterPatch,
+    voteAverage,
+}: ImageComponent) => {
     return (
         <S.ContainerImage>
-            <ImageUrl images={posterPatch} />
+            <ImageUrl images={posterPatch} voteAverage={voteAverage} />
         </S.ContainerImage>
     );
 };
