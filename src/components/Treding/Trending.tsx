@@ -3,18 +3,18 @@ import { SectionMovie } from "../CardMovie/SectionMovie";
 import { MovieContext } from "@/context/ContextMovie";
 import { TitleMovie } from "../TitleMovie/TitleMovie";
 import { ButtonChoiceMovie } from "../TitleMovie/ButtonChoiceMovie";
-import "./Trending.css";
+import * as S from "./styles";
 
 export const Trending = () => {
     const { trending } = React.useContext(MovieContext);
 
     return (
-        <section>
-            <div className="container-trending">
+        <S.Container>
+            <S.Content>
                 <TitleMovie title="Tendência" />
                 <ButtonChoiceMovie />
-            </div>
+            </S.Content>
             <SectionMovie cardMovie={trending} />
-        </section>
+        </S.Container>
     );
 };

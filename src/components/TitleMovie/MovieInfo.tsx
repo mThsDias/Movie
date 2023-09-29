@@ -1,11 +1,11 @@
 import React from "react";
-import { Box } from "@mui/material";
 
 type MovieInfoProps = {
     title: string;
     releaseDate: string;
     name: string;
     firstAirDate: string;
+    voteAverage: number;
 };
 
 export const MovieInfo = ({
@@ -13,21 +13,22 @@ export const MovieInfo = ({
     releaseDate,
     name,
     firstAirDate,
+    voteAverage,
 }: MovieInfoProps) => {
     return (
-        <Box
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-            }}
-        >
-            <h1>
+        <div style={{ height: "100px", fontSize: "12px" }}>
+            <span>{((voteAverage / 10) * 100).toFixed(0)}%</span>
+            <h2
+                style={{
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                }}
+            >
                 {title}
                 {name}
-            </h1>
-            <h4>{releaseDate || firstAirDate}</h4>
-        </Box>
+            </h2>
+            <p>{releaseDate || firstAirDate}</p>
+        </div>
     );
 };

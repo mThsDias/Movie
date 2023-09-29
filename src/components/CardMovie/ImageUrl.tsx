@@ -1,5 +1,6 @@
-import { Movie } from "@/context/movie/types";
 import React from "react";
+import { Movie } from "@/context/movie/types";
+import Image from "next/image";
 
 type ImageUrlProps = {
     images: Movie;
@@ -8,10 +9,12 @@ type ImageUrlProps = {
 export const ImageUrl = ({ images }: ImageUrlProps) => {
     return (
         <div>
-            <img
+            <Image
                 src={`https://image.tmdb.org/t/p/original${images.poster_path}`}
                 alt={images.title}
-                style={{ width: "100%", height: "100%" }}
+                width={156}
+                height={245}
+                style={{ borderRadius: "7px" }}
             />
         </div>
     );
