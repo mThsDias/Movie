@@ -5,7 +5,7 @@ export const CustomBox = styled.div`
     overflow-x: auto;
 
     margin: 0 auto;
-    margin-bottom: 20px;
+    background: url();
 
     white-space: nowrap;
     border-radius: 0.5rem;
@@ -43,6 +43,8 @@ export const EffectBlur = styled.div`
         rgba(255, 255, 255, 1) 40%,
         rgba(255, 255, 255, 0) 100%
     );
+
+    transition: opacity 0.9s ease;
 `;
 
 export const InnerContainer = styled.div`
@@ -66,40 +68,16 @@ export const ContentMovie = styled.div`
     margin-right: 20px;
 `;
 
-export const VoteAverage = styled.span`
-    display: flex;
-
-    color: #f7f4f8;
-    font-weight: bold;
-    font-size: 0.9rem;
-`;
-
-export const Porcent = styled.span`
-    font-size: 0.4rem;
-`;
-
 export const CircleContainer = styled.div`
     width: 38px;
     height: 38px;
-
     position: absolute;
-    top: 90%;
+
+    top: 90.5%;
     left: 5%;
 
     border-radius: 50%;
-    background-color: #081c22;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-export const CircleContent = styled.div`
-    width: 34px;
-    height: 34px;
-
-    border-radius: 50%;
-    border: 2px solid ${(props) => props.color};
+    background: #081c22;
 
     display: flex;
     align-items: center;

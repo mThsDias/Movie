@@ -2,6 +2,8 @@ import React from "react";
 import { Movie } from "@/context/movie/types";
 import Image from "next/image";
 import * as S from "./styles";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 type ImageUrlProps = {
     images: Movie;
@@ -23,6 +25,8 @@ export const ImageUrl = ({ images, voteAverage }: ImageUrlProps) => {
         }
     }, [voteAverage]);
 
+    const percentage = parseFloat(((voteAverage / 10) * 100).toFixed(0));
+
     return (
         <S.ContainerImageUrl>
             <Image
@@ -35,16 +39,22 @@ export const ImageUrl = ({ images, voteAverage }: ImageUrlProps) => {
                     objectFit: "cover",
                     cursor: "pointer",
                 }}
-                loading="lazy"
+                priority
             />
             <S.CircleContainer>
-                <S.CircleContent color={color}>
-                    <S.VoteAverage>
-                        {((voteAverage / 10) * 100).toFixed(0)}
-
-                        <S.Porcent>%</S.Porcent>
-                    </S.VoteAverage>
-                </S.CircleContent>
+                <CircularProgressbar
+                    value={percentage}
+                    text={`${percentage}%`}
+                    strokeWidth={7}
+                    styles={buildStyles({
+                        backgroundColor: "#081c22",
+                        textColor: "#fff",
+                        pathColor: color,
+                        trailColor: "#1a3b28",
+                        textSize: "1.8rem",
+                        fontWeight: "bold",
+                    })}
+                />
             </S.CircleContainer>
         </S.ContainerImageUrl>
     );
