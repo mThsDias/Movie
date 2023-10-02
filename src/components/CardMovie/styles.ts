@@ -5,7 +5,9 @@ export const CustomBox = styled.div`
     overflow-x: auto;
 
     margin: 0 auto;
-    background: url();
+
+    background-size: cover;
+    background-position: center;
 
     white-space: nowrap;
     border-radius: 0.5rem;
