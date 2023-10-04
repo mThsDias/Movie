@@ -8,10 +8,10 @@ export const CustomBox = styled.div`
 
     background-size: cover;
     background-position: center;
+    background: #333;
 
     white-space: nowrap;
-    border-radius: 0.5rem;
-
+    border-radius: 0.2rem;
     /* Estilização da barra de rolagem */
     &::-webkit-scrollbar {
         height: 10px;

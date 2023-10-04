@@ -29,18 +29,20 @@ export const ImageUrl = ({ images, voteAverage }: ImageUrlProps) => {
 
     return (
         <S.ContainerImageUrl>
-            <Image
-                src={`https://image.tmdb.org/t/p/original${images.poster_path}`}
-                alt={"Poster"}
-                width={156}
-                height={245}
-                style={{
-                    borderRadius: "7px",
-                    objectFit: "cover",
-                    cursor: "pointer",
-                }}
-                priority
-            />
+            {images && (
+                <Image
+                    src={`https://image.tmdb.org/t/p/original${images.poster_path}`}
+                    alt={"Poster"}
+                    width={156}
+                    height={245}
+                    style={{
+                        borderRadius: "7px",
+                        objectFit: "cover",
+                        cursor: "pointer",
+                    }}
+                    priority
+                />
+            )}
             <S.CircleContainer>
                 <CircularProgressbar
                     value={percentage}

@@ -1,6 +1,7 @@
 import { MovieContextData, Movie } from "./types";
 
 export interface Movie {
+    key: string;
     id: number;
     title: string;
     overview: string;
@@ -23,6 +24,7 @@ export interface MovieContextData {
     search: string;
     trending: Movie[];
     trendingWeekly: Movie[];
+    trailer: Movie[];
 }
 
 interface ApiResponse<T> {

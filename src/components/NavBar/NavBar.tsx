@@ -12,7 +12,7 @@ export const NavBar = () => {
                 <BasicMenuSeries titleSerie="Séries" />
             </S.BoxMenu>
             <div>
-                <h1>Entre</h1>
+                <span>Entre</span>
             </div>
         </S.BoxNavBar>
     );

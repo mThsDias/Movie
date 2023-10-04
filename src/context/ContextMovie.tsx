@@ -6,6 +6,7 @@ import {
     searchUrl,
     TRENDING_MOVIE,
     TRENDING_MOVIE_WEEKLY,
+    TRAILRES_MOVIE,
 } from "@/api/Api";
 import { MovieContextData, Movie } from "./movie/types";
 
@@ -20,6 +21,23 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     const [trendingWeekly, setTrendingWeekly] = React.useState<Movie[]>([]);
     const [search, setSearch] = React.useState<string>("");
     const [searchResult, setSearchResult] = React.useState<Movie[]>([]);
+    const [trailer, setTrailer] = React.useState<Movie[]>([]);
+
+    React.useEffect(() => {
+        try {
+            if (!TRAILRES_MOVIE.url)
+                throw new Error("TRAILRES_MOVIE.url is undefined");
+
+            fetch(TRAILRES_MOVIE.url, TRAILRES_MOVIE.options)
+                .then((response) => response.json())
+                .then((data) => {
+                    setTrailer(data.results);
+                    console.log(data);
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
 
     React.useEffect(() => {
         try {
@@ -77,7 +95,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
                 .then((response) => response.json())
                 .then((data) => {
                     setTrendingWeekly(data.results);
-                    console.log(data);
                 });
         } catch (error) {
             console.log(error);
@@ -110,6 +127,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
                 search,
                 trending,
                 trendingWeekly,
+                trailer,
             }}
         >
             {children}

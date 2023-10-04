@@ -3,6 +3,7 @@ import { Movie } from "@/context/movie/types";
 import { MovieInfo } from "../TitleMovie/MovieInfo";
 import { ImageComponent } from "./ImageComponent";
 import * as S from "./styles";
+import Link from "next/link";
 
 type SectionMovieProps = {
     cardMovie: Movie[];
@@ -26,10 +27,12 @@ export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
             <S.InnerContainer>
                 {cardMovie.map((movie) => (
                     <S.ContentMovie key={movie.id}>
-                        <ImageComponent
-                            posterPatch={movie}
-                            voteAverage={movie.vote_average}
-                        />
+                        <Link href={`/movies/${movie.id}`}>
+                            <ImageComponent
+                                posterPatch={movie}
+                                voteAverage={movie.vote_average}
+                            />
+                        </Link>
                         <MovieInfo
                             voteAverage={movie.vote_average}
                             title={movie.title}
