@@ -32,7 +32,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
                 .then((response) => response.json())
                 .then((data) => {
                     setTrailer(data.results);
-                    console.log(data);
                 });
         } catch (error) {
             console.log(error);
@@ -94,7 +93,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
             fetch(TRENDING_MOVIE.url, TRENDING_MOVIE.options)
                 .then((response) => response.json())
                 .then((data) => {
-                    setTrendingWeekly(data.results);
+                    setTrending(data.results);
                 });
         } catch (error) {
             console.log(error);
@@ -109,8 +108,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
             fetch(TRENDING_MOVIE_WEEKLY.url, TRENDING_MOVIE_WEEKLY.options)
                 .then((response) => response.json())
                 .then((data) => {
-                    setTrending(data.results);
-                    console.log(data);
+                    setTrendingWeekly(data.results);
                 });
         } catch (error) {
             console.log(error);

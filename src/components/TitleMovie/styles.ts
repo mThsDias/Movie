@@ -7,7 +7,6 @@ export const ContainerInfo = styled.div`
 
     width: 100%;
     max-width: 140px;
-    height: 100%;
 
     padding-top: 0.5rem;
 `;
@@ -17,9 +16,10 @@ export const Title = styled.h2`
     text-align: left;
 
     margin-top: 1rem;
+    text-decoration: none;
 
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.2rem;
 `;
 
@@ -31,6 +31,10 @@ export const Paragraph = styled.p`
 
 //Styles in TitleMovie
 export const TitleTrending = styled.h1`
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
+`;
+
+export const ContainerTitle = styled.div`
+    margin-left: 2rem;
 `;

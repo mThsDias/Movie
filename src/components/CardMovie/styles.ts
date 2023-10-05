@@ -3,12 +3,12 @@ import styled from "styled-components";
 // Styles in SectionMovie
 export const CustomBox = styled.div`
     overflow-x: auto;
+    overflow-y: hidden;
 
     margin: 0 auto;
 
     background-size: cover;
     background-position: center;
-    background: #333;
 
     white-space: nowrap;
     border-radius: 0.2rem;
@@ -68,11 +68,20 @@ export const ContentMovie = styled.div`
 
     width: 100%;
     margin-right: 20px;
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    a:hover {
+        color: #46cde8;
+    }
 `;
 
 export const CircleContainer = styled.div`
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     position: absolute;
 
     top: 90.5%;
@@ -80,8 +89,4 @@ export const CircleContainer = styled.div`
 
     border-radius: 50%;
     background: #081c22;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 `;

@@ -1,15 +1,11 @@
 import React from "react";
-import { Movie } from "@/context/movie/types";
 import { ImageUrl } from "./ImageUrl";
+import { Movie } from "@/context/movie/types";
 
 type ImageComponent = {
-    posterPatch: Movie;
-    voteAverage: number;
+    movie: Movie;
 };
 
-export const ImageComponent = ({
-    posterPatch,
-    voteAverage,
-}: ImageComponent) => {
-    return <ImageUrl images={posterPatch} voteAverage={voteAverage} />;
+export const ImageComponent = ({ movie }: ImageComponent) => {
+    return <ImageUrl movie={movie} />;
 };

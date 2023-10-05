@@ -7,8 +7,8 @@ type TitleMovieProps = {
 
 export const TitleMovie = ({ title }: TitleMovieProps) => {
     return (
-        <div>
+        <S.ContainerTitle>
             <S.TitleTrending>{title}</S.TitleTrending>
-        </div>
+        </S.ContainerTitle>
     );
 };

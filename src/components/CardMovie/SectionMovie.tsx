@@ -28,18 +28,15 @@ export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
                 {cardMovie.map((movie) => (
                     <S.ContentMovie key={movie.id}>
                         <Link href={`/movies/${movie.id}`}>
-                            <ImageComponent
-                                posterPatch={movie}
+                            <ImageComponent movie={movie} />
+                            <MovieInfo
                                 voteAverage={movie.vote_average}
+                                title={movie.title}
+                                name={movie.name}
+                                releaseDate={movie.release_date}
+                                firstAirDate={movie.first_air_date}
                             />
                         </Link>
-                        <MovieInfo
-                            voteAverage={movie.vote_average}
-                            title={movie.title}
-                            name={movie.name}
-                            releaseDate={movie.release_date}
-                            firstAirDate={movie.first_air_date}
-                        />
                     </S.ContentMovie>
                 ))}
             </S.InnerContainer>
