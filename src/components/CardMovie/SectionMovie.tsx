@@ -29,13 +29,16 @@ export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
                     <S.ContentMovie key={movie.id}>
                         <Link href={`/movies/${movie.id}`}>
                             <ImageComponent movie={movie} />
-                            <MovieInfo
-                                voteAverage={movie.vote_average}
-                                title={movie.title}
-                                name={movie.name}
-                                releaseDate={movie.release_date}
-                                firstAirDate={movie.first_air_date}
-                            />
+                            <S.ContainerInfo>
+                                <S.Title>
+                                    <MovieInfo
+                                        title={movie.title}
+                                        name={movie.name}
+                                        releaseDate={movie.release_date}
+                                        firstAirDate={movie.first_air_date}
+                                    />
+                                </S.Title>
+                            </S.ContainerInfo>
                         </Link>
                     </S.ContentMovie>
                 ))}

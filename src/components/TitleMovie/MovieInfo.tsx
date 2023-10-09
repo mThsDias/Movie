@@ -6,7 +6,6 @@ type MovieInfoProps = {
     releaseDate: string;
     name: string;
     firstAirDate: string;
-    voteAverage: number;
 };
 
 export const MovieInfo = ({
@@ -25,16 +24,14 @@ export const MovieInfo = ({
     };
 
     return (
-        <S.ContainerInfo>
-            <S.Title>
-                {title}
-                {name}
-            </S.Title>
+        <>
+            {title}
+            {name}
             <S.Paragraph>
                 {releaseDate
                     ? formatDate(releaseDate)
                     : formatDate(firstAirDate)}
             </S.Paragraph>
-        </S.ContainerInfo>
+        </>
     );
 };

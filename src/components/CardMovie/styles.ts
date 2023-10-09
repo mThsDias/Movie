@@ -53,7 +53,7 @@ export const InnerContainer = styled.div`
     display: flex;
     flex-wrap: nowrap;
 
-    padding: 50px 20px;
+    padding: 2rem;
 `;
 
 // Styles in ImageUrl
@@ -89,4 +89,26 @@ export const CircleContainer = styled.div`
 
     border-radius: 50%;
     background: #081c22;
+`;
+
+export const Title = styled.h2`
+    white-space: normal;
+    text-align: left;
+
+    margin-top: 1rem;
+    text-decoration: none;
+
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.2rem;
+`;
+
+export const ContainerInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 140px;
+
+    padding-top: 0.5rem;
 `;
