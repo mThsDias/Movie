@@ -23,8 +23,8 @@ export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
     };
 
     return (
-        <S.CustomBox onScroll={handleScroll}>
-            <S.InnerContainer>
+        <S.CustomBox>
+            <S.InnerContainer onScroll={handleScroll}>
                 {cardMovie.map((movie) => (
                     <S.ContentMovie key={movie.id}>
                         <Link href={`/movies/${movie.id}`}>

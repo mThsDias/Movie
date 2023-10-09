@@ -10,11 +10,16 @@ export interface Movie {
     vote_average: number;
     vote_count: number;
     backdrop_path: string;
-    genre_ids: number[];
-    genres: Genre[];
     name: string;
     first_air_date: string;
     runtime: number;
+}
+
+export interface Cast {
+    id: number;
+    name: string;
+    character: string;
+    profile_path: string;
 }
 
 export interface MovieContextData {
@@ -26,6 +31,7 @@ export interface MovieContextData {
     trending: Movie[];
     trendingWeekly: Movie[];
     trailer: Movie[];
+    credits: Cast[];
 }
 
 interface ApiResponse<T> {

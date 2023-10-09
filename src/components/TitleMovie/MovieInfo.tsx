@@ -25,8 +25,10 @@ export const MovieInfo = ({
 
     return (
         <>
-            {title}
-            {name}
+            <span>
+                {title}
+                {name}
+            </span>
             <S.Paragraph>
                 {releaseDate
                     ? formatDate(releaseDate)

@@ -14,15 +14,13 @@ export const ProfileDescription = ({ movie }: ProfileDescriptionProps) => {
     const [creditsDirector, setCreditsDirector] = React.useState({} as Movie);
 
     const { trending } = React.useContext(MovieContext);
-
     const params = useParams();
     const { id } = params;
-
     async function fetchCreditsMovie() {
         trending.find((movie) => movie.id === Number(id)) as Movie;
 
         try {
-            const creditsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=pt-br;`;
+            const creditsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=en-US;`;
             const response = await fetch(creditsUrl, {
                 method: "GET",
                 headers: {

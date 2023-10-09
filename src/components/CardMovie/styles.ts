@@ -7,29 +7,8 @@ export const CustomBox = styled.div`
 
     margin: 0 auto;
 
-    background-size: cover;
-    background-position: center;
-
     white-space: nowrap;
     border-radius: 0.2rem;
-    /* Estilização da barra de rolagem */
-    &::-webkit-scrollbar {
-        height: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: #888;
-        border-radius: 4px;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-        background-color: #555;
-    }
-
-    &::-webkit-scrollbar-track {
-        background-color: #ddd;
-        border-radius: 4px;
-    }
 `;
 
 // Styles in EffectBlur
@@ -53,7 +32,30 @@ export const InnerContainer = styled.div`
     display: flex;
     flex-wrap: nowrap;
 
+    overflow-y: hidden;
+
+    background: #141414;
+    backdrop-filter: blur(1px);
+
     padding: 2rem;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #ddd;
+        border-radius: 4px;
+    }
 `;
 
 // Styles in ImageUrl
@@ -74,8 +76,11 @@ export const ContentMovie = styled.div`
         color: #000;
     }
 
-    a:hover {
-        color: #46cde8;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+        opacity: 1;
     }
 `;
 
@@ -95,12 +100,18 @@ export const Title = styled.h2`
     white-space: normal;
     text-align: left;
 
+    color: #ddd;
+
     margin-top: 1rem;
     text-decoration: none;
 
     width: 100%;
     font-size: 1rem;
     line-height: 1.2rem;
+
+    span:hover {
+        color: #46cde8;
+    }
 `;
 
 export const ContainerInfo = styled.div`

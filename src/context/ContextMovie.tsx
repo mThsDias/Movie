@@ -8,7 +8,11 @@ import {
     TRENDING_MOVIE_WEEKLY,
     TRAILRES_MOVIE,
 } from "@/api/Api";
-import { MovieContextData, Movie } from "./movie/types";
+import { MovieContextData, Movie, Cast } from "./movie/types";
+import { useParams } from "next/navigation";
+
+export const apiKey =
+    process.env.REACT_APP_API_KEY || "dcf6fe444e49bcbe4d8f215076000be9";
 
 export const MovieContext = React.createContext<MovieContextData>(
     {} as MovieContextData
@@ -22,6 +26,10 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     const [search, setSearch] = React.useState<string>("");
     const [searchResult, setSearchResult] = React.useState<Movie[]>([]);
     const [trailer, setTrailer] = React.useState<Movie[]>([]);
+    const [credits, setCredits] = React.useState<Cast[]>([]);
+
+    const params = useParams();
+    const { id } = params;
 
     React.useEffect(() => {
         try {
@@ -93,7 +101,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
             fetch(TRENDING_MOVIE.url, TRENDING_MOVIE.options)
                 .then((response) => response.json())
                 .then((data) => {
-                    setTrending(data.results);
+                    setTrendingWeekly(data.results);
                 });
         } catch (error) {
             console.log(error);
@@ -108,7 +116,22 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
             fetch(TRENDING_MOVIE_WEEKLY.url, TRENDING_MOVIE_WEEKLY.options)
                 .then((response) => response.json())
                 .then((data) => {
-                    setTrendingWeekly(data.results);
+                    setTrending(data.results);
+                    console.log(data.results);
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
+
+    React.useEffect(() => {
+        try {
+            fetch(
+                `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=pt-br;`
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    setCredits(data);
                 });
         } catch (error) {
             console.log(error);
@@ -126,6 +149,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
                 trending,
                 trendingWeekly,
                 trailer,
+                credits,
             }}
         >
             {children}
