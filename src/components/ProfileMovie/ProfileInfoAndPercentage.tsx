@@ -2,8 +2,8 @@ import React from "react";
 import { MovieInfo } from "../TitleMovie/MovieInfo";
 import { PercentageRounded } from "../CardMovie/PercentageRounded";
 import { Movie } from "@/context/movie/types";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import * as S from "./styles";
+import Modal from "./Modal";
 
 type ProfileInfoAndPercentageProps = {
     movie: Movie;
@@ -31,10 +31,9 @@ export const ProfileInfoAndPercentage = ({
                             />
                         </S.CircleContainer>
                         <p>Avaliação dos usuários</p>
-                        <span>
-                            <PlayArrowIcon />
-                            Reproduzir trailer
-                        </span>
+                        <div style={{ marginLeft: "15rem" }}>
+                            <Modal />
+                        </div>
                     </S.PercentageContainer>
                 </>
             )}

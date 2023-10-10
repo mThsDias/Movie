@@ -1,12 +1,18 @@
 import { MovieContext } from "@/context/ContextMovie";
 import { Movie } from "@/context/movie/types";
 import { useParams } from "next/navigation";
+import CloseIcon from "@mui/icons-material/Close";
+import * as S from "./styles";
 import React from "react";
 
 export const apiKey =
     process.env.REACT_APP_API_KEY || "dcf6fe444e49bcbe4d8f215076000be9";
 
-export const ProfileTrailer = () => {
+type TrailerModalProps = {
+    onClose: () => void;
+};
+
+export const TrailerModal = ({ onClose }: TrailerModalProps) => {
     const [trailerKey, setTrailerKey] = React.useState("");
 
     const params = useParams();
@@ -44,15 +50,23 @@ export const ProfileTrailer = () => {
         fetchTrailerMovie();
     }, []);
     return (
-        <div>
-            <h1>ProfileTrailer</h1>
-            <iframe
-                width="560"
-                height="315"
-                src={trailerUrl}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-        </div>
+        <S.TrailerContainer>
+            <S.Trailer>
+                <span style={{ cursor: "pointer" }} onClick={onClose}>
+                    <CloseIcon
+                        style={{
+                            color: "#46cde8",
+                        }}
+                    />
+                </span>
+                <iframe
+                    width="1350"
+                    height="800"
+                    src={trailerUrl}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                ></iframe>
+            </S.Trailer>
+        </S.TrailerContainer>
     );
 };

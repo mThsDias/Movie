@@ -50,13 +50,6 @@ export const PercentageContainer = styled.div`
         width: 100%;
         max-width: 2rem;
     }
-
-    span {
-        padding-left: 10rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
 `;
 
 export const SinopseContainer = styled.div`
@@ -91,4 +84,21 @@ export const InfoContainer = styled.div`
     p {
         font-size: 1rem;
     }
+`;
+
+export const TrailerContainer = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+`;
+
+export const Trailer = styled.div`
+    position: relative;
+    margin-top: 15rem;
 `;
