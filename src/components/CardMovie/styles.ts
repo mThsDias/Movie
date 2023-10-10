@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 // Styles in SectionMovie
 export const CustomBox = styled.div`
@@ -63,6 +63,18 @@ export const ContainerImageUrl = styled.div`
     position: relative;
 `;
 
+const animation = keyframes`
+
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
+
 export const ContentMovie = styled.div`
     display: flex;
     flex-direction: column;
@@ -77,11 +89,13 @@ export const ContentMovie = styled.div`
     }
 
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
 
     &:hover {
         opacity: 1;
     }
+
+    animation: ${animation} 1.5s ease-in-out;
 `;
 
 export const CircleContainer = styled.div`
