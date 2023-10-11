@@ -4,6 +4,7 @@ import { ImageUrl } from "../CardMovie/ImageUrl";
 import * as S from "./styles";
 import { ProfileInfoAndPercentage } from "./ProfileInfoAndPercentage";
 import { ProfileDescription } from "./ProfileDescription";
+import { MainCast } from "./MainCast";
 
 type SectionProfileProps = {
     movie: Movie;
@@ -28,7 +29,9 @@ export const SectionProfile = ({ movie }: SectionProfileProps) => {
                     </S.ContentMovieDescription>
                 </S.Container>
             </S.ContentMovie>
-            <div></div>
+            <div>
+                <MainCast />
+            </div>
         </>
     );
 };

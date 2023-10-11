@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ContentMovie = styled.div`
-    background: url(https://t4.ftcdn.net/jpg/05/71/83/47/360_F_571834789_ujYbUnH190iUokdDhZq7GXeTBRgqYVwa.jpg);
     margin-top: 0.5rem;
 `;
 
@@ -101,4 +100,57 @@ export const TrailerContainer = styled.div`
 export const Trailer = styled.div`
     position: relative;
     margin-top: 15rem;
+`;
+
+export const CustomBox = styled.div`
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    margin: 0 auto;
+
+    white-space: nowrap;
+    border-radius: 0.2rem;
+`;
+
+export const InnerContainer = styled.div`
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+
+    overflow-y: hidden;
+
+    margin: 0 10rem;
+
+    padding: 2rem;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #ddd;
+        border-radius: 4px;
+    }
+`;
+
+export const ContentCast = styled.div`
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+
+    div {
+        padding: 1.8rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `;

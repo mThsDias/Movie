@@ -26,7 +26,12 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     const [search, setSearch] = React.useState<string>("");
     const [searchResult, setSearchResult] = React.useState<Movie[]>([]);
     const [trailer, setTrailer] = React.useState<Movie[]>([]);
-    const [credits, setCredits] = React.useState<Cast[]>([]);
+    const [cast, setCast] = React.useState<Cast[]>([]);
+    const [crew, setCrew] = React.useState<Cast[]>([]);
+    const [characters, setCharacters] = React.useState<Cast[]>([]);
+    const [directors, setDirectors] = React.useState<Cast[]>([]);
+    const [screenplay, setScreenplay] = React.useState<Cast[]>([]);
+    const [writer, setWriter] = React.useState<Cast[]>([]);
 
     const params = useParams();
     const { id } = params;
@@ -124,18 +129,44 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         }
     }, []);
 
-    React.useEffect(() => {
+    const fetchCast = async () => {
         try {
             fetch(
                 `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=pt-br;`
             )
                 .then((response) => response.json())
                 .then((data) => {
-                    setCredits(data);
+                    const directors = data.crew.filter(
+                        (crew: { job: string }) => crew.job === "Director"
+                    );
+
+                    const screenplay = data.crew.filter(
+                        (crew: { job: string }) => crew.job === "Screenplay"
+                    );
+
+                    const writer = data.crew.filter(
+                        (crew: { job: string }) => crew.job === "Writer"
+                    );
+
+                    const characters = data.cast.filter(
+                        (cast: { order: number }) => cast.order <= 10
+                    );
+
+                    setDirectors(directors);
+                    setScreenplay(screenplay);
+                    setCharacters(characters);
+                    setWriter(writer);
+                    setCast(data.cast);
+                    setCrew(data.crew);
+                    console.log(crew);
                 });
         } catch (error) {
             console.log(error);
         }
+    };
+
+    React.useEffect(() => {
+        fetchCast();
     }, []);
 
     return (
@@ -149,7 +180,12 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
                 trending,
                 trendingWeekly,
                 trailer,
-                credits,
+                cast,
+                crew,
+                characters,
+                directors,
+                screenplay,
+                writer,
             }}
         >
             {children}

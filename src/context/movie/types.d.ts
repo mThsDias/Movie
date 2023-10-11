@@ -31,7 +31,12 @@ export interface MovieContextData {
     trending: Movie[];
     trendingWeekly: Movie[];
     trailer: Movie[];
-    credits: Cast[];
+    cast: Cast[];
+    crew: Cast[];
+    characters: Cast[];
+    directors: Cast[];
+    screenplay: Cast[];
+    writer: Cast[];
 }
 
 interface ApiResponse<T> {

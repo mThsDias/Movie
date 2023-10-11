@@ -2,47 +2,13 @@ import React from "react";
 import * as S from "./styles";
 import { Movie } from "@/context/movie/types";
 import { MovieContext } from "@/context/ContextMovie";
-import { useParams } from "next/navigation";
-export const apiKey =
-    process.env.REACT_APP_API_KEY || "dcf6fe444e49bcbe4d8f215076000be9";
 
 type ProfileDescriptionProps = {
     movie: Movie;
 };
 
 export const ProfileDescription = ({ movie }: ProfileDescriptionProps) => {
-    const [creditsDirector, setCreditsDirector] = React.useState({} as Movie);
-
-    const { trending } = React.useContext(MovieContext);
-    const params = useParams();
-    const { id } = params;
-    async function fetchCreditsMovie() {
-        trending.find((movie) => movie.id === Number(id)) as Movie;
-
-        try {
-            const creditsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=en-US;`;
-            const response = await fetch(creditsUrl, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json;charset=utf-8",
-                },
-            });
-
-            const data = await response.json();
-
-            const creditsDirector = data.crew.find(
-                (movie: { job: string }) => movie.job === "Director"
-            );
-
-            setCreditsDirector(creditsDirector);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    React.useEffect(() => {
-        fetchCreditsMovie();
-    }, []);
+    const { directors, screenplay, writer } = React.useContext(MovieContext);
 
     return (
         <>
@@ -53,8 +19,44 @@ export const ProfileDescription = ({ movie }: ProfileDescriptionProps) => {
                         <p>{movie.overview}</p>
                     </S.SinopseContainer>
                     <S.CastContainer>
-                        <h3>Diretor</h3>
-                        <p>{creditsDirector.name}</p>
+                        {directors && (
+                            <div>
+                                {directors.map((director) => (
+                                    <div key={director.id}>
+                                        <ul>
+                                            <li>{director.name}</li>
+                                            <h5>Diretor (a)</h5>
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        {screenplay && (
+                            <div>
+                                {screenplay.map((screenplay) => (
+                                    <div key={screenplay.id}>
+                                        <ul>
+                                            <li>{screenplay.name}</li>
+                                            <h5>Roteirista</h5>
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        {writer && (
+                            <div>
+                                {writer.map((writer) => (
+                                    <div key={writer.id}>
+                                        <ul>
+                                            <li>{writer.name}</li>
+                                            <h5>Escritor (a)</h5>
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </S.CastContainer>
                 </>
             )}
