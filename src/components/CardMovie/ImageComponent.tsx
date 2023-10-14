@@ -3,9 +3,9 @@ import { ImageUrl } from "./ImageUrl";
 import { Movie } from "@/context/movie/types";
 
 type ImageComponent = {
-    movie: Movie;
+  movie: Movie;
 };
 
 export const ImageComponent = ({ movie }: ImageComponent) => {
-    return <ImageUrl movie={movie} />;
+  return <ImageUrl movie={movie} />;
 };

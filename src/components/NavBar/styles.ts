@@ -12,31 +12,31 @@ const animation = keyframes`
 `;
 
 export const BoxNavBar = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
-    padding: 1.2rem 18rem;
-    background: #032541;
-    color: #fffff3;
+  padding: 1.2rem 18rem;
+  background: #032541;
+  color: #fffff3;
 
-    animation: ${animation} 1.2s ease-in-out;
+  animation: ${animation} 1.2s ease-in-out;
 
-    @media (max-width: 900px) {
-        padding: 1.2rem 1rem;
-    }
+  @media (max-width: 900px) {
+    padding: 1.2rem 1rem;
+  }
 `;
 
 export const BoxMenu = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 1.2rem;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  align-items: center;
 
-    animation: ${animation} 1.2s ease-in-out;
+  animation: ${animation} 1.2s ease-in-out;
 `;
 
 export const StyleButton = styled(Button)`
-    color: #fffff3;
+  color: #fffff3;
 `;

@@ -6,40 +6,40 @@ import { Movie } from "@/context/movie/types";
 import { PercentageRounded } from "./PercentageRounded";
 
 type ImageUrlProps = {
-    movie: Movie;
-    isVoteAverageActive?: boolean;
-    w?: number;
-    h?: number;
+  movie: Movie;
+  isVoteAverageActive?: boolean;
+  w?: number;
+  h?: number;
 };
 
 export const ImageUrl = ({
-    movie,
-    isVoteAverageActive = true,
-    w,
-    h,
+  movie,
+  isVoteAverageActive = true,
+  w,
+  h,
 }: ImageUrlProps) => {
-    return (
-        <S.ContainerImageUrl>
-            {movie && (
-                <Image
-                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                    alt={"Poster"}
-                    width={w ?? 156}
-                    height={h ?? 245}
-                    style={{
-                        borderRadius: "7px",
-                        objectFit: "cover",
-                        cursor: "pointer",
-                    }}
-                    placeholder="blur"
-                    blurDataURL={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                />
-            )}
-            {isVoteAverageActive && (
-                <S.CircleContainer>
-                    <PercentageRounded voteAverage={movie.vote_average} />
-                </S.CircleContainer>
-            )}
-        </S.ContainerImageUrl>
-    );
+  return (
+    <S.ContainerImageUrl>
+      {movie && (
+        <Image
+          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          alt={"Poster"}
+          width={w ?? 156}
+          height={h ?? 245}
+          style={{
+            borderRadius: "7px",
+            objectFit: "cover",
+            cursor: "pointer",
+          }}
+          placeholder="blur"
+          blurDataURL={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+        />
+      )}
+      {isVoteAverageActive && (
+        <S.CircleContainer>
+          <PercentageRounded voteAverage={movie.vote_average} />
+        </S.CircleContainer>
+      )}
+    </S.ContainerImageUrl>
+  );
 };
