@@ -105,7 +105,8 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
       fetch(TRENDING_MOVIE.url, TRENDING_MOVIE.options)
         .then((response) => response.json())
         .then((data) => {
-          setTrendingWeekly(data.results);
+          setTrending(data.results);
+          console.log(data.results);
         });
     } catch (error) {
       console.log(error);
@@ -120,53 +121,57 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
       fetch(TRENDING_MOVIE_WEEKLY.url, TRENDING_MOVIE_WEEKLY.options)
         .then((response) => response.json())
         .then((data) => {
-          setTrending(data.results);
-          console.log(data.results);
+          setTrendingWeekly(data.results);
         });
     } catch (error) {
       console.log(error);
     }
   }, []);
 
-  const fetchCast = async () => {
+  React.useEffect(() => {
     try {
+      if (!id) return;
       fetch(
         `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=pt-br;`
       )
         .then((response) => response.json())
         .then((data) => {
-          const directors = data.crew.filter(
-            (crew: { job: string }) => crew.job === "Director"
-          );
+          if (data) {
+            const directors = data.crew
+              ? data.crew.filter(
+                  (crew: { job: string }) => crew.job === "Director"
+                )
+              : [];
 
-          const screenplay = data.crew.filter(
-            (crew: { job: string }) => crew.job === "Screenplay"
-          );
+            const screenplay = data.crew
+              ? data.crew.filter(
+                  (crew: { job: string }) => crew.job === "Screenplay"
+                )
+              : [];
 
-          const writer = data.crew.filter(
-            (crew: { job: string }) => crew.job === "Writer"
-          );
+            const writer = data.crew
+              ? data.crew.filter(
+                  (crew: { job: string }) => crew.job === "Writer"
+                )
+              : [];
 
-          const characters = data.cast.filter(
-            (cast: { order: number }) => cast.order <= 10
-          );
+            const characters = data.cast
+              ? data.cast.filter((cast: { order: number }) => cast.order <= 10)
+              : [];
 
-          setDirectors(directors);
-          setScreenplay(screenplay);
-          setCharacters(characters);
-          setWriter(writer);
-          setCast(data.cast);
-          setCrew(data.crew);
-          console.log(crew);
+            setDirectors(directors);
+            setScreenplay(screenplay);
+            setWriter(writer);
+            setCharacters(characters);
+            setCast(data.cast);
+            setCrew(data.crew);
+            console.log(data);
+          }
         });
     } catch (error) {
       console.log(error);
     }
-  };
-
-  React.useEffect(() => {
-    fetchCast();
-  }, []);
+  }, [id]);
 
   return (
     <MovieContext.Provider

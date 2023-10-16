@@ -12,7 +12,7 @@ export interface Movie {
   backdrop_path: string;
   name: string;
   first_air_date: string;
-  runtime: number;
+  media_type: string;
 }
 
 export interface Cast {

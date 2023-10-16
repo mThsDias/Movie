@@ -66,9 +66,20 @@ export const SinopseContainer = styled.div`
 export const CastContainer = styled.div`
   margin-top: 2rem;
 
-  h3 {
-    padding-bottom: 0.5rem;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    padding-bottom: 1rem;
   }
+
+  ul {
+    list-style: none;
+  }
+`;
+
+export const CastItem = styled.li`
+  display: flex;
 `;
 
 export const MovieBackground = styled.div`

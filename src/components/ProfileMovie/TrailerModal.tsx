@@ -18,9 +18,10 @@ export const TrailerModal = ({ onClose }: TrailerModalProps) => {
   const params = useParams();
   const { id } = params;
 
-  const { trending } = React.useContext(MovieContext);
+  const { trending, trendingWeekly } = React.useContext(MovieContext);
 
   trending.find((movie) => movie.id === Number(id)) as Movie;
+  trendingWeekly.find((movie) => movie.id === Number(id)) as Movie;
 
   async function fetchTrailerMovie() {
     try {
@@ -35,9 +36,11 @@ export const TrailerModal = ({ onClose }: TrailerModalProps) => {
       const data = await response.json();
 
       const trailer = data.results.find(
-        (movie: { type: string; key: string }) => movie.type === "Trailer"
+        (movie: { type: string; key: string }) =>
+          movie.type === "Trailer" || movie.type === "tv"
       );
 
+      if (!trailer) return;
       setTrailerKey(trailer.key);
     } catch (error) {
       console.log(error);
