@@ -1,5 +1,5 @@
 import { Cast } from "@/context/movie/types";
-import * as S from "./styles";
+import * as S from "../styles";
 import React from "react";
 
 type DirectorsProps = {

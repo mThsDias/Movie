@@ -31,10 +31,12 @@ export const MainCast = () => {
                     placeholder="blur"
                     blurDataURL={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
                   />
-                  <div>
-                    <p>{actor.name}</p>
-                    <p>{actor.character}</p>
-                  </div>
+                  <section>
+                    <div>
+                      <h3>{actor.name}</h3>
+                      <p>{actor.character}</p>
+                    </div>
+                  </section>
                 </S.ContentCast>
               </S.ContentMovie>
             ))}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Movie } from "@/context/movie/types";
-import { ImageUrl } from "../CardMovie/ImageUrl";
+import ImageUrl from "../CardMovie/ImageUrl";
 import * as S from "./styles";
 import { ProfileInfoAndPercentage } from "./ProfileInfoAndPercentage";
 import { ProfileDescription } from "./ProfileDescription";
@@ -19,8 +19,8 @@ export const SectionProfile = ({ movie }: SectionProfileProps) => {
             <ImageUrl
               movie={movie}
               isVoteAverageActive={false}
-              w={300}
-              h={450}
+              w={330}
+              h={470}
             />
             <div>
               <ProfileInfoAndPercentage movie={movie} />
@@ -29,9 +29,10 @@ export const SectionProfile = ({ movie }: SectionProfileProps) => {
           </S.ContentMovieDescription>
         </S.Container>
       </S.ContentMovie>
-      <div>
+      <S.C>
+        <h2>Elenco principal</h2>
         <MainCast />
-      </div>
+      </S.C>
     </>
   );
 };

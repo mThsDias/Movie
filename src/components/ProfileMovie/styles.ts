@@ -29,8 +29,10 @@ export const ContentMovieDescription = styled.section`
 `;
 
 export const CircleContainer = styled.div`
-  width: 78px;
-  height: 78px;
+  width: 65px;
+  height: 65px;
+
+  padding: 0.2rem;
 
   border-radius: 50%;
   background: #081c22;
@@ -39,38 +41,38 @@ export const CircleContainer = styled.div`
 export const PercentageContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 
   margin-top: 2rem;
 
   p {
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
     width: 100%;
     max-width: 2rem;
   }
 `;
 
 export const SinopseContainer = styled.div`
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   width: 100%;
   max-width: 1110px;
 
   p {
     font-size: 1rem;
-    line-height: 1.5rem;
-    margin-top: 0.5rem;
+    line-height: 1.2rem;
+    margin-top: 1rem;
   }
 `;
 
 export const CastContainer = styled.div`
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   div {
     display: flex;
     align-items: center;
     gap: 10rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.6rem;
   }
 
   ul {
@@ -89,7 +91,8 @@ export const MovieBackground = styled.div`
 `;
 
 export const InfoContainer = styled.div`
-  font-size: 2.8rem;
+  font-size: 2rem;
+  font-weight: bold;
 
   p {
     font-size: 1rem;
@@ -117,8 +120,6 @@ export const CustomBox = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
 
-  margin: 0 auto;
-
   white-space: nowrap;
   border-radius: 0.2rem;
 `;
@@ -127,6 +128,9 @@ export const InnerContainer = styled.div`
   display: flex;
   flex-wrap: nowrap;
   gap: 1rem;
+
+  width: 100%;
+  max-width: 1120px;
 
   overflow-y: hidden;
 
@@ -159,9 +163,23 @@ export const ContentCast = styled.div`
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 
   div {
-    padding: 1.8rem 0;
+    margin: 0.4rem 0 0 0.4rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 75px;
+  }
+
+  h3 {
+    padding-bottom: 0.2rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 140px;
+    white-space: normal;
+  }
+
+  p {
+    font-size: 0.8rem;
   }
 `;
+
+export const C = styled.div``;

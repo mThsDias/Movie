@@ -8,7 +8,6 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0 0 2rem 0;
 `;
 
 const shimmer = keyframes`
@@ -37,11 +36,11 @@ export const Button = styled.button`
   background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
   color: white;
   font-family: "Segoe UI", sans-serif;
-  font-weight: bold;
-  font-size: 17px;
+  font-weight: 500;
+  font-size: 0.9rem;
   border: none;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 6px 15px;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   animation: ${shimmer} 2s infinite;

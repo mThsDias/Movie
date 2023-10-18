@@ -32,6 +32,8 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   const [directors, setDirectors] = React.useState<Cast[]>([]);
   const [screenplay, setScreenplay] = React.useState<Cast[]>([]);
   const [writer, setWriter] = React.useState<Cast[]>([]);
+  const [creator, setCreator] = React.useState<Cast[]>([]);
+  const [information, setInformation] = React.useState<Movie[]>([]);
 
   const params = useParams();
   const { id } = params;
@@ -106,7 +108,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         .then((response) => response.json())
         .then((data) => {
           setTrending(data.results);
-          console.log(data.results);
         });
     } catch (error) {
       console.log(error);
@@ -129,10 +130,14 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   React.useEffect(() => {
+    const movies = [...trending, ...trendingWeekly];
+    const movie = movies.find((movie) => movie.id === Number(id));
+    const type = movie?.media_type === "movie" ? "movie" : "tv";
+
     try {
       if (!id) return;
       fetch(
-        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=pt-br;`
+        `https://api.themoviedb.org/3/${type}/${id}/credits?api_key=${apiKey}&language=pt-br;`
       )
         .then((response) => response.json())
         .then((data) => {
@@ -140,6 +145,12 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
             const directors = data.crew
               ? data.crew.filter(
                   (crew: { job: string }) => crew.job === "Director"
+                )
+              : [];
+
+            const creator = data.crew
+              ? data.crew.filter(
+                  (crew: { job: string }) => crew.job === "Creator"
                 )
               : [];
 
@@ -163,13 +174,31 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
             setScreenplay(screenplay);
             setWriter(writer);
             setCharacters(characters);
+            setCreator(creator);
             setCast(data.cast);
             setCrew(data.crew);
-            console.log(data);
           }
         });
     } catch (error) {
       console.log(error);
+    }
+  }, [id]);
+
+  React.useEffect(() => {
+    try {
+      const movies = [...trending, ...trendingWeekly];
+      const movie = movies.find((movie) => movie.id === Number(id));
+      const type = movie?.media_type === "movie" ? "movie" : "tv";
+
+      if (!id) return;
+      fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${apiKey}`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log({ data });
+          setInformation(data);
+        });
+    } catch (error) {
+      console.error("Erro ao obter informações do filme:", error);
     }
   }, [id]);
 
@@ -190,6 +219,8 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         directors,
         screenplay,
         writer,
+        creator,
+        information,
       }}
     >
       {children}

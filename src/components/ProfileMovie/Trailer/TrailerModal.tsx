@@ -2,7 +2,7 @@ import { MovieContext } from "@/context/ContextMovie";
 import { Movie } from "@/context/movie/types";
 import { useParams } from "next/navigation";
 import CloseIcon from "@mui/icons-material/Close";
-import * as S from "./styles";
+import * as S from "../styles";
 import React from "react";
 
 export const apiKey =

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 // Styles in SectionMovie
 export const CustomBox = styled.div`
@@ -34,7 +34,6 @@ export const InnerContainer = styled.div`
 
   overflow-y: hidden;
 
-  background: #141414;
   backdrop-filter: blur(1px);
 
   padding: 2rem;
@@ -63,18 +62,6 @@ export const ContainerImageUrl = styled.div`
   position: relative;
 `;
 
-const animation = keyframes`
-
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-
 export const ContentMovie = styled.div`
   display: flex;
   flex-direction: column;
@@ -94,14 +81,14 @@ export const ContentMovie = styled.div`
   &:hover {
     opacity: 1;
   }
-
-  animation: ${animation} 1.5s ease-in-out;
 `;
 
 export const CircleContainer = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   position: absolute;
+
+  padding: 0.2rem;
 
   top: 90.5%;
   left: 5%;
@@ -114,7 +101,7 @@ export const Title = styled.h2`
   white-space: normal;
   text-align: left;
 
-  color: #ddd;
+  color: #000;
 
   margin-top: 1rem;
   text-decoration: none;

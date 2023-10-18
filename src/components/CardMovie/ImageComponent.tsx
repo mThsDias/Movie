@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageUrl } from "./ImageUrl";
+import ImageUrl from "./ImageUrl";
 import { Movie } from "@/context/movie/types";
 
 type ImageComponent = {

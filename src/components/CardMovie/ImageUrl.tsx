@@ -12,7 +12,7 @@ type ImageUrlProps = {
   h?: number;
 };
 
-export const ImageUrl = ({
+const ImageUrl = ({
   movie,
   isVoteAverageActive = true,
   w,
@@ -25,14 +25,13 @@ export const ImageUrl = ({
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
           alt={"Poster"}
           width={w ?? 156}
-          height={h ?? 245}
+          height={h ?? 250}
           style={{
             borderRadius: "7px",
             objectFit: "cover",
             cursor: "pointer",
           }}
-          placeholder="blur"
-          blurDataURL={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          priority
         />
       )}
       {isVoteAverageActive && (
@@ -43,3 +42,5 @@ export const ImageUrl = ({
     </S.ContainerImageUrl>
   );
 };
+
+export default ImageUrl;

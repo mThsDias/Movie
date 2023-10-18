@@ -3,7 +3,7 @@ import { MovieInfo } from "../TitleMovie/MovieInfo";
 import { PercentageRounded } from "../CardMovie/PercentageRounded";
 import { Movie } from "@/context/movie/types";
 import * as S from "./styles";
-import Modal from "./Modal";
+import Modal from "./Trailer/Modal";
 
 type ProfileInfoAndPercentageProps = {
   movie: Movie;

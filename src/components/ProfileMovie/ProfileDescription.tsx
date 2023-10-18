@@ -1,17 +1,19 @@
 import React from "react";
 import * as S from "./styles";
 import { Movie } from "@/context/movie/types";
-import { ScreenPlay } from "./ScreenPlay";
-import { Writer } from "./Writer";
-import { Directors } from "./Directors";
+import { ScreenPlay } from "./CreativeStaff/ScreenPlay";
+import { Writer } from "./CreativeStaff/Writer";
+import { Directors } from "./CreativeStaff/Directors";
 import { MovieContext } from "@/context/ContextMovie";
+import { Creator } from "./CreativeStaff/Creator";
 
 type ProfileDescriptionProps = {
   movie: Movie;
 };
 
 export const ProfileDescription = ({ movie }: ProfileDescriptionProps) => {
-  const { directors, screenplay, writer } = React.useContext(MovieContext);
+  const { directors, screenplay, writer, creator } =
+    React.useContext(MovieContext);
 
   return (
     <>
@@ -25,6 +27,7 @@ export const ProfileDescription = ({ movie }: ProfileDescriptionProps) => {
             <Writer writer={writer} />
             <ScreenPlay screenplay={screenplay} />
             <Directors directors={directors} />
+            <Creator creator={creator} />
           </S.CastContainer>
         </>
       )}
