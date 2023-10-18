@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const ContentMovie = styled.div`
-  margin-top: 0.5rem;
-`;
+export const ContentMovie = styled.div``;
 
 export const Container = styled.div`
   background: rgba(0, 0, 0, 0.5);
@@ -53,37 +51,6 @@ export const PercentageContainer = styled.div`
   }
 `;
 
-export const SinopseContainer = styled.div`
-  margin-top: 1.5rem;
-  width: 100%;
-  max-width: 1110px;
-
-  p {
-    font-size: 1rem;
-    line-height: 1.2rem;
-    margin-top: 1rem;
-  }
-`;
-
-export const CastContainer = styled.div`
-  margin-top: 1rem;
-
-  div {
-    display: flex;
-    align-items: center;
-    gap: 10rem;
-    padding-bottom: 0.6rem;
-  }
-
-  ul {
-    list-style: none;
-  }
-`;
-
-export const CastItem = styled.li`
-  display: flex;
-`;
-
 export const MovieBackground = styled.div`
   background-image: url();
   background-size: cover;
@@ -92,8 +59,7 @@ export const MovieBackground = styled.div`
 
 export const InfoContainer = styled.div`
   font-size: 2rem;
-  font-weight: bold;
-
+  font-weight: 600;
   p {
     font-size: 1rem;
   }
@@ -182,4 +148,13 @@ export const ContentCast = styled.div`
   }
 `;
 
-export const C = styled.div``;
+export const ContainerCastAndStaff = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h2 {
+    margin-left: 20px;
+  }
+`;

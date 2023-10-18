@@ -13,11 +13,17 @@ export interface Movie {
   name: string;
   first_air_date: string;
   media_type: string;
+}
+
+export interface Info {
+  title: string;
   runtime: number;
-  genres: {
-    id: number;
-    name: string;
-  }[];
+  genres: [
+    {
+      name: string;
+      id: number;
+    }
+  ];
   original_language: string;
   homepage: string;
   revenue: number;
@@ -53,7 +59,7 @@ export interface MovieContextData {
   screenplay: Cast[];
   writer: Cast[];
   creator: Cast[];
-  information: Movie[];
+  information: Info;
 }
 
 interface ApiResponse<T> {

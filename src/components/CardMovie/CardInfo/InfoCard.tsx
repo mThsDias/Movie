@@ -8,7 +8,7 @@ type MovieInfoProps = {
   firstAirDate: string;
 };
 
-export const MovieInfo = ({
+export const InfoCard = ({
   title,
   releaseDate,
   name,
@@ -22,7 +22,6 @@ export const MovieInfo = ({
     };
     return new Date(date).toLocaleDateString("pt-BR", options);
   };
-
   return (
     <>
       <span>

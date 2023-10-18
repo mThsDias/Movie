@@ -1,6 +1,6 @@
 import React from "react";
 import { Movie } from "@/context/movie/types";
-import { MovieInfo } from "../TitleMovie/MovieInfo";
+import { InfoCard } from "./CardInfo/InfoCard";
 import { ImageComponent } from "./ImageComponent";
 import * as S from "./styles";
 import Link from "next/link";
@@ -31,7 +31,7 @@ export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
               <ImageComponent movie={movie} />
               <S.ContainerInfo>
                 <S.Title>
-                  <MovieInfo
+                  <InfoCard
                     title={movie.title}
                     name={movie.name}
                     releaseDate={movie.release_date}

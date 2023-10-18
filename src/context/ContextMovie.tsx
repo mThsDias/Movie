@@ -8,7 +8,7 @@ import {
   TRENDING_MOVIE_WEEKLY,
   TRAILRES_MOVIE,
 } from "@/api/Api";
-import { MovieContextData, Movie, Cast } from "./movie/types";
+import { MovieContextData, Movie, Cast, Info } from "./movie/types";
 import { useParams } from "next/navigation";
 
 export const apiKey =
@@ -33,7 +33,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   const [screenplay, setScreenplay] = React.useState<Cast[]>([]);
   const [writer, setWriter] = React.useState<Cast[]>([]);
   const [creator, setCreator] = React.useState<Cast[]>([]);
-  const [information, setInformation] = React.useState<Movie[]>([]);
+  const [information, setInformation] = React.useState<Info>({} as Info);
 
   const params = useParams();
   const { id } = params;
@@ -185,17 +185,17 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   }, [id]);
 
   React.useEffect(() => {
-    try {
-      const movies = [...trending, ...trendingWeekly];
-      const movie = movies.find((movie) => movie.id === Number(id));
-      const type = movie?.media_type === "movie" ? "movie" : "tv";
+    const movies = [...trending, ...trendingWeekly];
+    const movie = movies.find((movie) => movie.id === Number(id));
+    const type = movie?.media_type === "movie" ? "movie" : "tv";
 
+    try {
       if (!id) return;
       fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${apiKey}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log({ data });
           setInformation(data);
+          console.log({ data });
         });
     } catch (error) {
       console.error("Erro ao obter informações do filme:", error);

@@ -1,11 +1,11 @@
 import React from "react";
 import * as S from "./styles";
 import { Movie } from "@/context/movie/types";
-import { ScreenPlay } from "./CreativeStaff/ScreenPlay";
-import { Writer } from "./CreativeStaff/Writer";
-import { Directors } from "./CreativeStaff/Directors";
+import { ScreenPlay } from "./ScreenPlay";
+import { Writer } from "./Writer";
+import { Directors } from "./Directors";
 import { MovieContext } from "@/context/ContextMovie";
-import { Creator } from "./CreativeStaff/Creator";
+import { Creator } from "./Creator";
 
 type ProfileDescriptionProps = {
   movie: Movie;

@@ -3,7 +3,7 @@ import { Movie } from "@/context/movie/types";
 import ImageUrl from "../CardMovie/ImageUrl";
 import * as S from "./styles";
 import { ProfileInfoAndPercentage } from "./ProfileInfoAndPercentage";
-import { ProfileDescription } from "./ProfileDescription";
+import { ProfileDescription } from "../InfoMovie/CreativeStaff/ProfileDescription";
 import { MainCast } from "./MainCast";
 
 type SectionProfileProps = {
@@ -29,10 +29,9 @@ export const SectionProfile = ({ movie }: SectionProfileProps) => {
           </S.ContentMovieDescription>
         </S.Container>
       </S.ContentMovie>
-      <S.C>
-        <h2>Elenco principal</h2>
+      <S.ContainerCastAndStaff>
         <MainCast />
-      </S.C>
+      </S.ContainerCastAndStaff>
     </>
   );
 };

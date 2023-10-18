@@ -1,7 +1,6 @@
 import React from "react";
 import { SectionMovie } from "../CardMovie/SectionMovie";
 import { MovieContext } from "@/context/ContextMovie";
-import { TitleMovie } from "../TitleMovie/TitleMovie";
 import * as S from "./styles";
 
 export const Trending = () => {
@@ -24,7 +23,7 @@ export const Trending = () => {
   return (
     <S.Container>
       <S.Content>
-        <TitleMovie title="Tendência" />
+        <h2 style={{ paddingLeft: "2rem" }}>Tendencia</h2>
         <S.ContainerButton>
           <S.Button
             onClick={() => handleButtonClick("hoje")}
