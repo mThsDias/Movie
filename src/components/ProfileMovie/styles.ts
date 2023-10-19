@@ -2,10 +2,15 @@ import styled from "styled-components";
 
 export const ContentMovie = styled.div``;
 
+export const BackgroundColor = styled.div`
+  background-color: rgba(0, 0, 0, 0.9);
+`;
+
 export const Container = styled.div`
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  position: relative;
+  background: ${(props) => `url(${props.background})`};
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 export const ContentMovieDescription = styled.section`
@@ -48,20 +53,6 @@ export const PercentageContainer = styled.div`
     font-weight: 600;
     width: 100%;
     max-width: 2rem;
-  }
-`;
-
-export const MovieBackground = styled.div`
-  background-image: url();
-  background-size: cover;
-  background-position: center;
-`;
-
-export const InfoContainer = styled.div`
-  font-size: 2rem;
-  font-weight: 600;
-  p {
-    font-size: 1rem;
   }
 `;
 
@@ -157,4 +148,42 @@ export const ContainerCastAndStaff = styled.div`
   h2 {
     margin-left: 20px;
   }
+`;
+
+export const CastCompleted = styled.span`
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.2rem;
+
+  a {
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    height: 100%;
+  }
+
+  &&:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const EffectBlur = styled.div`
+  content: "";
+  position: absolute;
+  top: 40rem;
+  right: 22rem;
+  bottom: 0;
+  width: 80px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  transition: opacity 0.9s ease;
 `;

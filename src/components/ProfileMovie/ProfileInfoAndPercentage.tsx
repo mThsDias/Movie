@@ -3,6 +3,7 @@ import { PercentageRounded } from "../CardMovie/PercentageRounded";
 import { Movie } from "@/context/movie/types";
 import * as S from "./styles";
 import Modal from "./Trailer/Modal";
+import { InfoComponent } from "@/components/InfoMovie/InformationMovie/InfoComponent";
 
 type ProfileInfoAndPercentageProps = {
   movie: Movie;
@@ -15,15 +16,8 @@ export const ProfileInfoAndPercentage = ({
     <div>
       {movie && (
         <>
-          <S.InfoContainer>
-            {movie.title ? (
-              <span>{movie.title}</span>
-            ) : (
-              <span>{movie.name}</span>
-            )}
-          </S.InfoContainer>
           <div>
-            {movie.release_date ? movie.release_date : movie.first_air_date}
+            <InfoComponent movie={movie} />
           </div>
           <S.PercentageContainer>
             <S.CircleContainer>

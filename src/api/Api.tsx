@@ -47,14 +47,3 @@ export const TRENDING_MOVIE_WEEKLY = {
     },
   },
 };
-
-export const TRAILRES_MOVIE = {
-  url: `${baseUrl}/movie/popular?api_key=${apiKey}&append_to_response=videos`,
-  options: {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-  },
-};

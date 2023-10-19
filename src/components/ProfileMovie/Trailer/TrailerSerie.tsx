@@ -12,7 +12,7 @@ type TrailerModalProps = {
   onClose: () => void;
 };
 
-export const TrailerModal = ({ onClose }: TrailerModalProps) => {
+export const TrailerSerie = ({ onClose }: TrailerModalProps) => {
   const [trailerKey, setTrailerKey] = React.useState("");
 
   const params = useParams();
@@ -23,9 +23,9 @@ export const TrailerModal = ({ onClose }: TrailerModalProps) => {
   trending.find((movie) => movie.id === Number(id)) as Movie;
   trendingWeekly.find((movie) => movie.id === Number(id)) as Movie;
 
-  async function fetchTrailerMovie() {
+  async function fetchTrailerSerie() {
     try {
-      const trailerUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=pt-br`;
+      const trailerUrl = `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${apiKey}`;
       const response = await fetch(trailerUrl, {
         method: "GET",
         headers: {
@@ -36,7 +36,7 @@ export const TrailerModal = ({ onClose }: TrailerModalProps) => {
       const data = await response.json();
 
       const trailer = data.results.find(
-        (movie: { type: string; key: string }) => movie.type === "Trailer"
+        (movie: { type: string; key: string }) => movie.type === "Clip"
       );
 
       if (!trailer) return;
@@ -48,7 +48,7 @@ export const TrailerModal = ({ onClose }: TrailerModalProps) => {
   const trailerUrl = `https://www.youtube.com/embed/${trailerKey}`;
 
   React.useEffect(() => {
-    fetchTrailerMovie();
+    fetchTrailerSerie();
   }, []);
   return (
     <S.TrailerContainer>

@@ -9,16 +9,15 @@ type GenresProps = {
 export const Genres = ({ info }: GenresProps) => {
   return (
     <>
-      {info &&
-        info.genres.map((item, index) => (
-          <S.Container key={item.id}>
-            <ul>
-              <li>
-                {item.name} {index < info.genres.length - 1 ? ", " : ""}
-              </li>
-            </ul>
-          </S.Container>
-        ))}
+      {info.genres?.map((item, index) => (
+        <S.ListGenres key={item.id}>
+          <ul>
+            <li>
+              {item.name} {index < info.genres.length - 1 ? "," : ""}
+            </li>
+          </ul>
+        </S.ListGenres>
+      ))}
     </>
   );
 };

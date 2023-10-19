@@ -11,22 +11,26 @@ type SectionProfileProps = {
 };
 
 export const SectionProfile = ({ movie }: SectionProfileProps) => {
+  const images = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
+
   return (
     <>
       <S.ContentMovie>
-        <S.Container>
-          <S.ContentMovieDescription>
-            <ImageUrl
-              movie={movie}
-              isVoteAverageActive={false}
-              w={330}
-              h={470}
-            />
-            <div>
-              <ProfileInfoAndPercentage movie={movie} />
-              <ProfileDescription movie={movie} />
-            </div>
-          </S.ContentMovieDescription>
+        <S.Container background={images}>
+          <S.BackgroundColor>
+            <S.ContentMovieDescription>
+              <ImageUrl
+                movie={movie}
+                isVoteAverageActive={false}
+                w={330}
+                h={470}
+              />
+              <div>
+                <ProfileInfoAndPercentage movie={movie} />
+                <ProfileDescription movie={movie} />
+              </div>
+            </S.ContentMovieDescription>
+          </S.BackgroundColor>
         </S.Container>
       </S.ContentMovie>
       <S.ContainerCastAndStaff>

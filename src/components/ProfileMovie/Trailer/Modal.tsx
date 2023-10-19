@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { TrailerModal } from "./TrailerModal";
+import { TrailerSerie } from "./TrailerSerie";
 
 const style = {
   position: "absolute" as const,
@@ -34,6 +35,7 @@ export default function BasicModal() {
         <Box sx={style}>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <TrailerModal onClose={handleClose} />
+            <TrailerSerie onClose={handleClose} />
           </Typography>
         </Box>
       </Modal>

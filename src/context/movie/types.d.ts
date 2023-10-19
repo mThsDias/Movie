@@ -51,7 +51,6 @@ export interface MovieContextData {
   search: string;
   trending: Movie[];
   trendingWeekly: Movie[];
-  trailer: Movie[];
   cast: Cast[];
   crew: Cast[];
   characters: Cast[];

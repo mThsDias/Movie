@@ -6,7 +6,6 @@ import {
   searchUrl,
   TRENDING_MOVIE,
   TRENDING_MOVIE_WEEKLY,
-  TRAILRES_MOVIE,
 } from "@/api/Api";
 import { MovieContextData, Movie, Cast, Info } from "./movie/types";
 import { useParams } from "next/navigation";
@@ -25,7 +24,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   const [trendingWeekly, setTrendingWeekly] = React.useState<Movie[]>([]);
   const [search, setSearch] = React.useState<string>("");
   const [searchResult, setSearchResult] = React.useState<Movie[]>([]);
-  const [trailer, setTrailer] = React.useState<Movie[]>([]);
   const [cast, setCast] = React.useState<Cast[]>([]);
   const [crew, setCrew] = React.useState<Cast[]>([]);
   const [characters, setCharacters] = React.useState<Cast[]>([]);
@@ -37,21 +35,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
 
   const params = useParams();
   const { id } = params;
-
-  React.useEffect(() => {
-    try {
-      if (!TRAILRES_MOVIE.url)
-        throw new Error("TRAILRES_MOVIE.url is undefined");
-
-      fetch(TRAILRES_MOVIE.url, TRAILRES_MOVIE.options)
-        .then((response) => response.json())
-        .then((data) => {
-          setTrailer(data.results);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
 
   React.useEffect(() => {
     try {
@@ -132,7 +115,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   React.useEffect(() => {
     const movies = [...trending, ...trendingWeekly];
     const movie = movies.find((movie) => movie.id === Number(id));
-    const type = movie?.media_type === "movie" ? "movie" : "tv";
+    const type = movie?.media_type === "tv" ? "tv" : "movie";
 
     try {
       if (!id) return;
@@ -182,7 +165,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     } catch (error) {
       console.log(error);
     }
-  }, [id]);
+  }, [id, trending, trendingWeekly]);
 
   React.useEffect(() => {
     const movies = [...trending, ...trendingWeekly];
@@ -195,12 +178,11 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         .then((response) => response.json())
         .then((data) => {
           setInformation(data);
-          console.log({ data });
         });
     } catch (error) {
-      console.error("Erro ao obter informações do filme:", error);
+      console.error(error);
     }
-  }, [id]);
+  }, [id, trending, trendingWeekly]);
 
   return (
     <MovieContext.Provider
@@ -212,7 +194,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         search,
         trending,
         trendingWeekly,
-        trailer,
         cast,
         crew,
         characters,
