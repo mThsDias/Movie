@@ -2,10 +2,16 @@ import styled from "styled-components";
 
 export const CastItem = styled.li`
   display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  p {
+    font-size: 0.8rem;
+    margin-left: 0.1rem;
+  }
 `;
 
 export const SinopseContainer = styled.div`
-  margin-top: 1.5rem;
   width: 100%;
   max-width: 1110px;
 

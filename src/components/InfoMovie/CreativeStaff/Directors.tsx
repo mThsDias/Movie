@@ -13,12 +13,8 @@ export const Directors = ({ directors }: DirectorsProps) => {
         <div>
           {directors.map((director) => (
             <S.CastItem key={director.id}>
-              <ul>
-                <li>
-                  <h4>{director.name}</h4>
-                  <p>Diretor</p>
-                </li>
-              </ul>
+              <h4>{director.name}</h4>
+              <p>Diretor</p>
             </S.CastItem>
           ))}
         </div>

@@ -13,12 +13,8 @@ export const ScreenPlay = ({ screenplay }: ScreenPlayProps) => {
         <div>
           {screenplay.map((screenplay) => (
             <S.CastItem key={screenplay.id}>
-              <ul>
-                <li>
-                  <h4>{screenplay.name}</h4>
-                  <p>Roteirista</p>
-                </li>
-              </ul>
+              <h4>{screenplay.name}</h4>
+              <p>Roteirista</p>
             </S.CastItem>
           ))}
         </div>

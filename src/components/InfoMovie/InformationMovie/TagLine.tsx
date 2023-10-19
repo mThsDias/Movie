@@ -1,20 +1,16 @@
-import { Info } from "@/context/movie/types";
+import { MovieContext } from "@/context/ContextMovie";
 import * as S from "./styles";
 import React from "react";
 
-type GenresProps = {
-  info: Info;
-};
+export const TagLine = () => {
+  const { information } = React.useContext(MovieContext);
 
-export const TagLine = ({ info }: GenresProps) => {
   return (
     <>
-      {info && (
-        <S.Container>
-          <ul>
-            <li>{info.tagline}</li>
-          </ul>
-        </S.Container>
+      {information && (
+        <S.TagLine>
+          <p>{information.tagline}</p>
+        </S.TagLine>
       )}
     </>
   );

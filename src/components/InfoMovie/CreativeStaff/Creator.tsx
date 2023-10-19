@@ -13,12 +13,8 @@ export const Creator = ({ creator }: CreatorProps) => {
         <div>
           {creator.map((creator) => (
             <S.CastItem key={creator.id}>
-              <ul>
-                <li>
-                  <h4>{creator.name}</h4>
-                  <p>Criação</p>
-                </li>
-              </ul>
+              <h4>{creator.name}</h4>
+              <p>Criação</p>
             </S.CastItem>
           ))}
         </div>

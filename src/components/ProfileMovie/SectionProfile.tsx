@@ -15,25 +15,30 @@ export const SectionProfile = ({ movie }: SectionProfileProps) => {
 
   return (
     <>
-      <S.ContentMovie>
-        <S.Container background={images}>
-          <S.BackgroundColor>
-            <S.ContentMovieDescription>
-              <ImageUrl
-                movie={movie}
-                isVoteAverageActive={false}
-                w={330}
-                h={470}
-              />
-              <div>
-                <ProfileInfoAndPercentage movie={movie} />
-                <ProfileDescription movie={movie} />
-              </div>
-            </S.ContentMovieDescription>
-          </S.BackgroundColor>
-        </S.Container>
-      </S.ContentMovie>
+      <div
+        style={{
+          background: `url(${images})`,
+          backgroundSize: "cover",
+          backgroundPosition: "right",
+        }}
+      >
+        <S.BackgroundColor>
+          <S.ContentMovieDescription>
+            <ImageUrl
+              movie={movie}
+              isVoteAverageActive={false}
+              w={330}
+              h={470}
+            />
+            <div>
+              <ProfileInfoAndPercentage movie={movie} />
+              <ProfileDescription movie={movie} />
+            </div>
+          </S.ContentMovieDescription>
+        </S.BackgroundColor>
+      </div>
       <S.ContainerCastAndStaff>
+        <span>Elenco principal</span>
         <MainCast />
       </S.ContainerCastAndStaff>
     </>

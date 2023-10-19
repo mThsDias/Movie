@@ -1,16 +1,7 @@
 import styled from "styled-components";
 
-export const ContentMovie = styled.div``;
-
 export const BackgroundColor = styled.div`
-  background-color: rgba(0, 0, 0, 0.9);
-`;
-
-export const Container = styled.div`
-  background: ${(props) => `url(${props.background})`};
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: rgba(0, 0, 0, 0.8);
 `;
 
 export const ContentMovieDescription = styled.section`
@@ -32,10 +23,10 @@ export const ContentMovieDescription = styled.section`
 `;
 
 export const CircleContainer = styled.div`
-  width: 65px;
-  height: 65px;
+  width: 80px;
+  height: 80px;
 
-  padding: 0.2rem;
+  padding: 0.3rem;
 
   border-radius: 50%;
   background: #081c22;
@@ -54,18 +45,6 @@ export const PercentageContainer = styled.div`
     width: 100%;
     max-width: 2rem;
   }
-`;
-
-export const TrailerContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
 `;
 
 export const Trailer = styled.div`
@@ -89,11 +68,9 @@ export const InnerContainer = styled.div`
   width: 100%;
   max-width: 1120px;
 
+  padding-left: 1rem;
+
   overflow-y: hidden;
-
-  margin: 0 10rem;
-
-  padding: 2rem;
 
   &::-webkit-scrollbar {
     height: 8px;
@@ -123,7 +100,7 @@ export const ContentCast = styled.div`
     margin: 0.4rem 0 0 0.4rem;
     display: flex;
     flex-direction: column;
-    height: 75px;
+    height: 60px;
   }
 
   h3 {
@@ -141,12 +118,17 @@ export const ContentCast = styled.div`
 
 export const ContainerCastAndStaff = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 
-  h2 {
-    margin-left: 20px;
+  span {
+    width: 100%;
+    max-width: 1100px;
+    padding: 2.5rem 0 1.5rem 0;
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 500;
   }
 `;
 

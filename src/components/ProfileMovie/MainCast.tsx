@@ -31,7 +31,7 @@ export const MainCast = () => {
       <S.CustomBox>
         <S.InnerContainer onScroll={handleScroll}>
           {displayedCast.map((actor) => (
-            <S.ContentMovie key={actor.id}>
+            <div key={actor.id}>
               <S.ContentCast>
                 <Image
                   src={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
@@ -55,7 +55,7 @@ export const MainCast = () => {
                   </div>
                 </section>
               </S.ContentCast>
-            </S.ContentMovie>
+            </div>
           ))}
           {cast.length > 7 && !showAllCast && (
             <S.CastCompleted>

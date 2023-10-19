@@ -4,6 +4,7 @@ import { Movie } from "@/context/movie/types";
 import * as S from "./styles";
 import Modal from "./Trailer/Modal";
 import { InfoComponent } from "@/components/InfoMovie/InformationMovie/InfoComponent";
+import { TagLine } from "../InfoMovie/InformationMovie/TagLine";
 
 type ProfileInfoAndPercentageProps = {
   movie: Movie;
@@ -28,6 +29,7 @@ export const ProfileInfoAndPercentage = ({
               <Modal />
             </div>
           </S.PercentageContainer>
+          <TagLine />
         </>
       )}
     </div>

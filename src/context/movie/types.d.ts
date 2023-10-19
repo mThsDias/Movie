@@ -13,6 +13,7 @@ export interface Movie {
   name: string;
   first_air_date: string;
   media_type: string;
+  original_language: string;
 }
 
 export interface Info {

@@ -13,12 +13,8 @@ export const Writer = ({ writer }: WriteProps) => {
         <div>
           {writer.map((writer) => (
             <S.CastItem key={writer.id}>
-              <ul>
-                <li>
-                  <h4>{writer.name}</h4>
-                  <p>Escritor</p>
-                </li>
-              </ul>
+              <h4>{writer.name}</h4>
+              <p>Escritor</p>
             </S.CastItem>
           ))}
         </div>

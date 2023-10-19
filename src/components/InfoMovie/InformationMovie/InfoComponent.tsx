@@ -3,10 +3,12 @@ import React from "react";
 import * as S from "./styles";
 import { Genres } from "./Genres";
 import { MovieContext } from "@/context/ContextMovie";
+import { RunTime } from "./RunTime";
 
 type InfoContainerProps = {
   movie: Movie;
 };
+
 export const InfoComponent = ({ movie }: InfoContainerProps) => {
   const { information } = React.useContext(MovieContext);
 
@@ -18,6 +20,8 @@ export const InfoComponent = ({ movie }: InfoContainerProps) => {
     return "";
   };
 
+  const isTV = movie.media_type === "tv";
+
   return (
     <S.InfoContainer>
       <div>
@@ -28,6 +32,7 @@ export const InfoComponent = ({ movie }: InfoContainerProps) => {
       </div>
       <div>
         <Genres info={information} />
+        {!isTV && <RunTime info={information} />}
       </div>
     </S.InfoContainer>
   );

@@ -1,6 +1,7 @@
 import { Info } from "@/context/movie/types";
 import * as S from "./styles";
 import React from "react";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 type GenresProps = {
   info: Info;
@@ -16,9 +17,12 @@ export const RunTime = ({ info }: GenresProps) => {
   return (
     <>
       {info && (
-        <S.TagLine>
-          <p>{minutosParaHorasMinutos(info.runtime)}</p>
-        </S.TagLine>
+        <S.RunTime>
+          <p>
+            <AccessTimeIcon style={{ fontSize: "1.3rem" }} />
+            {minutosParaHorasMinutos(info.runtime)}
+          </p>
+        </S.RunTime>
       )}
     </>
   );
