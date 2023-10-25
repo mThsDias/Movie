@@ -5,29 +5,22 @@ export const BackgroundColor = styled.div`
 `;
 
 export const ContentMovieDescription = styled.section`
-  width: 100%;
-  height: 100%;
-
   display: flex;
-  gap: 3rem;
+
   align-items: center;
   justify-content: center;
+  gap: 3rem;
 
   color: #fff;
 
   padding: 2rem 0;
-
-  h1 {
-    padding-bottom: 0.5rem;
-  }
 `;
 
 export const CircleContainer = styled.div`
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
 
-  padding: 0.3rem;
-
+  padding: 0.33rem;
   border-radius: 50%;
   background: #081c22;
 `;
@@ -37,10 +30,10 @@ export const PercentageContainer = styled.div`
   align-items: center;
   gap: 0.5rem;
 
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 
   p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     width: 100%;
     max-width: 2rem;
@@ -62,18 +55,17 @@ export const CustomBox = styled.div`
 
 export const InnerContainer = styled.div`
   display: flex;
-  flex-wrap: nowrap;
-  gap: 1rem;
+  gap: 0.9rem;
 
   width: 100%;
-  max-width: 1120px;
+  max-width: 1100px;
 
-  padding-left: 1rem;
+  padding-bottom: 1.5rem;
 
   overflow-y: hidden;
 
   &::-webkit-scrollbar {
-    height: 8px;
+    height: 7px;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -100,7 +92,7 @@ export const ContentCast = styled.div`
     margin: 0.4rem 0 0 0.4rem;
     display: flex;
     flex-direction: column;
-    height: 60px;
+    height: 80px;
   }
 
   h3 {
@@ -119,17 +111,7 @@ export const ContentCast = styled.div`
 export const ContainerCastAndStaff = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  span {
-    width: 100%;
-    max-width: 1100px;
-    padding: 2.5rem 0 1.5rem 0;
-    text-align: left;
-    font-size: 1.4rem;
-    font-weight: 500;
-  }
+  gap: 1rem;
 `;
 
 export const CastCompleted = styled.span`
@@ -158,9 +140,10 @@ export const EffectBlur = styled.div`
   content: "";
   position: absolute;
   top: 40rem;
-  right: 22rem;
+  right: 32.9rem;
   bottom: 0;
   width: 80px;
+  height: 370px;
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 1) 50%,
@@ -168,4 +151,11 @@ export const EffectBlur = styled.div`
   );
 
   transition: opacity 0.9s ease;
+`;
+
+export const TitleCast = styled.div`
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 2rem 0 1rem 0;
+  margin-left: 17rem;
 `;

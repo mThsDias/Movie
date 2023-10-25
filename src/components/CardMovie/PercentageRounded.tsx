@@ -28,7 +28,7 @@ export function PercentageRounded({ voteAverage }: PercentageRoundedProps) {
       <CircularProgressbar
         value={percentage}
         text={`${percentage}%`}
-        strokeWidth={8}
+        strokeWidth={7}
         styles={buildStyles({
           backgroundColor: "#081c22",
           textColor: "#fff",

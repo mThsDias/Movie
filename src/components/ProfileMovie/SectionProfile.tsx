@@ -5,6 +5,7 @@ import * as S from "./styles";
 import { ProfileInfoAndPercentage } from "./ProfileInfoAndPercentage";
 import { ProfileDescription } from "../InfoMovie/CreativeStaff/ProfileDescription";
 import { MainCast } from "./MainCast";
+import { SubInfo } from "../InfoMovie/InformationMovie/SubInfo";
 
 type SectionProfileProps = {
   movie: Movie;
@@ -37,9 +38,11 @@ export const SectionProfile = ({ movie }: SectionProfileProps) => {
           </S.ContentMovieDescription>
         </S.BackgroundColor>
       </div>
+
+      <S.TitleCast>Elenco principal</S.TitleCast>
       <S.ContainerCastAndStaff>
-        <span>Elenco principal</span>
         <MainCast />
+        <SubInfo />
       </S.ContainerCastAndStaff>
     </>
   );

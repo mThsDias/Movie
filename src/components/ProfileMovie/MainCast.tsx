@@ -12,7 +12,7 @@ export const MainCast = () => {
   const [showBlur, setShowBlur] = React.useState(true);
 
   const showAllCast = false;
-  const displayedCast = showAllCast ? cast : cast.slice(0, 7);
+  const displayedCast = showAllCast ? cast : cast.slice(0, 9);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const container = e.target as HTMLDivElement;

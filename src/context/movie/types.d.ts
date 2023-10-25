@@ -13,7 +13,6 @@ export interface Movie {
   name: string;
   first_air_date: string;
   media_type: string;
-  original_language: string;
 }
 
 export interface Info {
@@ -25,16 +24,11 @@ export interface Info {
       id: number;
     }
   ];
-  original_language: string;
   homepage: string;
-  revenue: number;
-  budget: number;
   tagline: string;
-  networks: {
-    name: string;
-    logo_path: string;
-  }[];
   status: string;
+  budget: number;
+  revenue: number;
 }
 
 export interface Cast {
