@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 export const Container = styled.section`
-  margin-top: 5rem;
+  margin-top: 2rem;
 `;
 
 export const Content = styled.div`

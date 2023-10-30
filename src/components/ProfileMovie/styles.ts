@@ -157,5 +157,5 @@ export const TitleCast = styled.div`
   font-weight: 600;
   font-size: 1.4rem;
   padding: 2rem 0 1rem 0;
-  margin-left: 17rem;
+  margin-left: 16rem;
 `;

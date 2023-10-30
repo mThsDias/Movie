@@ -20,9 +20,23 @@ export const SubInfo = () => {
       <h5>Situação</h5>
       <p>{information.status}</p>
       <h5>Orçamento</h5>
-      <p>{information.budget ? information.budget : "-"}</p>
+      <p>
+        {information.budget
+          ? information.budget.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+            })
+          : "-"}
+      </p>
       <h5>Receita</h5>
-      <p>{information.revenue ? information.revenue : "-"}</p>
+      <p>
+        {information.revenue
+          ? information.revenue.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+            })
+          : "-"}
+      </p>
     </S.ContainerSubInfo>
   );
 };

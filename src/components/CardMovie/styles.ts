@@ -5,7 +5,7 @@ export const CustomBox = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
 
-  margin: 0 auto;
+  padding: 0 2rem;
 
   white-space: nowrap;
   border-radius: 0.2rem;
@@ -36,23 +36,14 @@ export const InnerContainer = styled.div`
 
   backdrop-filter: blur(1px);
 
-  padding: 2rem;
+  padding: 1.2rem;
 
   &::-webkit-scrollbar {
-    height: 8px;
+    height: 9px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: #ddd;
+    background-color: #dbdbdbdb;
     border-radius: 4px;
   }
 `;
@@ -103,11 +94,11 @@ export const Title = styled.h2`
 
   color: #000;
 
-  margin-top: 1rem;
+  margin-top: 1.3rem;
   text-decoration: none;
 
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.96rem;
   line-height: 1.2rem;
 
   span:hover {

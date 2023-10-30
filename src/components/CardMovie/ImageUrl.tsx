@@ -24,8 +24,8 @@ const ImageUrl = ({
         <Image
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
           alt={"Poster"}
-          width={w ?? 156}
-          height={h ?? 250}
+          width={w ?? 150}
+          height={h ?? 230}
           style={{
             borderRadius: "7px",
             objectFit: "cover",
