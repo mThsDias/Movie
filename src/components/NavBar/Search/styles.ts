@@ -38,17 +38,24 @@ export const InputGroup = styled.div`
     align-items: center;
     justify-content: center;
     color: #fff;
-    cursor: pointer;
+
+    a {
+      text-decoration: none;
+    }
 
     &:hover {
       background: linear-gradient(to bottom, #2c2f63, #5b67b7);
     }
   }
 
-  p {
+  button {
     margin: 0 2rem;
-    color: #fff;
     font-weight: 600;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
   }
 `;
 
