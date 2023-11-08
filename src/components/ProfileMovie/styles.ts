@@ -65,20 +65,11 @@ export const InnerContainer = styled.div`
   overflow-y: hidden;
 
   &::-webkit-scrollbar {
-    height: 7px;
+    height: 8px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: #ddd;
+    background-color: #dbdbdbdb;
     border-radius: 4px;
   }
 `;

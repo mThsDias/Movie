@@ -3,7 +3,6 @@ import React from "react";
 import {
   POPULAR_MOVIE,
   TOP_RANKED_MOVIE,
-  searchUrl,
   TRENDING_MOVIE,
   TRENDING_MOVIE_WEEKLY,
 } from "@/api/Api";
@@ -71,7 +70,9 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
-    const apiUrl = `${searchUrl}${search}`;
+    const type = "multi";
+    const apiUrl = `https://api.themoviedb.org/3/search/${type}?api_key=${apiKey}&language=pt-br-US&query=${search}`;
+
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {

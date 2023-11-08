@@ -5,7 +5,6 @@ import React from "react";
 
 export const SubInfo = () => {
   const { information } = React.useContext(MovieContext);
-  console.log(information);
 
   return (
     <S.ContainerSubInfo>

@@ -4,8 +4,7 @@ import { MovieContext } from "@/context/ContextMovie";
 import Link from "next/link";
 
 export const Input = () => {
-  const { search, setSearch, searchResult } = React.useContext(MovieContext);
-  console.log(searchResult);
+  const { search, setSearch } = React.useContext(MovieContext);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -23,7 +22,7 @@ export const Input = () => {
         onChange={handleChange}
       />
       <div>
-        <Link href="/search/[query]" as={`/search/${search}`}>
+        <Link href={`/search/${search}`}>
           <button>search</button>
         </Link>
       </div>
