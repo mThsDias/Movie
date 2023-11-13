@@ -41,7 +41,6 @@ export interface Cast {
 export interface MovieContextData {
   popularMovies: Movie[];
   topRated: Movie[];
-  searchResult: Movie[];
   setSearch: (search: string) => void;
   search: string;
   trending: Movie[];

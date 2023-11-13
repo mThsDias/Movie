@@ -22,7 +22,7 @@ export const Input = () => {
         onChange={handleChange}
       />
       <div>
-        <Link href={`/search/${search}`}>
+        <Link href={`/tv/${search}`}>
           <button>search</button>
         </Link>
       </div>

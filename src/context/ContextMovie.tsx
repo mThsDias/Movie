@@ -22,7 +22,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   const [trending, setTrending] = React.useState<Movie[]>([]);
   const [trendingWeekly, setTrendingWeekly] = React.useState<Movie[]>([]);
   const [search, setSearch] = React.useState<string>("");
-  const [searchResult, setSearchResult] = React.useState<Movie[]>([]);
   const [cast, setCast] = React.useState<Cast[]>([]);
   const [crew, setCrew] = React.useState<Cast[]>([]);
   const [characters, setCharacters] = React.useState<Cast[]>([]);
@@ -63,25 +62,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
       console.log(error);
     }
   }, []);
-
-  React.useEffect(() => {
-    if (search.trim() === "") {
-      setSearchResult([]);
-      return;
-    }
-
-    const type = "multi";
-    const apiUrl = `https://api.themoviedb.org/3/search/${type}?api_key=${apiKey}&language=pt-br-US&query=${search}`;
-
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        setSearchResult(data.results);
-      })
-      .catch((error) => {
-        console.error("Erro na pesquisa:", error);
-      });
-  }, [search]);
 
   React.useEffect(() => {
     try {
@@ -190,7 +170,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
       value={{
         popularMovies,
         topRated,
-        searchResult,
         setSearch,
         search,
         trending,
