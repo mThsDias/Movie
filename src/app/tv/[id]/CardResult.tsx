@@ -2,6 +2,8 @@ import React from "react";
 import * as S from "./styles";
 import Image from "next/image";
 import { SearchContext } from "./context/SearchContext";
+import { format, parseISO } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 interface CardResultProps {
   selectedCategory: string;
@@ -25,6 +27,12 @@ export const CardResult = ({ selectedCategory }: CardResultProps) => {
           (selectedCategory === "tv" && item.media_type === "tv") ||
           (selectedCategory === "movie" && item.media_type === "movie")
         ) {
+          const releaseDate = item.release_date || item.first_air_date;
+          const formattedDate = releaseDate
+            ? format(parseISO(releaseDate), "d 'de' MMMM 'de' yyyy", {
+                locale: ptBR,
+              })
+            : "";
           return (
             <section key={item.id}>
               <S.Container>
@@ -41,7 +49,7 @@ export const CardResult = ({ selectedCategory }: CardResultProps) => {
                   />
                   <S.BoxDescription>
                     <h5>{item.title || item.name}</h5>
-                    <h6>{item.release_date || item.first_air_date}</h6>
+                    {formattedDate && <h6>{formattedDate}</h6>}
                     <p>{item.overview}</p>
                   </S.BoxDescription>
                 </S.Section>
@@ -49,7 +57,7 @@ export const CardResult = ({ selectedCategory }: CardResultProps) => {
             </section>
           );
         }
-        return null; // Ignora itens que não correspondem à categoria selecionada
+        return null;
       })}
     </S.Flex>
   );

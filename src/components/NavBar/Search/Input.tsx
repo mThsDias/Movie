@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./styles";
-import { MovieContext } from "@/context/ContextMovie";
 import Link from "next/link";
+import { MovieContext } from "@/context/ContextMovie";
 
 export const Input = () => {
   const { search, setSearch } = React.useContext(MovieContext);
@@ -14,9 +14,6 @@ export const Input = () => {
     <S.InputGroup>
       <S.Input
         value={search}
-        type="email"
-        id="Email"
-        name="Email"
         placeholder="Busque por filmes e séries..."
         autoComplete="off"
         onChange={handleChange}

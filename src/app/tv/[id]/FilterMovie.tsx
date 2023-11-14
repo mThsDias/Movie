@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./styles";
+
 import { CardResult } from "./CardResult";
 import { SearchContext } from "./context/SearchContext";
 
@@ -14,18 +15,45 @@ export const FilterMovie = () => {
   return (
     <>
       <S.BoxFilter>
-        Resultado da Busca
-        <div>
+        <h3>Resultado da Busca</h3>
+        <S.ContainerListFilter>
           <ul>
-            <li onClick={() => handleCategoryChange("tv")}>
-              TV{searchMovie.filter((item) => item.media_type === "tv").length}
+            <li
+              onClick={() => handleCategoryChange("tv")}
+              style={{
+                backgroundColor: selectedCategory === "tv" ? "#ccc" : "#fff",
+              }}
+            >
+              <a>Séries</a>
+              <span
+                style={{
+                  backgroundColor: selectedCategory === "tv" ? "#fff" : "#ccc",
+                }}
+              >
+                {searchMovie?.filter((item) => item.media_type === "tv").length}
+              </span>
             </li>
-            <li onClick={() => handleCategoryChange("movie")}>
-              Filmes
-              {searchMovie.filter((item) => item.media_type === "movie").length}
+            <li
+              onClick={() => handleCategoryChange("movie")}
+              style={{
+                backgroundColor: selectedCategory === "movie" ? "#ccc" : "#fff",
+              }}
+            >
+              <a>Filmes</a>
+              <span
+                style={{
+                  backgroundColor:
+                    selectedCategory === "movie" ? "#fff" : "#ccc",
+                }}
+              >
+                {
+                  searchMovie?.filter((item) => item.media_type === "movie")
+                    .length
+                }
+              </span>
             </li>
           </ul>
-        </div>
+        </S.ContainerListFilter>
       </S.BoxFilter>
       <CardResult selectedCategory={selectedCategory} />
     </>

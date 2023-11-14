@@ -25,7 +25,7 @@ export const SectionMovie = ({ cardMovie }: SectionMovieProps) => {
   return (
     <S.CustomBox>
       <S.InnerContainer onScroll={handleScroll}>
-        {cardMovie.map((movie) => (
+        {cardMovie?.map((movie) => (
           <S.ContentMovie key={movie.id}>
             <Link href={`/movies/${movie.id}`}>
               <ImageComponent movie={movie} />

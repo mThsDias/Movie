@@ -21,7 +21,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   const [topRated, setTopRated] = React.useState<Movie[]>([]);
   const [trending, setTrending] = React.useState<Movie[]>([]);
   const [trendingWeekly, setTrendingWeekly] = React.useState<Movie[]>([]);
-  const [search, setSearch] = React.useState<string>("");
   const [cast, setCast] = React.useState<Cast[]>([]);
   const [crew, setCrew] = React.useState<Cast[]>([]);
   const [characters, setCharacters] = React.useState<Cast[]>([]);
@@ -29,6 +28,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   const [screenplay, setScreenplay] = React.useState<Cast[]>([]);
   const [writer, setWriter] = React.useState<Cast[]>([]);
   const [creator, setCreator] = React.useState<Cast[]>([]);
+  const [search, setSearch] = React.useState<string>("");
   const [information, setInformation] = React.useState<Info>({} as Info);
 
   const params = useParams();
@@ -101,7 +101,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     try {
       if (!id) return;
       fetch(
-        `https://api.themoviedb.org/3/${type}/${id}/credits?api_key=${apiKey}&language=pt-br;`
+        `https://api.themoviedb.org/3/${type}/${id}/credits?api_key=${apiKey}&language=pt-br`
       )
         .then((response) => response.json())
         .then((data) => {
@@ -154,7 +154,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     const type = movie?.media_type === "movie" ? "movie" : "tv";
 
     try {
-      if (!id) return;
       fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${apiKey}`)
         .then((response) => response.json())
         .then((data) => {
@@ -170,8 +169,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
       value={{
         popularMovies,
         topRated,
-        setSearch,
-        search,
         trending,
         trendingWeekly,
         cast,
@@ -182,6 +179,8 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         writer,
         creator,
         information,
+        search,
+        setSearch,
       }}
     >
       {children}

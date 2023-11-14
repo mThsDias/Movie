@@ -1,6 +1,6 @@
 import React from "react";
-import { MovieProvider } from "@/context/ContextMovie";
 import "./index.css";
+import { MovieProvider } from "@/context/ContextMovie";
 
 export const metadata = {
   title: "Movie",

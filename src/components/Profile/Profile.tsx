@@ -12,8 +12,8 @@ export const Profile = () => {
   const { trendingWeekly, trending } = React.useContext(MovieContext);
 
   const movie =
-    trendingWeekly.find((movie) => movie.id === Number(id)) ||
-    trending.find((movie) => movie.id === Number(id)) ||
+    trendingWeekly?.find((movie) => movie.id === Number(id)) ||
+    trending?.find((movie) => movie.id === Number(id)) ||
     null;
 
   return (

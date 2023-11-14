@@ -41,8 +41,6 @@ export interface Cast {
 export interface MovieContextData {
   popularMovies: Movie[];
   topRated: Movie[];
-  setSearch: (search: string) => void;
-  search: string;
   trending: Movie[];
   trendingWeekly: Movie[];
   cast: Cast[];
@@ -53,6 +51,8 @@ export interface MovieContextData {
   writer: Cast[];
   creator: Cast[];
   information: Info;
+  setSearch: (search: string) => void;
+  search: string;
 }
 
 interface ApiResponse<T> {
