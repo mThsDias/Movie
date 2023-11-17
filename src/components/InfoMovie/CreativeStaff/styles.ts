@@ -4,6 +4,10 @@ export const CastItem = styled.li`
   display: flex;
   flex-direction: column;
 
+  h4 {
+    width: 120px;
+  }
+
   p {
     font-size: 0.8rem;
   }
@@ -21,6 +25,8 @@ export const SinopseContainer = styled.div`
 
 export const CastContainer = styled.div`
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
 
   div {
     display: flex;

@@ -9,11 +9,11 @@ export const Profile = () => {
   const params = useParams();
   const { id } = params;
 
-  const { trendingWeekly, trending } = React.useContext(MovieContext);
+  const { ListTv, ListMovie } = React.useContext(MovieContext);
 
   const movie =
-    trendingWeekly?.find((movie) => movie.id === Number(id)) ||
-    trending?.find((movie) => movie.id === Number(id)) ||
+    ListTv.find((movie) => movie.id === Number(id)) ||
+    ListMovie.find((movie) => movie.id === Number(id)) ||
     null;
 
   return (

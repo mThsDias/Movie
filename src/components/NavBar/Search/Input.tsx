@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import Link from "next/link";
-import { MovieContext } from "@/context/ContextMovie";
+import { MovieContext } from "@/contexts/ContextMovie";
 
 export const Input = () => {
   const { search, setSearch } = React.useContext(MovieContext);

@@ -1,6 +1,6 @@
 import React from "react";
 import ImageUrl from "./ImageUrl";
-import { Movie } from "@/context/movie/types";
+import { Movie } from "@/contexts/movie/types";
 
 type ImageComponent = {
   movie: Movie;

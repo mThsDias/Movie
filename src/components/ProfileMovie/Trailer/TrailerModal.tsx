@@ -1,5 +1,5 @@
 import { MovieContext } from "@/context/ContextMovie";
-import { Movie } from "@/context/movie/types";
+import { Movie } from "@/contexts/movie/types";
 import { useParams } from "next/navigation";
 import CloseIcon from "@mui/icons-material/Close";
 import * as S from "./styles";
@@ -18,18 +18,13 @@ export const TrailerModal = ({ onClose }: TrailerModalProps) => {
   const params = useParams();
   const { id } = params;
 
-  const { trending, trendingWeekly } = React.useContext(MovieContext);
+  const { ListTv } = React.useContext(MovieContext);
 
-  trending.find((movie) => movie.id === Number(id)) as Movie;
-  trendingWeekly.find((movie) => movie.id === Number(id)) as Movie;
+  ListTv.find((movie) => movie.id === Number(id)) as Movie;
 
   async function fetchTrailerMovie() {
-    const movies = [...trending, ...trendingWeekly];
-    const movie = movies.find((movie) => movie.id === Number(id));
-    const type = movie?.media_type === "tv" ? "tv" : "movie";
-
     try {
-      const trailerUrl = `https://api.themoviedb.org/3/${type}/${id}/videos?api_key=${apiKey}`;
+      const trailerUrl = `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${apiKey}`;
       const response = await fetch(trailerUrl, {
         method: "GET",
         headers: {

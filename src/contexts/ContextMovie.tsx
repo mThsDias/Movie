@@ -1,12 +1,7 @@
 "use client";
+
 import React from "react";
-import {
-  POPULAR_MOVIE,
-  TOP_RANKED_MOVIE,
-  TRENDING_MOVIE,
-  TRENDING_MOVIE_WEEKLY,
-} from "@/api/Api";
-import { MovieContextData, Movie, Cast, Info } from "./movie/types";
+import { MovieContextData, Movie, Cast } from "./movie/types";
 import { useParams } from "next/navigation";
 
 export const apiKey =
@@ -17,8 +12,6 @@ export const MovieContext = React.createContext<MovieContextData>(
 );
 
 export function MovieProvider({ children }: { children: React.ReactNode }) {
-  const [popularMovies, setPopularMovies] = React.useState<Movie[]>([]);
-  const [topRated, setTopRated] = React.useState<Movie[]>([]);
   const [trending, setTrending] = React.useState<Movie[]>([]);
   const [trendingWeekly, setTrendingWeekly] = React.useState<Movie[]>([]);
   const [cast, setCast] = React.useState<Cast[]>([]);
@@ -29,46 +22,54 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   const [writer, setWriter] = React.useState<Cast[]>([]);
   const [creator, setCreator] = React.useState<Cast[]>([]);
   const [search, setSearch] = React.useState<string>("");
-  const [information, setInformation] = React.useState<Info>({} as Info);
+  const [ListTv, setListTv] = React.useState<Movie[]>([]);
+  const [ListMovie, setListMovie] = React.useState<Movie[]>([]);
 
   const params = useParams();
   const { id } = params;
 
   React.useEffect(() => {
-    try {
-      if (!POPULAR_MOVIE.url) throw new Error("POPULAR_MOVIE.url is undefined");
+    const fetchTvDetails = async () => {
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=pt-br`
+        );
+        const data = await response.json();
+        // Faça algo com os dados da série de TV
+        setListTv([data]);
+        console.log("Detalhes da série de TV:", data);
+      } catch (error) {
+        console.error("Erro ao buscar informações da série de TV:", error);
+      }
+    };
 
-      fetch(POPULAR_MOVIE.url, POPULAR_MOVIE.options)
-        .then((response) => response.json())
-        .then((data) => {
-          setPopularMovies(data.results);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+    fetchTvDetails();
+  }, [id]);
+
+  // useEffect para obter informações sobre um filme
+  React.useEffect(() => {
+    const fetchMovieDetails = async () => {
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=pt-br`
+        );
+        const data = await response.json();
+        // Faça algo com os dados do filme
+        setListMovie([data]);
+        console.log("Detalhes do filme:", data);
+      } catch (error) {
+        console.error("Erro ao buscar informações do filme:", error);
+      }
+    };
+
+    fetchMovieDetails();
+  }, [id]);
 
   React.useEffect(() => {
     try {
-      if (!TOP_RANKED_MOVIE.url)
-        throw new Error("TOP_RANKED_MOVIE.url is undefined");
-
-      fetch(TOP_RANKED_MOVIE.url, TOP_RANKED_MOVIE.options)
-        .then((response) => response.json())
-        .then((data) => {
-          setTopRated(data.results);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-
-  React.useEffect(() => {
-    try {
-      if (!TRENDING_MOVIE.url)
-        throw new Error("TRENDING_MOVIE.url is undefined");
-
-      fetch(TRENDING_MOVIE.url, TRENDING_MOVIE.options)
+      fetch(
+        `https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}&language=pt-br-US&page=1`
+      )
         .then((response) => response.json())
         .then((data) => {
           setTrending(data.results);
@@ -80,10 +81,9 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
 
   React.useEffect(() => {
     try {
-      if (!TRENDING_MOVIE_WEEKLY.url)
-        throw new Error("TRENDING_MOVIE.url is undefined");
-
-      fetch(TRENDING_MOVIE_WEEKLY.url, TRENDING_MOVIE_WEEKLY.options)
+      fetch(
+        `https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=pt-br-US&page=1`
+      )
         .then((response) => response.json())
         .then((data) => {
           setTrendingWeekly(data.results);
@@ -148,27 +148,9 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     }
   }, [id, trending, trendingWeekly]);
 
-  React.useEffect(() => {
-    const movies = [...trending, ...trendingWeekly];
-    const movie = movies.find((movie) => movie.id === Number(id));
-    const type = movie?.media_type === "movie" ? "movie" : "tv";
-
-    try {
-      fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${apiKey}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setInformation(data);
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }, [id, trending, trendingWeekly]);
-
   return (
     <MovieContext.Provider
       value={{
-        popularMovies,
-        topRated,
         trending,
         trendingWeekly,
         cast,
@@ -178,9 +160,10 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         screenplay,
         writer,
         creator,
-        information,
         search,
         setSearch,
+        ListTv,
+        ListMovie,
       }}
     >
       {children}

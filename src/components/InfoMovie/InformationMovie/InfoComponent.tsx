@@ -1,8 +1,7 @@
-import { Movie } from "@/context/movie/types";
+import { Movie } from "@/contexts/movie/types";
 import React from "react";
 import * as S from "./styles";
 import { Genres } from "./Genres";
-import { MovieContext } from "@/context/ContextMovie";
 import { RunTime } from "./RunTime";
 
 type InfoContainerProps = {
@@ -10,8 +9,6 @@ type InfoContainerProps = {
 };
 
 export const InfoComponent = ({ movie }: InfoContainerProps) => {
-  const { information } = React.useContext(MovieContext);
-
   const getYearFromDate = (dateString: string) => {
     if (dateString) {
       const year = dateString.slice(0, 4);
@@ -20,7 +17,7 @@ export const InfoComponent = ({ movie }: InfoContainerProps) => {
     return "";
   };
 
-  const isTV = movie.media_type === "tv";
+  const isTV = movie.media_type === "tv" ? "" : "movie";
 
   return (
     <S.InfoContainer>
@@ -31,8 +28,8 @@ export const InfoComponent = ({ movie }: InfoContainerProps) => {
         </span>
       </div>
       <div>
-        <Genres info={information} />
-        {!isTV && <RunTime info={information} />}
+        <Genres />
+        {!isTV && <RunTime />}
       </div>
     </S.InfoContainer>
   );

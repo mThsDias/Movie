@@ -96,6 +96,9 @@ export const ContentCast = styled.div`
 
   p {
     font-size: 0.8rem;
+    width: 100%;
+    max-width: 120px;
+    white-space: normal;
   }
 `;
 

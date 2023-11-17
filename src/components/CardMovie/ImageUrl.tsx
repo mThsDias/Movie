@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import * as S from "./styles";
 import "react-circular-progressbar/dist/styles.css";
-import { Movie } from "@/context/movie/types";
+import { Movie } from "@/contexts/movie/types";
 import { PercentageRounded } from "./PercentageRounded";
 
 type ImageUrlProps = {

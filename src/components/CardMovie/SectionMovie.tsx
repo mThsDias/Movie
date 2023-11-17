@@ -1,5 +1,5 @@
 import React from "react";
-import { Movie } from "@/context/movie/types";
+import { Movie } from "@/contexts/movie/types";
 import { InfoCard } from "./CardInfo/InfoCard";
 import { ImageComponent } from "./ImageComponent";
 import * as S from "./styles";

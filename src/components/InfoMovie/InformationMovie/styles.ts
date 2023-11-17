@@ -33,6 +33,7 @@ export const InfoContainer = styled.div`
   h3 {
     font-size: 2rem;
     font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 
   span {
@@ -51,6 +52,15 @@ export const InfoContainer = styled.div`
 export const ListGenres = styled.div`
   ul {
     list-style: none;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  li {
+    border: 1px solid #ced2ce;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
   }
 `;
 

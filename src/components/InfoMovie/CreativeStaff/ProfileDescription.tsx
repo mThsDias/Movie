@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./styles";
-import { Movie } from "@/context/movie/types";
+import { Movie } from "@/contexts/movie/types";
 import { ScreenPlay } from "./ScreenPlay";
 import { Writer } from "./Writer";
 import { Directors } from "./Directors";

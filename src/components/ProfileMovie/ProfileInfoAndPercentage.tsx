@@ -1,6 +1,6 @@
 import React from "react";
 import { PercentageRounded } from "../CardMovie/PercentageRounded";
-import { Movie } from "@/context/movie/types";
+import { Movie } from "@/contexts/movie/types";
 import * as S from "./styles";
 import Modal from "./Trailer/Modal";
 import { InfoComponent } from "@/components/InfoMovie/InformationMovie/InfoComponent";

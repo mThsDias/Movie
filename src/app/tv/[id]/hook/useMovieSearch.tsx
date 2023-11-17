@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext, useRef } from "react";
-import { MovieContext } from "@/context/ContextMovie";
+import { MovieContext } from "@/contexts/ContextMovie";
 
 export const useMovieSearch = () => {
   const { search } = useContext(MovieContext);
@@ -22,7 +22,7 @@ export const useMovieSearch = () => {
 
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/search/${type}?api_key=${apiKey}&query=${search}`,
+          `https://api.themoviedb.org/3/search/${type}?api_key=${apiKey}&query=${search}&language=pt-BR `,
           { signal: controller.signal }
         );
 

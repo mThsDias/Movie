@@ -3,15 +3,15 @@ import * as S from "./styles";
 import React from "react";
 
 export const TagLine = () => {
-  const { information } = React.useContext(MovieContext);
+  const { ListTv } = React.useContext(MovieContext);
 
   return (
     <>
-      {information && (
-        <S.TagLine>
-          <p>{information.tagline}</p>
+      {ListTv.map((item) => (
+        <S.TagLine key={item.id}>
+          <p>{item.tagline}</p>
         </S.TagLine>
-      )}
+      ))}
     </>
   );
 };

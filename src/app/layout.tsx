@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-import { MovieProvider } from "@/context/ContextMovie";
 
 export const metadata = {
   title: "Movie",
@@ -14,9 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body>
-        <MovieProvider>{children}</MovieProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

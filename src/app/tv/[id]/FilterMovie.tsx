@@ -24,7 +24,13 @@ export const FilterMovie = () => {
                 backgroundColor: selectedCategory === "tv" ? "#ccc" : "#fff",
               }}
             >
-              <a>Séries</a>
+              <a
+                style={{
+                  fontWeight: selectedCategory === "tv" ? "bold" : "normal",
+                }}
+              >
+                Séries
+              </a>
               <span
                 style={{
                   backgroundColor: selectedCategory === "tv" ? "#fff" : "#ccc",
@@ -39,7 +45,13 @@ export const FilterMovie = () => {
                 backgroundColor: selectedCategory === "movie" ? "#ccc" : "#fff",
               }}
             >
-              <a>Filmes</a>
+              <a
+                style={{
+                  fontWeight: selectedCategory === "movie" ? "bold" : "normal",
+                }}
+              >
+                Filmes
+              </a>
               <span
                 style={{
                   backgroundColor:

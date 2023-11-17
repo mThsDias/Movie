@@ -30,7 +30,7 @@ export const MainCast = () => {
     <>
       <S.CustomBox>
         <S.InnerContainer onScroll={handleScroll}>
-          {displayedCast.map((actor) => (
+          {displayedCast?.map((actor) => (
             <div key={actor.id}>
               <S.ContentCast>
                 <Image
@@ -57,7 +57,7 @@ export const MainCast = () => {
               </S.ContentCast>
             </div>
           ))}
-          {cast.length > 7 && !showAllCast && (
+          {cast?.length > 7 && !showAllCast && (
             <S.CastCompleted>
               <Link href={`/cast/${id}`}>
                 Mostrar Mais <ArrowRightAltIcon />

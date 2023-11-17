@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import React from "react";
-import { Cast } from "@/context/movie/types";
+import { Cast } from "@/contexts/movie/types";
 
 type CreatorProps = {
   creator: Cast[];

@@ -1,5 +1,5 @@
 import React from "react";
-import { Movie } from "@/context/movie/types";
+import { Movie } from "@/contexts/movie/types";
 import ImageUrl from "../CardMovie/ImageUrl";
 import * as S from "./styles";
 import { ProfileInfoAndPercentage } from "./ProfileInfoAndPercentage";

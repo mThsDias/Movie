@@ -20,21 +20,33 @@ export const Section = styled.div`
 `;
 
 export const BoxDescription = styled.div`
-  margin: 10px;
-  width: 1000px;
+  margin-left: 15px;
+  width: 960px;
 
   p {
-    margin-top: 1.8rem;
-    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
     font-weight: 100;
+    width: 900px;
   }
 
   h5 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
   }
 
-  h6 {
-    font-size: 1rem;
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      color: #01b4e4;
+    }
+  }
+
+  span {
+    font-size: 0.95rem;
+    color: #999999;
   }
 `;
 
@@ -75,6 +87,7 @@ export const ContainerListFilter = styled.div`
     width: 100%;
     height: 100%;
     padding: 10px 20px;
+    font-size: 0.95rem;
   }
 
   span {
@@ -86,6 +99,7 @@ export const ContainerListFilter = styled.div`
     border-radius: 8px;
     margin-right: 20px;
     white-space: nowrap;
+    font-size: 0.8rem;
   }
 
   li {
@@ -93,7 +107,6 @@ export const ContainerListFilter = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    line-height: 1.4em;
     cursor: pointer;
   }
 `;

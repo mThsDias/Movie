@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionMovie } from "../CardMovie/SectionMovie";
-import { MovieContext } from "@/context/ContextMovie";
+import { MovieContext } from "@/contexts/ContextMovie";
 import * as S from "./styles";
 
 export const Trending = () => {
