@@ -1,4 +1,5 @@
 import React from "react";
+
 import { MovieProvider } from "./context/MovieContext";
 import { MovieItem } from "./components/MovieItem";
 
