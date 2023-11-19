@@ -6,7 +6,7 @@ type PercentageRoundedProps = {
   voteAverage: number;
 };
 
-export function PercentageRounded({ voteAverage }: PercentageRoundedProps) {
+export const OverViewComponent = ({ voteAverage }: PercentageRoundedProps) => {
   const [color, setColor] = React.useState("#f7f4f8");
 
   React.useEffect(() => {
@@ -34,9 +34,9 @@ export function PercentageRounded({ voteAverage }: PercentageRoundedProps) {
           textColor: "#fff",
           pathColor: color,
           trailColor: "#1a3b28",
-          textSize: "1.8rem",
+          textSize: "1.9rem",
         })}
       />
     </>
   );
-}
+};

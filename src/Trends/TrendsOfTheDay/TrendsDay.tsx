@@ -23,14 +23,19 @@ export const TrendsDay = () => {
       <S.ContainerItem>
         {trendsDay?.map((dayItem) => (
           <S.BoxItems key={dayItem.id}>
-            <Image
-              src={`https://image.tmdb.org/t/p/original/${dayItem.poster_path}`}
-              alt={"Poster"}
-              width={150}
-              height={230}
-              priority
-              style={{ borderRadius: "10px" }}
-            />
+            <S.BoxImageAndPercentage>
+              <Image
+                src={`https://image.tmdb.org/t/p/original/${dayItem.poster_path}`}
+                alt={"Poster"}
+                width={150}
+                height={230}
+                priority
+                style={{ borderRadius: "10px" }}
+              />
+              <span>
+                <PercentageRounded voteAverage={dayItem.vote_average} />
+              </span>
+            </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
               <h2>{dayItem.title || dayItem.name}</h2>
               <p>

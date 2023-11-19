@@ -121,3 +121,19 @@ export const BoxTitleAndDate = styled.div`
     color: #46cde8;
   }
 `;
+
+export const BoxImageAndPercentage = styled.div`
+  position: relative;
+  margin-bottom: 0.2rem;
+
+  span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    padding: 0.2rem;
+    top: 90.5%;
+    left: 5%;
+    border-radius: 50%;
+    background: #081c22;
+  }
+`;

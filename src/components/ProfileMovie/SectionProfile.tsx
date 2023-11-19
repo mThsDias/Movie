@@ -1,6 +1,6 @@
 import React from "react";
 import { Movie } from "@/contexts/movie/types";
-import ImageUrl from "../CardMovie/ImageUrl";
+import ImageUrl from "../OverView/ImageUrl";
 import * as S from "./styles";
 import { ProfileInfoAndPercentage } from "./ProfileInfoAndPercentage";
 import { ProfileDescription } from "../InfoMovie/CreativeStaff/ProfileDescription";
