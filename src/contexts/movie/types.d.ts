@@ -44,7 +44,6 @@ export interface MovieContextData {
   creator: Cast[];
   setSearch: (search: string) => void;
   search: string;
-  ListTv: Movie[];
   ListMovie: Movie[];
 }
 

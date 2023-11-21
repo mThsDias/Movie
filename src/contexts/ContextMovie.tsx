@@ -22,29 +22,10 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   const [writer, setWriter] = React.useState<Cast[]>([]);
   const [creator, setCreator] = React.useState<Cast[]>([]);
   const [search, setSearch] = React.useState<string>("");
-  const [ListTv, setListTv] = React.useState<Movie[]>([]);
   const [ListMovie, setListMovie] = React.useState<Movie[]>([]);
 
   const params = useParams();
   const { id } = params;
-
-  React.useEffect(() => {
-    const fetchTvDetails = async () => {
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=pt-br`
-        );
-        const data = await response.json();
-        // Faça algo com os dados da série de TV
-        setListTv([data]);
-        console.log("Detalhes da série de TV:", data);
-      } catch (error) {
-        console.error("Erro ao buscar informações da série de TV:", error);
-      }
-    };
-
-    fetchTvDetails();
-  }, [id]);
 
   // useEffect para obter informações sobre um filme
   React.useEffect(() => {
@@ -56,7 +37,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         const data = await response.json();
         // Faça algo com os dados do filme
         setListMovie([data]);
-        console.log("Detalhes do filme:", data);
+        console.log({ data });
       } catch (error) {
         console.error("Erro ao buscar informações do filme:", error);
       }
@@ -162,7 +143,6 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
         creator,
         search,
         setSearch,
-        ListTv,
         ListMovie,
       }}
     >

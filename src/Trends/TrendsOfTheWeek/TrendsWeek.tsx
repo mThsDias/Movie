@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import * as S from "../styles";
 import Image from "next/image";
+import Link from "next/link";
 
 import { formatDate } from "@/functions";
 import { TrendsContext } from "../context/TrendsContext";
@@ -30,15 +31,17 @@ export const TrendsWeek = () => {
                 alt={"Poster"}
                 width={150}
                 height={230}
-                priority
                 style={{ borderRadius: "10px" }}
+                priority
               />
               <span>
                 <OverViewComponent voteAverage={weekItem.vote_average} />
               </span>
             </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
-              <h2>{weekItem.title || weekItem.name}</h2>
+              <Link href={`/movies/${weekItem.id}`}>
+                <h2>{weekItem.title || weekItem.name}</h2>
+              </Link>
               <p>
                 {formatDate(weekItem.release_date || weekItem.first_air_date)}
               </p>

@@ -5,6 +5,8 @@ import Image from "next/image";
 
 import { formatDate } from "@/functions";
 import { TrendsContext } from "../context/TrendsContext";
+import { OverViewComponent } from "@/components/OverView";
+import Link from "next/link";
 
 export const TrendsDay = () => {
   const { trendsDay, errorTrendsDay, loadingTrendsDay } =
@@ -29,15 +31,17 @@ export const TrendsDay = () => {
                 alt={"Poster"}
                 width={150}
                 height={230}
-                priority
                 style={{ borderRadius: "10px" }}
+                priority
               />
               <span>
-                <PercentageRounded voteAverage={dayItem.vote_average} />
+                <OverViewComponent voteAverage={dayItem.vote_average} />
               </span>
             </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
-              <h2>{dayItem.title || dayItem.name}</h2>
+              <Link href={`/movies/${dayItem.id}`}>
+                <h2>{dayItem.title || dayItem.name}</h2>
+              </Link>
               <p>
                 {formatDate(dayItem.release_date || dayItem.first_air_date)}
               </p>

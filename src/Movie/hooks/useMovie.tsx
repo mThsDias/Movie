@@ -1,38 +1,43 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useFetch } from "@/Hooks";
+import { useParams } from "next/navigation";
 
 export const useMovie = () => {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState<unknown[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const controllerRef = useRef<AbortController | null>(null);
+
+  const { id } = useParams();
 
   const apiKey = "dcf6fe444e49bcbe4d8f215076000be9";
-  const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=pt-BR`;
-
-  const {
-    data,
-    loading: FetchLoading,
-    error: FetchError,
-  } = useFetch(apiUrl, undefined);
+  const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=pt-BR`;
+  const { request } = useFetch(apiUrl, {
+    method: "GET",
+  });
 
   useEffect(() => {
-    const controller = new AbortController();
-    controllerRef.current = controller;
+    setLoading(loading);
 
-    if (data) {
-      setMovie(data);
-      setLoading(FetchLoading);
-      setError(FetchError);
-    } else if (FetchError) {
-      setLoading(false);
-      setError(FetchError);
-    }
+    const fetchData = async () => {
+      try {
+        const { response, json } = await request(apiUrl, {
+          method: "GET",
+        });
 
-    return () => {
-      controllerRef.current?.abort();
+        if (response?.ok) {
+          setMovie([json]);
+        } else {
+          throw new Error(json.message);
+        }
+      } catch (error: unknown) {
+        setError(error as string);
+      } finally {
+        setLoading(false);
+      }
     };
-  }, [data, FetchError]);
+
+    fetchData();
+  }, []);
 
   return { movie, loading, error };
 };

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useFetch } from "@/Hooks";
 
 export const useTrendsWeek = () => {
@@ -6,35 +6,37 @@ export const useTrendsWeek = () => {
   const [loadingTrendsWeek, setLoadingTrendsWeek] = useState(false);
   const [errorTrendsWeek, setErrorTrendsWeek] = useState<string | null>(null);
 
-  const controllerRef = useRef<AbortController | null>(null);
-
   const apiKey = "dcf6fe444e49bcbe4d8f215076000be9";
 
   const apiUrlWeek = `https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=pt-BR`;
 
-  const {
-    data: dataWeek,
-    loading: fetchLoadingWeek,
-    error: fetchErrorWeek,
-  } = useFetch(apiUrlWeek, undefined);
+  const { request } = useFetch(apiUrlWeek, {
+    method: "GET",
+  });
 
   useEffect(() => {
-    const controller = new AbortController();
-    controllerRef.current = controller;
+    setLoadingTrendsWeek(true);
 
-    if (dataWeek) {
-      setTrendsWeek(dataWeek);
-      setLoadingTrendsWeek(fetchLoadingWeek);
-      setErrorTrendsWeek(fetchErrorWeek);
-    } else if (fetchErrorWeek) {
-      setLoadingTrendsWeek(false);
-      setErrorTrendsWeek(fetchErrorWeek);
-    }
+    const fetchData = async () => {
+      try {
+        const { response, json } = await request(apiUrlWeek, {
+          method: "GET",
+        });
 
-    return () => {
-      controllerRef.current?.abort();
+        if (response?.ok) {
+          setTrendsWeek(json.results);
+        } else {
+          throw new Error(json.message);
+        }
+      } catch (error: unknown) {
+        setErrorTrendsWeek(error as string);
+      } finally {
+        setLoadingTrendsWeek(false);
+      }
     };
-  }, [dataWeek, fetchErrorWeek]);
+
+    fetchData();
+  }, []);
 
   return { trendsWeek, loadingTrendsWeek, errorTrendsWeek };
 };
