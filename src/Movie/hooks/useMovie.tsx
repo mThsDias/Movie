@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "@/Hooks";
 import { useParams } from "next/navigation";
+import { Movie } from "../context/types";
 
 export const useMovie = () => {
-  const [movie, setMovie] = useState<unknown[]>([]);
+  const [movie, setMovie] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -25,7 +26,7 @@ export const useMovie = () => {
         });
 
         if (response?.ok) {
-          setMovie([json]);
+          setMovie(json);
         } else {
           throw new Error(json.message);
         }
