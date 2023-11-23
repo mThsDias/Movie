@@ -18,6 +18,7 @@ export interface Movie {
   release_date: string;
   first_air_date: string;
   genres: Genres[];
+  runtime: number;
 }
 
 interface Genres {
