@@ -5,6 +5,7 @@ import { MovieContext } from "@/Movie/context/MovieContext";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 import * as S from "./styles";
+import { OverViewComponent } from "@/components/OverView";
 
 export const ProfileComponent = () => {
   const { movie, error, loading } = useContext(MovieContext);
@@ -30,6 +31,10 @@ export const ProfileComponent = () => {
     const minutosRestantes = minutos % 60;
     return `${horas}h ${minutosRestantes}min`;
   }
+
+  const valorRecebidoComoString = movie
+    ?.map((movie) => movie.vote_average)
+    .join();
 
   return (
     <div>
@@ -62,6 +67,11 @@ export const ProfileComponent = () => {
                   {minutosParaHorasMinutos(movie.runtime)}
                 </S.BoxRuntime>
               </S.BoxRuntimeAndGenres>
+              <div>
+                <OverViewComponent
+                  voteAverage={parseFloat(valorRecebidoComoString)}
+                />
+              </div>
             </div>
           </S.ContainerProfile>
         </div>
