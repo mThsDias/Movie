@@ -1,5 +1,7 @@
 import { CastContext } from "@/Movie/context/CastContext";
+import Image from "next/image";
 import React, { useContext } from "react";
+import * as S from "./styles";
 
 export const CastMovie = () => {
   const { cast, error, loading } = useContext(CastContext);
@@ -11,17 +13,26 @@ export const CastMovie = () => {
 
   return (
     <div>
-      {cast &&
-        cast.map((c) => (
-          <div key={c.id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${c.profile_path}`}
-              alt={c.name}
-            />
-            <p>{c.name}</p>
-            <p>{c.character}</p>
-          </div>
-        ))}
+      <h1>Elenco</h1>
+      <S.Teste>
+        {cast &&
+          cast.slice(0, 5).map((c) => (
+            <div key={c.id}>
+              <div>
+                <Image
+                  src={`https://image.tmdb.org/t/p/original${c.profile_path}`}
+                  alt={"Cast"}
+                  width={140}
+                  height={200}
+                  style={{ borderRadius: "10px" }}
+                  priority
+                />
+              </div>
+              <p>{c.name}</p>
+              <p>{c.character}</p>
+            </div>
+          ))}
+      </S.Teste>
     </div>
   );
 };

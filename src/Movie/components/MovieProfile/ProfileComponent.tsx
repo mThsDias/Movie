@@ -39,35 +39,33 @@ export const ProfileComponent = () => {
             <S.Container>
               <Image
                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                width={400}
-                height={600}
+                width={430}
+                height={680}
                 style={{ borderRadius: "30px" }}
                 alt="poster"
                 priority
               />
               <div>
-                <S.BoxDes>
-                  <S.BoxTitle>
-                    <h1>{movie.title || movie.name}</h1>
-                  </S.BoxTitle>
-                  <S.BoxRuntimeAndGenres>
-                    <S.BoxGenres>
-                      {movie.genres.map((genre) => (
-                        <span key={genre.id}>{genre.name}</span>
-                      ))}
-                    </S.BoxGenres>
-                    <S.BoxRuntime>
-                      {minutosParaHorasMinutos(movie.runtime)}
-                    </S.BoxRuntime>
-                  </S.BoxRuntimeAndGenres>
-                  <S.Tagline>
-                    <p>{movie.tagline}</p>
-                  </S.Tagline>
-                  <S.BoxOverview>
-                    <h2>Sinopse</h2>
-                    <p>{movie.overview}</p>
-                  </S.BoxOverview>
-                </S.BoxDes>
+                <S.BoxTitle>
+                  <h1>{movie.title || movie.name}</h1>
+                </S.BoxTitle>
+                <S.BoxRuntimeAndGenres>
+                  <S.BoxGenres>
+                    {movie.genres.map((genre) => (
+                      <span key={genre.id}>{genre.name}</span>
+                    ))}
+                  </S.BoxGenres>
+                  <S.BoxRuntime>
+                    {minutosParaHorasMinutos(movie.runtime)}
+                  </S.BoxRuntime>
+                </S.BoxRuntimeAndGenres>
+                <S.Tagline>
+                  <p>{movie.tagline}</p>
+                </S.Tagline>
+                <S.BoxOverview>
+                  <h2>Sinopse</h2>
+                  <p>{movie.overview}</p>
+                </S.BoxOverview>
                 <div>
                   <CastMovie />
                 </div>

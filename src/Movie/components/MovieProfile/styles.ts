@@ -6,10 +6,6 @@ export const Main = styled.main`
   background: #000000;
 `;
 
-export const BoxDes = styled.div`
-  padding-top: 1rem;
-`;
-
 export const Tagline = styled.div`
   padding: 1rem 0;
   font-size: 1.2rem;
@@ -22,7 +18,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  padding-top: 10rem;
+  padding-top: 13rem;
   justify-content: center;
   gap: 2rem;
   color: #fff;
@@ -41,7 +37,6 @@ export const BoxGenres = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 0.5rem;
 
   span {
     border: 1px solid #ced2ce;
