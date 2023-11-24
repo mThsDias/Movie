@@ -1,55 +1,82 @@
 import styled from "styled-components";
 
-export const ContainerProfile = styled.section`
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  color: #fff;
-  padding: 2rem 2.5rem;
-  background: #081c22;
+export const Main = styled.main`
+  width: 100%;
+  height: 100vh;
+  background: #000000;
 `;
 
-export const BoxTitleAndDate = styled.div`
+export const BoxDes = styled.div`
+  padding-top: 1rem;
+`;
+
+export const Tagline = styled.div`
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ced2ce;
+`;
+
+export const Container = styled.div`
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-top: 10rem;
+  justify-content: center;
+  gap: 2rem;
+  color: #fff;
+`;
+
+export const BoxTitle = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-
-  span {
-    color: #cac3c0;
-    font-weight: 600;
-  }
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 900px;
 `;
 
 export const BoxGenres = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
   margin-top: 0.5rem;
 
   span {
     border: 1px solid #ced2ce;
-    border-radius: 0.5rem;
-    padding: 0.2rem 0.5rem;
-    font-size: 0.95rem;
+    border-radius: 1rem;
+    padding: 0.3rem 2rem;
+    font-size: 1.2rem;
   }
 `;
 
 export const BoxRuntimeAndGenres = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 0.19rem;
   gap: 2rem;
-  font-size: 0.95rem;
 `;
 
 export const BoxRuntime = styled.div`
   display: flex;
-  align-items: center;
+  align-items: end;
   padding-top: 0.5rem;
-  gap: 0.2rem;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+`;
+
+export const BoxOverview = styled.div`
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  p {
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 700px;
+  }
 `;
 
 export const CircleContainer = styled.div`

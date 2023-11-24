@@ -7,6 +7,7 @@ export const BoxTrends = styled.div`
 
   h2 {
     margin-right: 1.8rem;
+    color: #fdfdfd;
   }
 `;
 
@@ -33,7 +34,7 @@ const particles = keyframes`
 export const Button = styled.button`
   position: relative;
   display: inline-block;
-  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+  background: #990000;
   color: white;
   font-family: "Segoe UI", sans-serif;
   font-weight: 500;
@@ -48,7 +49,7 @@ export const Button = styled.button`
   margin-left: 0.2rem;
 
   &:hover {
-    background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+    background: #ff0000;
     animation: ${particles} 1s ease-in-out infinite;
     transform: translateY(-2px);
   }
@@ -71,7 +72,7 @@ export const ContainerItem = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #dbdbdbdb;
+    background-color: #1c1c1c;
     border-radius: 4px;
   }
 `;
@@ -98,7 +99,6 @@ export const BoxItems = styled.div`
 export const BoxTitleAndDate = styled.div`
   white-space: normal;
   text-align: left;
-  color: #000;
   margin-top: 1.3rem;
   text-decoration: none;
   width: 100%;
@@ -106,6 +106,7 @@ export const BoxTitleAndDate = styled.div`
   line-height: 1.2rem;
 
   h2 {
+    color: #fdfdfd;
     font-size: 1em;
     cursor: pointer;
   }

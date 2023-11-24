@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "@/Hooks";
 import { useParams } from "next/navigation";
-import { Movie } from "../context/types";
+import { Cast } from "../context/types";
 
-export const useMovie = () => {
-  const [movie, setMovie] = useState<Movie[]>();
+export const useCast = () => {
+  const [cast, setCast] = useState<Cast[]>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   const { id } = useParams();
 
   const apiKey = "dcf6fe444e49bcbe4d8f215076000be9";
-  const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=pt-BR`;
+  const apiUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=pt-BR`;
   const { request } = useFetch(apiUrl, {
     method: "GET",
   });
@@ -26,7 +26,7 @@ export const useMovie = () => {
         });
 
         if (response?.ok) {
-          setMovie([json]);
+          setCast(json.cast);
         } else {
           throw new Error(json.message);
         }
@@ -40,5 +40,5 @@ export const useMovie = () => {
     fetchData();
   }, []);
 
-  return { movie, loading, error };
+  return { cast, loading, error };
 };

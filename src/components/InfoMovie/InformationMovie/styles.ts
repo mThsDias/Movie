@@ -16,14 +16,6 @@ export const RunTime = styled.p`
   }
 `;
 
-export const TagLine = styled.p`
-  padding: 1.5rem 0 1rem 0;
-
-  font-size: 1rem;
-  font-weight: 500;
-  color: #ced2ce;
-`;
-
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
