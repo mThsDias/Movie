@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import Image from "next/image";
 
 import { MovieContext } from "@/Movie/context/MovieContext";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 import * as S from "./styles";
+import { CastMovie } from "../Cast/CastMovie";
 
 export const ProfileComponent = () => {
   const { movie, error, loading } = useContext(MovieContext);
@@ -57,7 +57,6 @@ export const ProfileComponent = () => {
                       ))}
                     </S.BoxGenres>
                     <S.BoxRuntime>
-                      <AccessTimeIcon style={{ fontSize: "1.5rem" }} />
                       {minutosParaHorasMinutos(movie.runtime)}
                     </S.BoxRuntime>
                   </S.BoxRuntimeAndGenres>
@@ -69,6 +68,9 @@ export const ProfileComponent = () => {
                     <p>{movie.overview}</p>
                   </S.BoxOverview>
                 </S.BoxDes>
+                <div>
+                  <CastMovie />
+                </div>
               </div>
             </S.Container>
           </div>

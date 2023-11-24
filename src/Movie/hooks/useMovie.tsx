@@ -17,7 +17,7 @@ export const useMovie = () => {
   });
 
   useEffect(() => {
-    setLoading(loading);
+    setLoading(true);
 
     const fetchData = async () => {
       try {

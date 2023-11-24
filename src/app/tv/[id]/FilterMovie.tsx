@@ -13,7 +13,7 @@ export const FilterMovie = () => {
   };
 
   return (
-    <>
+    <div>
       <S.BoxFilter>
         <h3>Resultado da Busca</h3>
         <S.ContainerListFilter>
@@ -68,6 +68,6 @@ export const FilterMovie = () => {
         </S.ContainerListFilter>
       </S.BoxFilter>
       <CardResult selectedCategory={selectedCategory} />
-    </>
+    </div>
   );
 };

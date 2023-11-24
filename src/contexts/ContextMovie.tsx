@@ -82,7 +82,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
     try {
       if (!id) return;
       fetch(
-        `https://api.themoviedb.org/3/${type}/${id}/credits?api_key=${apiKey}&language=pt-br`
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=pt-br`
       )
         .then((response) => response.json())
         .then((data) => {

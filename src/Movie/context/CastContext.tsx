@@ -6,7 +6,7 @@ import { useCast } from "../hooks/useCast";
 
 export const CastContext = createContext({} as CastContextValue);
 
-export function MovieProvider({ children }: CastProviderProps) {
+export function CastProvider({ children }: CastProviderProps) {
   const { cast, error, loading } = useCast();
 
   return (

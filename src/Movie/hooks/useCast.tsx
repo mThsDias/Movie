@@ -11,13 +11,13 @@ export const useCast = () => {
   const { id } = useParams();
 
   const apiKey = "dcf6fe444e49bcbe4d8f215076000be9";
-  const apiUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=pt-BR`;
+  const apiUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}`;
   const { request } = useFetch(apiUrl, {
     method: "GET",
   });
 
   useEffect(() => {
-    setLoading(loading);
+    setLoading(true);
 
     const fetchData = async () => {
       try {

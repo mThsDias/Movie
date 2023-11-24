@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const BoxTrends = styled.div`
   display: flex;
@@ -8,26 +8,6 @@ export const BoxTrends = styled.div`
   h2 {
     margin-right: 1.8rem;
     color: #fdfdfd;
-  }
-`;
-
-const shimmer = keyframes`
-  0% {
-    background-position: left top;
-  }
-
-  100% {
-    background-position: right bottom;
-  }
-`;
-
-const particles = keyframes`
-  0% {
-    background-position: left top;
-  }
-
-  100% {
-    background-position: right bottom;
   }
 `;
 
@@ -44,13 +24,11 @@ export const Button = styled.button`
   padding: 6px 15px;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  animation: ${shimmer} 2s infinite;
   transition: all 0.3s ease-in-out;
   margin-left: 0.2rem;
 
   &:hover {
     background: #ff0000;
-    animation: ${particles} 1s ease-in-out infinite;
     transform: translateY(-2px);
   }
 
@@ -112,7 +90,7 @@ export const BoxTitleAndDate = styled.div`
   }
 
   p {
-    color: #666666;
+    color: #ccc;
     font-weight: 100;
     font-size: 1em;
     padding-top: 0.2rem;
