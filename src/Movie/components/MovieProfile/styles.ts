@@ -2,8 +2,19 @@ import styled from "styled-components";
 
 export const Main = styled.main`
   width: 100%;
-  height: 150vh;
+  height: 300vh;
   background: #000;
+`;
+
+export const Trailer = styled.div`
+  position: relative;
+  top: 80rem;
+  display: flex;
+  justify-content: center;
+
+  iframe {
+    border: none;
+  }
 `;
 
 export const Tagline = styled.div`

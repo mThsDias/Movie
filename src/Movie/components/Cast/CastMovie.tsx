@@ -24,7 +24,7 @@ export const CastMovie = () => {
                   src={`https://image.tmdb.org/t/p/original${c.profile_path}`}
                   alt={"Cast"}
                   width={150}
-                  height={210}
+                  height={225}
                   style={{ borderRadius: "10px" }}
                   priority
                 />

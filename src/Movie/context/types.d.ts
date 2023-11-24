@@ -53,7 +53,7 @@ export interface TrailerProviderProps {
 }
 
 export interface TrailerContextValue {
-  trailer: Trailer[] | undefined;
+  trailer: Trailer | undefined;
   loading: boolean;
   error: string | null;
 }
@@ -61,7 +61,6 @@ export interface TrailerContextValue {
 export interface Trailer {
   id: string;
   key: string;
-  name: string;
   site: string;
   type: string;
 }

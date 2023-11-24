@@ -30,7 +30,7 @@ export const TrendsWeek = () => {
                 src={`https://image.tmdb.org/t/p/original/${weekItem.poster_path}`}
                 alt={"Poster"}
                 width={150}
-                height={230}
+                height={225}
                 style={{ borderRadius: "10px" }}
                 priority
               />

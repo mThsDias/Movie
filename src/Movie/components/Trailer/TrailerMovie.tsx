@@ -1,9 +1,24 @@
-import React from "react";
+import { TrailerContext } from "@/Movie/context/TrailerContext";
+import React, { useContext } from "react";
 
 export const TrailerMovie = () => {
+  const { trailer, error, loading } = useContext(TrailerContext);
+  console.log({ trailer });
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>{error}</p>;
+
   return (
     <div>
-      <h1>Trailer</h1>
+      <iframe
+        width="1450"
+        height="800"
+        src={`https://www.youtube.com/embed/${trailer?.key}`}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { Trailer } from "../context/types";
 
 export const useTrailer = () => {
-  const [trailer, setTrailer] = useState<Trailer[]>();
+  const [trailer, setTrailer] = useState<Trailer>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,7 +26,12 @@ export const useTrailer = () => {
         });
 
         if (response?.ok) {
-          setTrailer(json.results);
+          setTrailer(
+            json.results.find(
+              (trailer: Trailer) =>
+                trailer.type === "Trailer" && trailer.site === "YouTube"
+            )
+          );
         } else {
           throw new Error(json.message);
         }

@@ -7,11 +7,10 @@ import { CastMovie } from "../Cast/CastMovie";
 import { BsClock } from "react-icons/bs";
 
 import * as S from "./styles";
+import { TrailerMovie } from "../Trailer/TrailerMovie";
 
 export const ProfileComponent = () => {
   const { movie, error, loading } = useContext(MovieContext);
-
-  console.log(movie);
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -44,7 +43,7 @@ export const ProfileComponent = () => {
               <Image
                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                 width={430}
-                height={640}
+                height={645}
                 style={{ borderRadius: "30px" }}
                 alt="poster"
                 priority
@@ -81,6 +80,9 @@ export const ProfileComponent = () => {
           </div>
         </section>
       ))}
+      <S.Trailer>
+        <TrailerMovie />
+      </S.Trailer>
     </S.Main>
   );
 };
