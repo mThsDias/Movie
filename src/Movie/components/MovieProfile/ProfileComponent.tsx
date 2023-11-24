@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
+
 import Image from "next/image";
 
 import { MovieContext } from "@/Movie/context/MovieContext";
+import { CastMovie } from "../Cast/CastMovie";
+import { BsClock } from "react-icons/bs";
 
 import * as S from "./styles";
-import { CastMovie } from "../Cast/CastMovie";
 
 export const ProfileComponent = () => {
   const { movie, error, loading } = useContext(MovieContext);
+
+  console.log(movie);
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -40,7 +44,7 @@ export const ProfileComponent = () => {
               <Image
                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                 width={430}
-                height={680}
+                height={640}
                 style={{ borderRadius: "30px" }}
                 alt="poster"
                 priority
@@ -55,13 +59,16 @@ export const ProfileComponent = () => {
                       <span key={genre.id}>{genre.name}</span>
                     ))}
                   </S.BoxGenres>
+                </S.BoxRuntimeAndGenres>
+                <S.BoxTaglineAndRuntime>
+                  <S.Tagline>
+                    <p>{movie.tagline}</p>
+                  </S.Tagline>
                   <S.BoxRuntime>
+                    <BsClock />
                     {minutosParaHorasMinutos(movie.runtime)}
                   </S.BoxRuntime>
-                </S.BoxRuntimeAndGenres>
-                <S.Tagline>
-                  <p>{movie.tagline}</p>
-                </S.Tagline>
+                </S.BoxTaglineAndRuntime>
                 <S.BoxOverview>
                   <h2>Sinopse</h2>
                   <p>{movie.overview}</p>

@@ -1,20 +1,21 @@
-import { CastContext } from "@/Movie/context/CastContext";
-import Image from "next/image";
 import React, { useContext } from "react";
+
+import Image from "next/image";
 import * as S from "./styles";
+
+import { CastContext } from "@/Movie/context/CastContext";
 
 export const CastMovie = () => {
   const { cast, error, loading } = useContext(CastContext);
-  console.log(cast);
 
   if (loading) return <p>Loading...</p>;
 
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <S.SectionCast>
       <h1>Elenco</h1>
-      <S.Teste>
+      <S.BoxCast>
         {cast &&
           cast.slice(0, 5).map((c) => (
             <div key={c.id}>
@@ -22,17 +23,18 @@ export const CastMovie = () => {
                 <Image
                   src={`https://image.tmdb.org/t/p/original${c.profile_path}`}
                   alt={"Cast"}
-                  width={140}
-                  height={200}
+                  width={150}
+                  height={210}
                   style={{ borderRadius: "10px" }}
                   priority
                 />
               </div>
-              <p>{c.name}</p>
-              <p>{c.character}</p>
+              <S.BoxCastP>
+                <p>{c.name}</p>
+              </S.BoxCastP>
             </div>
           ))}
-      </S.Teste>
-    </div>
+      </S.BoxCast>
+    </S.SectionCast>
   );
 };

@@ -24,25 +24,44 @@ export interface Movie {
   runtime: number;
 }
 
-interface Genres {
+export interface Genres {
   id: number;
   name: string;
 }
 
 // CastContext.tsx
-interface CastProviderProps {
+export interface CastProviderProps {
   children: ReactNode;
 }
 
-interface CastContextValue {
+export interface CastContextValue {
   cast: Cast[] | undefined;
   loading: boolean;
   error: string | null;
 }
 
-interface Cast {
+export interface Cast {
   id: number;
   name: string;
   character: string;
   profile_path: string;
+}
+
+// TrailerContext.tsx
+export interface TrailerProviderProps {
+  children: ReactNode;
+}
+
+export interface TrailerContextValue {
+  trailer: Trailer[] | undefined;
+  loading: boolean;
+  error: string | null;
+}
+
+export interface Trailer {
+  id: string;
+  key: string;
+  name: string;
+  site: string;
+  type: string;
 }
