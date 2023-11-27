@@ -6,17 +6,6 @@ export const Main = styled.main`
   background: #000;
 `;
 
-export const Trailer = styled.div`
-  position: relative;
-  top: 30rem;
-  display: flex;
-  justify-content: center;
-
-  iframe {
-    border: none;
-  }
-`;
-
 export const Tagline = styled.div`
   font-size: 1.5rem;
   font-weight: 500;
@@ -38,7 +27,7 @@ export const BoxTitle = styled.div`
   display: flex;
   align-items: center;
   font-size: 3.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
   width: 100%;
   max-width: 1020px;
 `;
@@ -56,15 +45,9 @@ export const BoxGenres = styled.div`
   }
 `;
 
-export const BoxRuntimeAndGenres = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-`;
-
 export const BoxRuntime = styled.div`
   display: flex;
-  align-items: center;
+  align-items: end;
   gap: 0.5rem;
   font-size: 1.2rem;
 
@@ -80,7 +63,7 @@ export const BoxOverview = styled.div`
   }
 
   p {
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     font-size: 1rem;
     line-height: 1.5rem;
     width: 700px;
@@ -91,5 +74,5 @@ export const BoxTaglineAndRuntime = styled.div`
   display: flex;
   align-items: center;
   gap: 4.7rem;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
 `;

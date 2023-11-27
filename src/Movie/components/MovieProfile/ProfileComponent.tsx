@@ -39,13 +39,11 @@ export const ProfileComponent = () => {
                 <S.BoxTitle>
                   <TitleComponent title={movie} />
                 </S.BoxTitle>
-                <S.BoxRuntimeAndGenres>
-                  <S.BoxGenres>
-                    {movie.genres.map((genre) => (
-                      <span key={genre.id}>{genre.name}</span>
-                    ))}
-                  </S.BoxGenres>
-                </S.BoxRuntimeAndGenres>
+                <S.BoxGenres>
+                  {movie.genres.map((genre) => (
+                    <span key={genre.id}>{genre.name}</span>
+                  ))}
+                </S.BoxGenres>
                 <S.BoxTaglineAndRuntime>
                   <S.Tagline>
                     <p>{movie.tagline}</p>
@@ -67,9 +65,7 @@ export const ProfileComponent = () => {
           </div>
         </section>
       ))}
-      <S.Trailer>
-        <TrailerMovie />
-      </S.Trailer>
+      <TrailerMovie />
     </S.Main>
   );
 };
