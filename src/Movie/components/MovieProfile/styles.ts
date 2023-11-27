@@ -6,12 +6,6 @@ export const Main = styled.main`
   background: #000;
 `;
 
-export const Tagline = styled.div`
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #ced2ce;
-`;
-
 export const Container = styled.div`
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1));
   width: 100%;
@@ -21,6 +15,12 @@ export const Container = styled.div`
   justify-content: center;
   gap: 2rem;
   color: #fff;
+`;
+
+export const Tagline = styled.div`
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ced2ce;
 `;
 
 export const BoxTitle = styled.div`
@@ -35,7 +35,7 @@ export const BoxTitle = styled.div`
 export const BoxGenres = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
 
   span {
     border: 1px solid #ced2ce;

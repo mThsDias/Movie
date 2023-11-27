@@ -5,9 +5,11 @@ import { CastMovie } from "../Cast/CastMovie";
 import { BsClock } from "react-icons/bs";
 import { formatTime } from "@/functions";
 import { TrailerMovie } from "../Trailer/TrailerMovie";
-import { ImageComponent, TitleComponent } from "@/components";
+import { ImageComponent } from "@/components/Image/ImageComponent";
+import { TitleComponent } from "@/components/Title/TitleComponent";
 
 import * as S from "./styles";
+import { EnhancedDetails } from "@/components/EnhancedDetails/EnhancedDetails";
 
 export const ProfileComponent = () => {
   const { movie, error, loading } = useContext(MovieContext);
@@ -66,6 +68,7 @@ export const ProfileComponent = () => {
         </section>
       ))}
       <TrailerMovie />
+      <EnhancedDetails />
     </S.Main>
   );
 };

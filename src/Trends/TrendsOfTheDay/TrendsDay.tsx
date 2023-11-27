@@ -6,7 +6,9 @@ import Link from "next/link";
 import { formatDate } from "@/functions";
 import { TrendsContext } from "../context/TrendsContext";
 import { OverViewComponent } from "@/components/OverView";
-import { DateComponent, ImageComponent, TitleComponent } from "@/components";
+import { DateComponent } from "@/components/Date";
+import { ImageComponent } from "@/components/Image";
+import { TitleComponent } from "@/components/Title";
 
 export const TrendsDay = () => {
   const { trendsDay, errorTrendsDay, loadingTrendsDay } =
