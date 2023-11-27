@@ -43,7 +43,9 @@ export const TrendsWeek = () => {
                 <h2>{weekItem.title || weekItem.name}</h2>
               </Link>
               <p>
-                {formatDate(weekItem.release_date || weekItem.first_air_date)}
+                {weekItem.release_date || weekItem.first_air_date
+                  ? formatDate(weekItem.release_date || weekItem.first_air_date)
+                  : "Data Indisponível"}
               </p>
             </S.BoxTitleAndDate>
           </S.BoxItems>

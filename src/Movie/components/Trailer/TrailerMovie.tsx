@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 
 export const TrailerMovie = () => {
   const { trailer, error, loading } = useContext(TrailerContext);
-  console.log({ trailer });
 
   if (loading) return <p>Loading...</p>;
 

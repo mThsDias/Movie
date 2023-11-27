@@ -8,7 +8,7 @@ export const Main = styled.main`
 
 export const Trailer = styled.div`
   position: relative;
-  top: 80rem;
+  top: 30rem;
   display: flex;
   justify-content: center;
 
