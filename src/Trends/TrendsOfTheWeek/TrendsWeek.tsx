@@ -29,7 +29,7 @@ export const TrendsWeek = () => {
           <S.BoxItems key={weekItem.id}>
             <S.BoxImageAndPercentage>
               <ImageComponent
-                img={weekItem}
+                img={weekItem.poster_path}
                 w={150}
                 h={225}
                 borderRadius={10}
@@ -45,7 +45,10 @@ export const TrendsWeek = () => {
                 </h2>
               </Link>
               <p>
-                <DateComponent date={weekItem} formatDate={formatDate} />
+                <DateComponent
+                  date={weekItem.first_air_date || weekItem.release_date}
+                  formatDate={formatDate}
+                />
               </p>
             </S.BoxTitleAndDate>
           </S.BoxItems>

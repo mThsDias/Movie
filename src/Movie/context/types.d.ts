@@ -22,6 +22,18 @@ export interface Movie {
   tagline: string;
   genres: Genres[];
   runtime: number;
+  budget: number;
+  revenue: number;
+  production_companies: ProductionCompanies[];
+  homepage: string;
+  status: string;
+}
+
+export interface ProductionCompanies {
+  id: number;
+  name: string;
+  logo_path: string;
+  origin_country: string;
 }
 
 export interface Genres {

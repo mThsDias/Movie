@@ -28,7 +28,12 @@ export const TrendsDay = () => {
         {trendsDay?.map((dayItem) => (
           <S.BoxItems key={dayItem.id}>
             <S.BoxImageAndPercentage>
-              <ImageComponent img={dayItem} w={150} h={225} borderRadius={10} />
+              <ImageComponent
+                img={dayItem.poster_path}
+                w={150}
+                h={225}
+                borderRadius={10}
+              />
               <span>
                 <OverViewComponent voteAverage={dayItem.vote_average} />
               </span>
@@ -40,7 +45,10 @@ export const TrendsDay = () => {
                 </h2>
               </Link>
               <p>
-                <DateComponent date={dayItem} formatDate={formatDate} />
+                <DateComponent
+                  date={dayItem.first_air_date || dayItem.release_date}
+                  formatDate={formatDate}
+                />
               </p>
             </S.BoxTitleAndDate>
           </S.BoxItems>

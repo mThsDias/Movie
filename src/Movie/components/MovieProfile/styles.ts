@@ -45,17 +45,6 @@ export const BoxGenres = styled.div`
   }
 `;
 
-export const BoxRuntime = styled.div`
-  display: flex;
-  align-items: end;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-
-  svg {
-    font-size: 1.2rem;
-  }
-`;
-
 export const BoxOverview = styled.div`
   h2 {
     font-size: 1.5rem;

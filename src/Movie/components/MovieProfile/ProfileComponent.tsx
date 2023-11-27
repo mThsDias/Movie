@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 
 import { MovieContext } from "@/Movie/context/MovieContext";
 import { CastMovie } from "../Cast/CastMovie";
-import { BsClock } from "react-icons/bs";
-import { formatTime } from "@/functions";
 import { TrailerMovie } from "../Trailer/TrailerMovie";
 import { ImageComponent } from "@/components/Image/ImageComponent";
 import { TitleComponent } from "@/components/Title/TitleComponent";
@@ -36,7 +34,12 @@ export const ProfileComponent = () => {
             }}
           >
             <S.Container>
-              <ImageComponent img={movie} w={430} h={645} borderRadius={15} />
+              <ImageComponent
+                img={movie.poster_path}
+                w={430}
+                h={645}
+                borderRadius={15}
+              />
               <div>
                 <S.BoxTitle>
                   <TitleComponent title={movie} />
@@ -50,10 +53,6 @@ export const ProfileComponent = () => {
                   <S.Tagline>
                     <p>{movie.tagline}</p>
                   </S.Tagline>
-                  <S.BoxRuntime>
-                    <BsClock />
-                    <span>{formatTime(movie.runtime)}</span>
-                  </S.BoxRuntime>
                 </S.BoxTaglineAndRuntime>
                 <S.BoxOverview>
                   <h2>Sinopse</h2>
