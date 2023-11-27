@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 
-import Image from "next/image";
-
 import { MovieContext } from "@/Movie/context/MovieContext";
 import { CastMovie } from "../Cast/CastMovie";
 import { BsClock } from "react-icons/bs";
+import { formatTime } from "@/functions";
+import { TrailerMovie } from "../Trailer/TrailerMovie";
+import { ImageComponent, TitleComponent } from "@/components";
 
 import * as S from "./styles";
-import { TrailerMovie } from "../Trailer/TrailerMovie";
 
 export const ProfileComponent = () => {
   const { movie, error, loading } = useContext(MovieContext);
@@ -18,12 +18,6 @@ export const ProfileComponent = () => {
 
   if (error) {
     return <h1>Error: {error}</h1>;
-  }
-
-  function minutosParaHorasMinutos(minutos: number) {
-    const horas = Math.floor(minutos / 60);
-    const minutosRestantes = minutos % 60;
-    return `${horas}h ${minutosRestantes}min`;
   }
 
   return (
@@ -40,17 +34,10 @@ export const ProfileComponent = () => {
             }}
           >
             <S.Container>
-              <Image
-                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                width={430}
-                height={645}
-                style={{ borderRadius: "30px" }}
-                alt="poster"
-                priority
-              />
+              <ImageComponent img={movie} w={430} h={645} borderRadius={15} />
               <div>
                 <S.BoxTitle>
-                  <h1>{movie.title || movie.name}</h1>
+                  <TitleComponent title={movie} />
                 </S.BoxTitle>
                 <S.BoxRuntimeAndGenres>
                   <S.BoxGenres>
@@ -65,7 +52,7 @@ export const ProfileComponent = () => {
                   </S.Tagline>
                   <S.BoxRuntime>
                     <BsClock />
-                    {minutosParaHorasMinutos(movie.runtime)}
+                    <span>{formatTime(movie.runtime)}</span>
                   </S.BoxRuntime>
                 </S.BoxTaglineAndRuntime>
                 <S.BoxOverview>

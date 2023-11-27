@@ -6,7 +6,7 @@ import Link from "next/link";
 import { formatDate } from "@/functions";
 import { TrendsContext } from "../context/TrendsContext";
 import { OverViewComponent } from "@/components/OverView";
-import { ImageComponent } from "@/components";
+import { DateComponent, ImageComponent, TitleComponent } from "@/components";
 
 export const TrendsDay = () => {
   const { trendsDay, errorTrendsDay, loadingTrendsDay } =
@@ -33,12 +33,12 @@ export const TrendsDay = () => {
             </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
               <Link href={`/movies/${dayItem.id}`}>
-                <h2>{dayItem.title || dayItem.name}</h2>
+                <h2>
+                  <TitleComponent title={dayItem} />
+                </h2>
               </Link>
               <p>
-                {dayItem.release_date || dayItem.first_air_date
-                  ? formatDate(dayItem.release_date || dayItem.first_air_date)
-                  : "Data Indisponível"}
+                <DateComponent date={dayItem} formatDate={formatDate} />
               </p>
             </S.BoxTitleAndDate>
           </S.BoxItems>

@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 
 import * as S from "../styles";
-import Image from "next/image";
 import Link from "next/link";
 
 import { formatDate } from "@/functions";
 import { TrendsContext } from "../context/TrendsContext";
 import { OverViewComponent } from "@/components/OverView";
+import { ImageComponent, TitleComponent } from "@/components";
+import { DateComponent } from "@/components";
 
 export const TrendsWeek = () => {
   const { trendsWeek, loadingTrendsWeek, errorTrendsWeek } =
@@ -26,13 +27,11 @@ export const TrendsWeek = () => {
         {trendsWeek?.map((weekItem) => (
           <S.BoxItems key={weekItem.id}>
             <S.BoxImageAndPercentage>
-              <Image
-                src={`https://image.tmdb.org/t/p/original/${weekItem.poster_path}`}
-                alt={"Poster"}
-                width={150}
-                height={225}
-                style={{ borderRadius: "10px" }}
-                priority
+              <ImageComponent
+                img={weekItem}
+                w={150}
+                h={225}
+                borderRadius={10}
               />
               <span>
                 <OverViewComponent voteAverage={weekItem.vote_average} />
@@ -40,12 +39,10 @@ export const TrendsWeek = () => {
             </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
               <Link href={`/movies/${weekItem.id}`}>
-                <h2>{weekItem.title || weekItem.name}</h2>
+                <TitleComponent title={weekItem.title} />
               </Link>
               <p>
-                {weekItem.release_date || weekItem.first_air_date
-                  ? formatDate(weekItem.release_date || weekItem.first_air_date)
-                  : "Data Indisponível"}
+                <DateComponent date={weekItem} formatDate={formatDate} />
               </p>
             </S.BoxTitleAndDate>
           </S.BoxItems>
