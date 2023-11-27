@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import * as S from "./styles";
 import { formatCash } from "@/functions";
+import { formatTime } from "@/functions";
 import { MovieContext } from "@/Movie/context/MovieContext";
 import { ProductionCompanies } from "./ProductionCompanies";
 
@@ -11,6 +12,9 @@ export const EnhancedDetails = () => {
 
   return (
     <S.ContainerDetails>
+      <div>
+        <h1>Informações</h1>
+      </div>
       <S.BoxDetails>
         {movie?.map((movie, index) => (
           <section key={index}>
@@ -30,7 +34,7 @@ export const EnhancedDetails = () => {
             </p>
             <p>
               <strong>Duração:</strong>
-              {movie.runtime} minutos
+              {formatTime(movie.runtime)}
             </p>
             <div>
               <ProductionCompanies
