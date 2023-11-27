@@ -40,7 +40,9 @@ export const TrendsWeek = () => {
             </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
               <Link href={`/movies/${weekItem.id}`}>
-                <TitleComponent title={weekItem.title} />
+                <h2>
+                  <TitleComponent title={weekItem} />
+                </h2>
               </Link>
               <p>
                 <DateComponent date={weekItem} formatDate={formatDate} />

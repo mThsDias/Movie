@@ -1,0 +1,1 @@
+export { EnhancedDetails } from "./EnhancedDetails";

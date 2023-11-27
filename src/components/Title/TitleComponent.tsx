@@ -9,7 +9,7 @@ interface TitleProps {
 
 export const TitleComponent = ({ title }: TitleProps) => {
   const typeTitle =
-    typeof title === "string" ? title : title.title || title.name;
+    typeof title === "string" ? title : title?.title || title?.name;
 
   return <>{typeTitle}</>;
 };
