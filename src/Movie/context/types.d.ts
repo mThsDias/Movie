@@ -76,3 +76,34 @@ export interface Trailer {
   site: string;
   type: string;
 }
+
+// SimilarContext.tsx
+export interface SimilarProviderProps {
+  children: ReactNode;
+}
+
+export interface SimilarContextValue {
+  similar: Similar[] | undefined;
+  loading: boolean;
+  error: string | null;
+}
+
+export interface Similar {
+  id: number;
+  title: string;
+  name: string;
+  poster_path: string;
+  backdrop_path: string;
+  vote_average: number;
+  overview: string;
+  release_date: string;
+  first_air_date: string;
+  tagline: string;
+  genres: Genres[];
+  runtime: number;
+  budget: number;
+  revenue: number;
+  production_companies: ProductionCompanies[];
+  homepage: string;
+  status: string;
+}

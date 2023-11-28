@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 
 import { MovieContext } from "@/Movie/context/MovieContext";
 import { ProfileComponent } from "./ProfileComponent";
+import { Footer } from "@/components/Footer";
 
 export const MovieProfile = () => {
   const { movie, error, loading } = useContext(MovieContext);
@@ -20,5 +21,12 @@ export const MovieProfile = () => {
     return <h1>Error: {error}</h1>;
   }
 
-  return <div>{movies ? <ProfileComponent /> : <h1>Movie not found</h1>}</div>;
+  return (
+    <>
+      <main>{movies ? <ProfileComponent /> : <h1>Movie not found</h1>}</main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
+  );
 };

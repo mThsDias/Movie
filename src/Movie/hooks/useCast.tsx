@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { Cast } from "../context/types";
 
 export const useCast = () => {
-  const [cast, setCast] = useState<Cast>();
+  const [cast, setCast] = useState<Cast[]>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 

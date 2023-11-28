@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.main`
   width: 100%;
-  height: 300vh;
+  height: 230vh;
   background: #000;
 `;
 
