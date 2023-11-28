@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import { MovieContext } from "@/Movie/context/MovieContext";
 import { ProfileComponent } from "./ProfileComponent";
 import { Footer } from "@/components/Footer";
+import { NavBar } from "@/components/NavBar";
 
 export const MovieProfile = () => {
   const { movie, error, loading } = useContext(MovieContext);
@@ -23,6 +24,9 @@ export const MovieProfile = () => {
 
   return (
     <>
+      <header>
+        <NavBar />
+      </header>
       <main>{movies ? <ProfileComponent /> : <h1>Movie not found</h1>}</main>
       <footer>
         <Footer />

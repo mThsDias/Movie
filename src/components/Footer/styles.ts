@@ -19,7 +19,7 @@ export const BoxFooter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: 7.5rem;
 
   li {
     list-style: none;
