@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 
-import * as S from "./styles";
-import { TrailerContext } from "@/Movie/context/TrailerContext";
+import * as S from "../../../Movie/components/Trailer/styles";
+import { TrailerTvContext } from "../../context/TrailerTvContext";
 
-export const TrailerMovie = () => {
-  const { trailer, error, loading } = useContext(TrailerContext);
-  console.log(trailer);
+export const TrailerTv = () => {
+  const { trailerTv, error, loading } = useContext(TrailerTvContext);
 
   if (loading) return <p>Loading...</p>;
 
@@ -18,7 +17,7 @@ export const TrailerMovie = () => {
         <iframe
           width="1450"
           height="800"
-          src={`https://www.youtube.com/embed/${trailer?.key}`}
+          src={`https://www.youtube.com/embed/${trailerTv?.key}`}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

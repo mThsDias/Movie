@@ -2,6 +2,7 @@ import React from "react";
 
 import * as S from "./styles";
 import icon from "../../assets/icon.png";
+import Link from "next/link";
 
 export const NavBar = () => {
   return (
@@ -17,7 +18,9 @@ export const NavBar = () => {
         </S.BoxLogo>
         <S.HeaderNav>
           <ul>
-            <li>Home</li>
+            <Link href="/">
+              <li>Home</li>
+            </Link>
             <li>Movies</li>
             <li>Series</li>
             <li>My List</li>

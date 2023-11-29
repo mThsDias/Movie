@@ -1,15 +1,15 @@
-// MovieContext.tsx
-export interface MovieProviderProps {
+// TvContext.tsx
+export interface TvProviderProps {
   children: ReactNode;
 }
 
-export interface MovieContextValue {
-  movie: Movie[] | undefined;
+export interface TvContextValue {
+  tv: Tv[] | undefined;
   loading: boolean;
   error: string | null;
 }
 
-export interface Movie {
+export interface Tv {
   id: number;
   title: string;
   name: string;
@@ -42,17 +42,17 @@ export interface Genres {
 }
 
 // CastContext.tsx
-export interface CastProviderProps {
+export interface CastTvProviderProps {
   children: ReactNode;
 }
 
-export interface CastContextValue {
-  cast: Cast[] | undefined;
+export interface CastTvContextValue {
+  castTv: CastTv[] | undefined;
   loading: boolean;
   error: string | null;
 }
 
-export interface Cast {
+export interface CastTv {
   id: number;
   name: string;
   character: string;
@@ -60,30 +60,19 @@ export interface Cast {
 }
 
 // TrailerContext.tsx
-export interface TrailerProviderProps {
+export interface TrailerTvProviderProps {
   children: ReactNode;
 }
 
-export interface TrailerContextValue {
-  trailer: Trailer | undefined;
+export interface TrailerTvContextValue {
+  trailerTv: TrailerTv | undefined;
   loading: boolean;
   error: string | null;
 }
 
-export interface Trailer {
+export interface TrailerTv {
   id: string;
   key: string;
   site: string;
   type: string;
-}
-
-// SimilarContext.tsx
-export interface SimilarProviderProps {
-  children: ReactNode;
-}
-
-export interface SimilarContextValue {
-  similar: Similar[] | undefined;
-  loading: boolean;
-  error: string | null;
 }

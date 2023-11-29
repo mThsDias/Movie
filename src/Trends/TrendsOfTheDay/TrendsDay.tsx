@@ -4,6 +4,7 @@ import * as S from "../styles";
 import Link from "next/link";
 
 import { formatDate } from "@/functions";
+import { generateLink } from "@/functions/generateLink";
 import { TrendsContext } from "../context/TrendsContext";
 import { OverViewComponent } from "@/components/OverView";
 import { DateComponent } from "@/components/Date";
@@ -39,7 +40,7 @@ export const TrendsDay = () => {
               </span>
             </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
-              <Link href={`/movies/${dayItem.id}`}>
+              <Link href={generateLink(dayItem.id, dayItem.media_type)}>
                 <h2>
                   <TitleComponent title={dayItem} />
                 </h2>

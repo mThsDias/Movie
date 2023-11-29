@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerTrailer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 30rem;
+  margin-top: 38rem;
   color: #fff;
 
   div {

@@ -32,6 +32,16 @@ export const HeaderNav = styled.nav`
     position: relative;
     font-size: 1.7rem;
     color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      color: #cc0000;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
   }
 `;
 

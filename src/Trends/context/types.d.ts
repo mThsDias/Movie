@@ -20,4 +20,5 @@ export interface Trends {
   overview: string;
   release_date: string;
   first_air_date: string;
+  media_type: string;
 }
