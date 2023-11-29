@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const Main = styled.main`
   width: 100%;
   height: 230vh;
-  background: #000;
+  background: #0f0f0f;
 `;
 
 export const Container = styled.div`
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1));
+  background: linear-gradient(to bottom, transparent, #0f0f0f);
   width: 100%;
   height: 100%;
   display: flex;

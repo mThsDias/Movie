@@ -25,7 +25,7 @@ export const Button = styled.button`
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
-  margin-left: 0.2rem;
+  margin-left: 0.5rem;
 
   &:hover {
     background: #ff0000;
