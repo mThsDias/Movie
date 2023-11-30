@@ -9,10 +9,11 @@ body {
   &::-webkit-scrollbar {
     height: 7px;
     width: 7px;
+    background: #1c1c1c;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #dbdbdbdb;
+    background-color: #0f0f0f;
     border-radius: 10px;
   }
 }

@@ -35,8 +35,8 @@ export const ComponentOnePiece = () => {
               <p>{item.overview}</p>
             </div>
             <S.Button>
-              <button>Assistir Agora</button>
-              <button>Mais Informações</button>
+              <span>Assistir Agora</span>
+              <span>Assistar Trailer</span>
             </S.Button>
           </S.BoxDescription>
           <ImageComponent

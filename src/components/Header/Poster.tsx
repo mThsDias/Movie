@@ -36,7 +36,7 @@ export const Poster = () => {
               : "",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "92vh",
+          height: "96vh",
           boxShadow: "inset -10000px 0 20px rgba(0, 0, 0, 0.6)",
         }}
       >
