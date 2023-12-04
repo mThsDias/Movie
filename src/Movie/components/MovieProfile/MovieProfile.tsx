@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { MovieContext } from "@/Movie/context/MovieContext";
 import { ProfileComponent } from "./ProfileComponent";
 import { Footer } from "@/components/Footer";
-import { NavBar } from "@/components/NavBar";
+import { NavBar } from "@/components/Header/NavBar";
 
 export const MovieProfile = () => {
   const { movie, error, loading } = useContext(MovieContext);

@@ -11,7 +11,7 @@ export const useTrailerTv = () => {
   const { id } = useParams();
 
   const apiKey = "dcf6fe444e49bcbe4d8f215076000be9";
-  const apiUrl = `https://api.themoviedb.org/3/tv/${id}/season/1/videos?api_key=${apiKey}`;
+  const apiUrl = `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${apiKey}`;
   const { request } = useFetch(apiUrl, {
     method: "GET",
   });

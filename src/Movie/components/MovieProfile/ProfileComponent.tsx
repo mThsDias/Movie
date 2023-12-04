@@ -10,6 +10,7 @@ import * as S from "./styles";
 
 export const ProfileComponent = () => {
   const { movie, error, loading } = useContext(MovieContext);
+  console.log({ movie });
 
   if (loading) {
     return <h1>Loading...</h1>;

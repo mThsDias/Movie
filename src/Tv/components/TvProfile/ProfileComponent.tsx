@@ -10,6 +10,7 @@ import { TvContext } from "@/Tv/context/TvContext";
 
 export const ProfileComponent = () => {
   const { tv, error, loading } = useContext(TvContext);
+  console.log({ tv });
 
   if (loading) {
     return <h1>Loading...</h1>;

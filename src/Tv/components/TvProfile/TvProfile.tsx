@@ -2,7 +2,7 @@ import { useParams } from "next/navigation";
 import React, { useContext } from "react";
 
 import { Footer } from "@/components/Footer";
-import { NavBar } from "@/components/NavBar";
+import { NavBar } from "@/components/Header/NavBar";
 import { ProfileComponent } from "./ProfileComponent";
 import { TvContext } from "@/Tv/context/TvContext";
 

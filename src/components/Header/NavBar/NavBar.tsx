@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as S from "./styles";
-import icon from "../../assets/icon.png";
+import icon from "../../../assets/icon.png";
 import Link from "next/link";
 
 export const NavBar = () => {

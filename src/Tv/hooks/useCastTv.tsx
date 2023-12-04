@@ -11,7 +11,7 @@ export const useCastTv = () => {
   const { id } = useParams();
 
   const apiKey = "dcf6fe444e49bcbe4d8f215076000be9";
-  const apiUrl = `https://api.themoviedb.org/3/tv/${id}/credits?api_key=${apiKey}`;
+  const apiUrl = `https://api.themoviedb.org/3/tv/${id}/credits?api_key=${apiKey}&language=pt-BR`;
   const { request } = useFetch(apiUrl, {
     method: "GET",
   });

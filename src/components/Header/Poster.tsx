@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import * as S from "./styles";
-import { NavBar } from "../NavBar";
+import { NavBar } from "./NavBar";
 import { ComponentOnePiece } from "./ComponentOnePiece";
 
 interface PosterData {
-  file_path: string; // Adicione outras propriedades, se necessário
+  file_path: string;
   posters: PosterData[];
 }
 
@@ -36,7 +36,7 @@ export const Poster = () => {
               : "",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "96vh",
+          height: "100vh",
           boxShadow: "inset -10000px 0 20px rgba(0, 0, 0, 0.6)",
         }}
       >

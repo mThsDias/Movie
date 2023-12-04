@@ -50,9 +50,14 @@ export const Box = styled.div`
 
 export const Button = styled.button`
   display: flex;
+  align-items: center;
   gap: 1rem;
   background: transparent;
   border: none;
+
+  a {
+    text-decoration: none;
+  }
 
   span {
     border: 3px solid #fff;
