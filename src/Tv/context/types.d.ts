@@ -76,3 +76,14 @@ export interface TrailerTv {
   site: string;
   type: string;
 }
+
+// PopularTvContext.tsx
+export interface PopularTvProviderProps {
+  children: ReactNode;
+}
+
+export interface PopularTvContextValue {
+  popularTv: PopularTv[] | undefined;
+  loading: boolean;
+  error: string | null;
+}

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const BoxTrends = styled.div`
+export const BoxPopular = styled.div`
   display: flex;
   align-items: center;
-  margin: 2.5rem 0 0 1rem;
+  margin: 20rem 0 0 1rem;
 
   h2 {
     margin-right: 1.8rem;
@@ -11,38 +11,13 @@ export const BoxTrends = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  position: relative;
-  display: inline-block;
-  background: #990000;
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border: none;
-  border-radius: 30px;
-  padding: 6px 15px;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  margin-left: 0.5rem;
-
-  &:hover {
-    background: #ff0000;
-    transform: translateY(-2px);
-  }
-
-  &:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-`;
-
-export const ContainerItem = styled.div`
+export const ContainerPopular = styled.div`
   display: flex;
   flex-wrap: nowrap;
   overflow-y: hidden;
   backdrop-filter: blur(1px);
   padding: 1.2rem;
+  margin-bottom: 50rem;
 
   &::-webkit-scrollbar {
     height: 9px;
@@ -54,7 +29,7 @@ export const ContainerItem = styled.div`
   }
 `;
 
-export const BoxItems = styled.div`
+export const BoxPopularItems = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,6 +45,22 @@ export const BoxItems = styled.div`
 
   &:hover {
     opacity: 1;
+  }
+`;
+
+export const BoxImageAndPercentage = styled.div`
+  position: relative;
+  margin-bottom: 0.2rem;
+
+  span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    padding: 0.2rem;
+    top: 90.5%;
+    left: 5%;
+    border-radius: 50%;
+    background: #081c22;
   }
 `;
 
@@ -100,18 +91,28 @@ export const BoxTitleAndDate = styled.div`
   }
 `;
 
-export const BoxImageAndPercentage = styled.div`
+export const Button = styled.button`
   position: relative;
-  margin-bottom: 0.2rem;
+  display: inline-block;
+  background: #990000;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 30px;
+  padding: 6px 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  margin-left: 0.5rem;
 
-  span {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    padding: 0.2rem;
-    top: 90.5%;
-    left: 5%;
-    border-radius: 50%;
-    background: #081c22;
+  &:hover {
+    background: #ff0000;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
 `;

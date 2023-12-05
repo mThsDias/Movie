@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { TrendsDay } from "./TrendsOfTheDay/TrendsDay";
 import { TrendsWeek } from "./TrendsOfTheWeek/TrendsWeek";
@@ -7,7 +7,7 @@ import { TrendingsProvider } from "./context/TrendsContext";
 import * as S from "./styles";
 
 export const Trends = () => {
-  const [showTrends, setShowTrends] = React.useState(true);
+  const [showTrends, setShowTrends] = useState(true);
 
   const handleShowDay = () => {
     setShowTrends(true);

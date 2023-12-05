@@ -4,7 +4,6 @@ import React from "react";
 import * as S from "./styles";
 import { Trends } from "@/Trends";
 import { Poster } from "@/components/Header";
-import { PopularProvider } from "@/Movie/context/PopularContext";
 import { Popular } from "@/Movie/components/Popular/Popular";
 import { Footer } from "@/components/Footer";
 
@@ -14,9 +13,7 @@ export default function Home() {
       <Poster />
       <S.Container>
         <Trends />
-        <PopularProvider>
-          <Popular />
-        </PopularProvider>
+        <Popular />
       </S.Container>
       <Footer />
     </main>

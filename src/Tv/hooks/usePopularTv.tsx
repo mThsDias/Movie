@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "@/Hooks";
-import { Movie } from "../context/types";
+import { Tv } from "../context/types";
 
-export const usePopular = () => {
-  const [popular, setPopular] = useState<Movie[]>([]);
+export const usePopularTv = () => {
+  const [popularTv, setPopularTv] = useState<Tv[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   const apiKey = "dcf6fe444e49bcbe4d8f215076000be9";
-  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR`;
+  const apiUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=pt-BR`;
   const { request } = useFetch(apiUrl, {
     method: "GET",
   });
@@ -23,7 +23,7 @@ export const usePopular = () => {
         });
 
         if (response?.ok) {
-          setPopular(json.results);
+          setPopularTv(json.results);
         } else {
           throw new Error(json.message);
         }
@@ -37,5 +37,5 @@ export const usePopular = () => {
     fetchData();
   }, []);
 
-  return { popular, loading, error };
+  return { popularTv, loading, error };
 };
