@@ -77,13 +77,13 @@ export interface Trailer {
   type: string;
 }
 
-// SimilarContext.tsx
-export interface SimilarProviderProps {
+// PopularContext.tsx
+export interface PopularProviderProps {
   children: ReactNode;
 }
 
-export interface SimilarContextValue {
-  similar: Similar[] | undefined;
+export interface PopularContextValue {
+  popular: Popular[] | undefined;
   loading: boolean;
   error: string | null;
 }

@@ -10,7 +10,9 @@ export const Modal = ({ onCLose, children }: ModalProps) => {
   return (
     <S.ModalOverlay>
       <S.Modal>
-        <button onClick={onCLose}>Fechar</button>
+        <span style={{ color: "black" }} onClick={onCLose}>
+          Fechar
+        </span>
         {children}
       </S.Modal>
     </S.ModalOverlay>

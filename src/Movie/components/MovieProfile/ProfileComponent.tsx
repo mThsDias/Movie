@@ -45,7 +45,7 @@ export const ProfileComponent = () => {
                   <TitleComponent title={movie} />
                 </S.BoxTitle>
                 <S.BoxGenres>
-                  {movie.genres.map((genre) => (
+                  {movie?.genres?.map((genre) => (
                     <span key={genre.id}>{genre.name}</span>
                   ))}
                 </S.BoxGenres>
