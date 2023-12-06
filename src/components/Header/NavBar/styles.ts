@@ -8,7 +8,7 @@ export const Header = styled.header`
   z-index: 99;
   margin-top: 2rem;
 
-  ul {
+  ol {
     display: flex;
     gap: 2rem;
     list-style: none;
@@ -22,7 +22,7 @@ export const HeaderWrap = styled.header`
   padding: 0 5rem;
 `;
 
-export const HeaderNav = styled.nav`
+export const HeaderNav = styled.menu`
   display: flex;
   align-items: center;
 
@@ -33,15 +33,15 @@ export const HeaderNav = styled.nav`
     font-size: 1.7rem;
     color: #fff;
     cursor: pointer;
-
-    &:hover {
-      color: #cc0000;
-    }
   }
 
   a {
     color: #fff;
     text-decoration: none;
+
+    &:hover {
+      color: #cc0000;
+    }
   }
 `;
 

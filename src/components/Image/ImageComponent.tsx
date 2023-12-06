@@ -12,12 +12,12 @@ export const ImageComponent = ({ img, w, h, borderRadius }: ImageProps) => {
   return (
     <>
       <Image
-        src={`https://image.tmdb.org/t/p/original/${img}`}
+        src={`https://image.tmdb.org/t/p/w500/${img}`}
         alt="Poster"
         width={w || 150}
-        height={h || 255}
+        height={h || 230}
         style={{ borderRadius: borderRadius }}
-        priority
+        loading="eager"
       />
     </>
   );

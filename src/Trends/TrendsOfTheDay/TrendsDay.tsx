@@ -29,18 +29,16 @@ export const TrendsDay = () => {
         {trendsDay?.map((dayItem) => (
           <S.BoxItems key={dayItem.id}>
             <S.BoxImageAndPercentage>
-              <ImageComponent
-                img={dayItem.poster_path}
-                w={150}
-                h={225}
-                borderRadius={10}
-              />
+              <ImageComponent img={dayItem.poster_path} borderRadius={10} />
               <span>
                 <OverViewComponent voteAverage={dayItem.vote_average} />
               </span>
             </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
-              <Link href={generateLink(dayItem.id, dayItem.media_type)}>
+              <Link
+                rel="preconnect"
+                href={generateLink(dayItem.id, dayItem.media_type)}
+              >
                 <h2>
                   <TitleComponent title={dayItem} />
                 </h2>

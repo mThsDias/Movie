@@ -39,6 +39,8 @@ export const Button = styled.button`
 
 export const ContainerItem = styled.div`
   display: flex;
+  width: 100%;
+  max-width: 1370px;
   flex-wrap: nowrap;
   overflow-y: hidden;
   backdrop-filter: blur(1px);
@@ -59,6 +61,7 @@ export const BoxItems = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: 350px;
   margin-right: 20px;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;

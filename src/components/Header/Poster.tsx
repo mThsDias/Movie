@@ -26,20 +26,20 @@ export const Poster = () => {
       .catch((error) => console.error("Erro na requisição:", error));
   }, []);
 
+  const mainStyle = {
+    backgroundImage:
+      poster.length > 0
+        ? `url(https://image.tmdb.org/t/p/original${poster[0].file_path})`
+        : "",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "100vh",
+    boxShadow: "inset 10000px 0 0px rgba(0, 0, 0, 0.6)",
+  };
+
   return (
     <S.Main>
-      <div
-        style={{
-          backgroundImage:
-            poster.length > 0
-              ? `url(https://image.tmdb.org/t/p/original${poster[0].file_path})`
-              : "",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "100vh",
-          boxShadow: "inset -10000px 0 20px rgba(0, 0, 0, 0.6)",
-        }}
-      >
+      <div style={mainStyle}>
         <S.blur>
           <NavBar />
         </S.blur>

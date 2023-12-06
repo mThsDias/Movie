@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BoxPopular = styled.div`
   display: flex;
   align-items: center;
-  margin: 20rem 0 0 1rem;
+  margin: 5rem 0 0 1rem;
 
   h2 {
     margin-right: 1.8rem;
@@ -14,6 +14,8 @@ export const BoxPopular = styled.div`
 export const ContainerPopular = styled.div`
   display: flex;
   flex-wrap: nowrap;
+  width: 100%;
+  max-width: 1370px;
   overflow-y: hidden;
   backdrop-filter: blur(1px);
   padding: 1.2rem;

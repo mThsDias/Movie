@@ -3,28 +3,27 @@ import React from "react";
 import * as S from "./styles";
 import icon from "../../../assets/icon.png";
 import Link from "next/link";
+import Image from "next/image";
 
 export const NavBar = () => {
   return (
     <S.Header>
       <S.HeaderWrap>
         <S.BoxLogo>
-          <img
-            src={icon.src}
-            alt="logo"
-            style={{ width: "40px", height: "40px" }}
-          />
+          <Image src={icon} alt="logo" width={40} height={40} />
           <span>GO Movies</span>
         </S.BoxLogo>
         <S.HeaderNav>
-          <ul>
-            <Link href="/">
-              <li>Home</li>
-            </Link>
+          <ol>
+            <li>
+              <Link rel="preconnect" href={"/"}>
+                Home
+              </Link>
+            </li>
             <li>Movies</li>
             <li>Series</li>
             <li>My List</li>
-          </ul>
+          </ol>
         </S.HeaderNav>
       </S.HeaderWrap>
     </S.Header>

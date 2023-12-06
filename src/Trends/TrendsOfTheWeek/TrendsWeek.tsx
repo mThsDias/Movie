@@ -29,18 +29,16 @@ export const TrendsWeek = () => {
         {trendsWeek?.map((weekItem) => (
           <S.BoxItems key={weekItem.id}>
             <S.BoxImageAndPercentage>
-              <ImageComponent
-                img={weekItem.poster_path}
-                w={150}
-                h={225}
-                borderRadius={10}
-              />
+              <ImageComponent img={weekItem.poster_path} borderRadius={10} />
               <span>
                 <OverViewComponent voteAverage={weekItem.vote_average} />
               </span>
             </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
-              <Link href={generateLink(weekItem.id, weekItem.media_type)}>
+              <Link
+                rel="preconnect"
+                href={generateLink(weekItem.id, weekItem.media_type)}
+              >
                 <h2>
                   <TitleComponent title={weekItem} />
                 </h2>

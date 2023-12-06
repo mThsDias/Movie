@@ -10,7 +10,7 @@ import { TitleComponent } from "@/components/Title";
 import { formatDate } from "@/functions";
 import { DateComponent } from "@/components/Date";
 
-export const ComponentPopular = () => {
+export const MoviePopular = () => {
   const { popular, error, loading } = useContext(PopularContext);
 
   if (loading) {
@@ -27,18 +27,13 @@ export const ComponentPopular = () => {
         {popular?.map((item) => (
           <S.BoxPopularItems key={item.id}>
             <S.BoxImageAndPercentage>
-              <ImageComponent
-                img={item.poster_path}
-                w={150}
-                h={225}
-                borderRadius={10}
-              />
+              <ImageComponent img={item.poster_path} borderRadius={10} />
               <span>
                 <OverViewComponent voteAverage={item.vote_average} />
               </span>
             </S.BoxImageAndPercentage>
             <S.BoxTitleAndDate>
-              <Link href={`/movies/${item.id}`}>
+              <Link rel="preconnect" href={`/movies/${item.id}`}>
                 <h2>
                   <TitleComponent title={item} />
                 </h2>

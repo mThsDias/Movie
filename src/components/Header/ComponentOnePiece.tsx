@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 
 import * as S from "./styles";
-import { Tv } from "@/Tv/context/types";
-import { ImageComponent } from "../Image";
 import Link from "next/link";
+
+import { Tv } from "@/Tv/context/types";
 import { Modal } from "../Modal/Modal";
+import { ImageComponent } from "../Image";
 
 export const ComponentOnePiece = () => {
   const [onePiece, setOnePiece] = React.useState<Tv[]>([]);
@@ -46,7 +47,7 @@ export const ComponentOnePiece = () => {
               <p>{item.overview}</p>
             </div>
             <S.Button>
-              <Link href="/tv/37854">
+              <Link rel="preconnect" href="/tv/37854">
                 <span>Assistir Agora</span>
               </Link>
               <span onClick={handleOpenModal}>Assistir Trailer</span>
@@ -65,7 +66,7 @@ export const ComponentOnePiece = () => {
           </S.BoxDescription>
           <ImageComponent
             img={item.poster_path}
-            borderRadius={20}
+            borderRadius={10}
             w={400}
             h={600}
           />

@@ -8,7 +8,7 @@ export const usePopularTv = () => {
   const [error, setError] = useState<string | null>(null);
 
   const apiKey = "dcf6fe444e49bcbe4d8f215076000be9";
-  const apiUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=pt-BR`;
+  const apiUrl = `https://api.themoviedb.org/3/discover/tv?&include_video=true&language=pt-BR&page=2&sort_by=popularity.desc&api_key=${apiKey}`;
   const { request } = useFetch(apiUrl, {
     method: "GET",
   });
