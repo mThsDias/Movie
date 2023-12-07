@@ -20,9 +20,16 @@ export const NavBar = () => {
                 Home
               </Link>
             </li>
-            <li>Movies</li>
-            <li>Series</li>
-            <li>My List</li>
+            <li>
+              <Link rel="preconnect" href={"/listMovie"}>
+                Movies
+              </Link>
+            </li>
+            <li>
+              <Link rel="preconnect" href={"/listTv"}>
+                Series
+              </Link>
+            </li>
           </ol>
         </S.HeaderNav>
       </S.HeaderWrap>
