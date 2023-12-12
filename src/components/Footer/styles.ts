@@ -6,7 +6,7 @@ export const ContainerFooter = styled.footer`
   align-items: center;
   flex-direction: column;
   color: #fff;
-  padding-top: 5rem;
+  padding: 5rem 0;
   background: url("https://github.com/trananhtuat/react-movie/blob/main/src/assets/footer-bg.jpg?raw=true");
   background-size: cover;
   background-position: center;
