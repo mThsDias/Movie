@@ -9,8 +9,6 @@ import { TitleComponent } from "@/components/Title";
 import { DateComponent } from "@/components/Date";
 import { formatDate } from "@/functions";
 import Link from "next/link";
-import { Footer } from "@/components/Footer";
-import { NavBar } from "@/components/Header/NavBar";
 
 export default function ListMovie() {
   const [movieList, setMovieList] = React.useState<Movie[]>([]);
@@ -63,7 +61,6 @@ export default function ListMovie() {
 
   return (
     <main style={{ background: "#0f0f0f" }}>
-      <NavBar />
       <S.ContainerGrid>
         {movieList.map((item) => (
           <S.BoxGrid key={item.id}>
@@ -95,7 +92,6 @@ export default function ListMovie() {
           Próxima Página
         </button>
       </S.BoxButton>
-      <Footer />
     </main>
   );
 }

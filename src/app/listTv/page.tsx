@@ -7,8 +7,6 @@ import { TitleComponent } from "@/components/Title";
 import { DateComponent } from "@/components/Date";
 import { formatDate } from "@/functions";
 import Link from "next/link";
-import { Footer } from "@/components/Footer";
-import { NavBar } from "@/components/Header/NavBar";
 import { Tv } from "@/Tv/context/types";
 
 export default function ListTv() {
@@ -62,7 +60,6 @@ export default function ListTv() {
 
   return (
     <main style={{ background: "#0f0f0f" }}>
-      <NavBar />
       <S.ContainerGrid>
         {movieList.map((item) => (
           <S.BoxGrid key={item.id}>
@@ -94,7 +91,6 @@ export default function ListTv() {
           Próxima Página
         </button>
       </S.BoxButton>
-      <Footer />
     </main>
   );
 }

@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 
-import { Footer } from "@/components/Footer";
-import { NavBar } from "@/components/Header/NavBar";
 import { ProfileComponent } from "./ProfileComponent";
 import { TvContext } from "@/Tv/context/TvContext";
 
@@ -18,13 +16,7 @@ export const TvProfile = () => {
 
   return (
     <>
-      <header>
-        <NavBar />
-      </header>
       <main>{tv ? <ProfileComponent /> : <h1>Movie not found</h1>}</main>
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 };

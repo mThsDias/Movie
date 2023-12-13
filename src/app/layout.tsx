@@ -1,10 +1,9 @@
+"use client";
+
 import React from "react";
 import "./index.css";
-
-export const metadata = {
-  title: "Movie",
-  description: "Movie",
-};
+import { NavBar } from "@/components/Header/NavBar";
+import { Footer } from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -13,7 +12,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body>{children}</body>
+      <body style={{ background: "#000" }}>
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
