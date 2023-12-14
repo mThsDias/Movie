@@ -10,6 +10,7 @@ export const Header = styled.header`
 
   ol {
     display: flex;
+    align-items: center;
     gap: 2rem;
     list-style: none;
   }
@@ -17,6 +18,7 @@ export const Header = styled.header`
 
 export const HeaderWrap = styled.header`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   height: 100%;
   padding: 0 5rem;

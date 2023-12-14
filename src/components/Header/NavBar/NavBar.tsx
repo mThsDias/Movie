@@ -13,8 +13,10 @@ export const NavBar = () => {
         <S.BoxLogo>
           <Image src={icon} alt="logo" width={40} height={40} />
           <span>GO Movies</span>
-          <Search />
         </S.BoxLogo>
+        <div>
+          <Search />
+        </div>
         <S.HeaderNav>
           <ol>
             <li>
